@@ -38,6 +38,7 @@
 		A2B9AECE2653E7F3008BF07E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2B9AECD2653E7F3008BF07E /* Login.storyboard */; };
 		A2B9AED02653E806008BF07E /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2B9AECF2653E806008BF07E /* Register.storyboard */; };
 		A2B9AED32653EB7D008BF07E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AED22653EB7D008BF07E /* LoginViewController.swift */; };
+		A2B9AED72653F303008BF07E /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AED62653F303008BF07E /* LoginModel.swift */; };
 		A6B4EA55E80C53A589A7FC2A /* ODataOnboardingStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7713A41B719036DDCBB249EA /* ODataOnboardingStep.swift */; };
 		B043015C3A65739B1C251779 /* ConfigurationProvider.plist in Sources */ = {isa = PBXBuildFile; fileRef = 76CC561AFE1ED4364FD4BF99 /* ConfigurationProvider.plist */; };
 		B73F43DE5A6A35D6A478A802 /* OnboardingFlowProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A16F993422404F95BDE62 /* OnboardingFlowProvider.swift */; };
@@ -114,6 +115,7 @@
 		A2B9AECD2653E7F3008BF07E /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		A2B9AECF2653E806008BF07E /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		A2B9AED22653EB7D008BF07E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A2B9AED62653F303008BF07E /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		B0F2F58DEC627E64C9D2876E /* IPA_Booking_JadenOnlineODataController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IPA_Booking_JadenOnlineODataController.swift; path = OData/IPA_Booking_JadenOnlineODataController.swift; sourceTree = "<group>"; };
 		B5C9897F68EEB2F9B0132FCB /* AlertHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlertHelper.swift; path = Utils/AlertHelper.swift; sourceTree = "<group>"; };
 		B5CB276A643F8529CD084829 /* IPA_Booking_JadenCollectionType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IPA_Booking_JadenCollectionType.swift; path = Model/IPA_Booking_JadenCollectionType.swift; sourceTree = "<group>"; };
@@ -272,6 +274,14 @@
 			name = LoginVC;
 			sourceTree = "<group>";
 		};
+		A2B9AED52653F2F7008BF07E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A2B9AED62653F303008BF07E /* LoginModel.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		AE5F8EFB586000DE30E62209 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +304,7 @@
 		F6AE14B9E2294873B345BB94 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A2B9AED52653F2F7008BF07E /* Login */,
 				B5CB276A643F8529CD084829 /* IPA_Booking_JadenCollectionType.swift */,
 			);
 			name = Model;
@@ -468,6 +479,7 @@
 				D5ED2522A754A32AB9A02C6F /* EntityContainerMetadataText.swift in Sources */,
 				D029EA7099F3C23DFDCA3446 /* CellCreationHelper.swift in Sources */,
 				EA9BB69451C52013A69FE9E2 /* AlertHelper.swift in Sources */,
+				A2B9AED72653F303008BF07E /* LoginModel.swift in Sources */,
 				E850EB9AABF3C5418F7E5CC5 /* EntityContainer.swift in Sources */,
 				1CA0B58AF589BFCFE6FA5D60 /* User.swift in Sources */,
 				A2B9AED32653EB7D008BF07E /* LoginViewController.swift in Sources */,
