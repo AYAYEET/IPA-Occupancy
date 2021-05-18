@@ -8,6 +8,7 @@
 
 import UIKit
 import SAPFiori
+import SAPCommon
 
 class LoginViewController: UIViewController {
 
@@ -29,6 +30,7 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
         configureButtons()
         configureTextFields()
+        delegateTextFields()
     }
     
     //What happens when Login Button is pressed
@@ -43,7 +45,7 @@ class LoginViewController: UIViewController {
                                              icon: UIImage(systemName: "exclamationmark.circle")!,
                                              inView: self.messageView,
                                              withDuration: 2.0,
-                                             maxNumberOfLines: 0)
+                                             maxNumberOfLines: 1)
             case Constants.Login.emptyUsername:
                 self.usernameTextField.layer.borderColor = Constants.General.red
                 self.passwordTextField.layer.borderColor = Constants.General.red
@@ -62,25 +64,26 @@ class LoginViewController: UIViewController {
                                              icon: UIImage(systemName: "exclamationmark.circle")!,
                                              inView: self.messageView,
                                              withDuration: 2.0,
-                                             maxNumberOfLines: 0)
+                                             maxNumberOfLines: 2)
+                
             case Constants.Login.userIsBlocked:
                 FUIToastMessage.show(message: "User has been blocked.",
                                              icon: UIImage(systemName: "exclamationmark.circle")!,
                                              inView: self.messageView,
                                              withDuration: 2.0,
-                                             maxNumberOfLines: 0)
+                                             maxNumberOfLines: 1)
                 
             case Constants.Login.userIsDeleted:
                 FUIToastMessage.show(message: "User has been deleted.",
                                              icon: UIImage(systemName: "exclamationmark.circle")!,
                                              inView: self.messageView,
                                              withDuration: 2.0,
-                                             maxNumberOfLines: 0)
+                                             maxNumberOfLines: 1)
                 
             case Constants.Login.userIsFree:
-//                print("success")
+                print("success")
                 //Setting userdefaults for decision between login and main at app launch --> Here true
-                UserDefaults.standard.set(true, forKey: "status")
+//                UserDefaults.standard.set(true, forKey: "status")
                 //Segue to Main
 //                self.performSegue(withIdentifier: Constants.Login.loginSegue, sender: self)
 
@@ -115,13 +118,14 @@ class LoginViewController: UIViewController {
     }
     
     //MARK: - Button Styling (Mostly done in Storyboard)
-        //Changes to the design of Button
+        //Changes the design of Button
         fileprivate func configureButtons() {
             loginButton.layer.cornerRadius = 5
             registerButton.layer.cornerRadius = 5
         }
     
     //MARK: - Textfield styling (Mostly done in Storyboard)
+    //Changes the design of Textfields
     fileprivate func configureTextFields() {
         usernameTextField.layer.borderWidth = 1.0
         passwordTextField.layer.borderWidth = 1.0
@@ -131,5 +135,29 @@ class LoginViewController: UIViewController {
         usernameTextField.layer.borderColor = UIColor.preferredFioriColor(forStyle: .primary9).cgColor
         passwordTextField.layer.borderColor = UIColor.preferredFioriColor(forStyle: .primary9).cgColor
     }
+}
+
+//MARK: - UITextfield Delegate Methods
+extension LoginViewController: UITextFieldDelegate {
+    //Set delegate for textfields
+    func delegateTextFields() {
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+    //A Delegate Method of UITextfields, happens when return Button is pressed.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.nextTextField(textField)
+        return true
+    }
     
+    //Switches selected textfield to the next textfield
+    private func nextTextField(_ textField: UITextField) {
+        switch textField {
+        case self.usernameTextField:
+            self.passwordTextField.becomeFirstResponder()
+            
+        default:
+            self.passwordTextField.resignFirstResponder()
+        }
+    }
 }
