@@ -205,17 +205,14 @@
 			children = (
 				7A1315B81D4B982000A5DA56 /* AppDelegate.swift */,
 				7A1315C11D4B982000A5DA56 /* Assets.xcassets */,
-				CBCA7A9B1E3778A9001AF49E /* Main.storyboard */,
-				A2B9AECF2653E806008BF07E /* Register.storyboard */,
-				A2B9AECD2653E7F3008BF07E /* Login.storyboard */,
-				7A1315C31D4B982000A5DA56 /* LaunchScreen.storyboard */,
 				1277F7601F8E66AC0060AF58 /* SAPLogo@2x.png */,
 				7A1315C61D4B982000A5DA56 /* Info.plist */,
+				A2B9AED12653E9D4008BF07E /* View */,
+				FF056DF0FE3F1D3426F049E7 /* ViewControllers */,
+				F6AE14B9E2294873B345BB94 /* Model */,
+				33E4DAB177E35891E013904E /* OData */,
 				D394B46DBC72B1781D78EEA5 /* Proxy Classes */,
 				AE5F8EFB586000DE30E62209 /* Utils */,
-				FF056DF0FE3F1D3426F049E7 /* ViewControllers */,
-				33E4DAB177E35891E013904E /* OData */,
-				F6AE14B9E2294873B345BB94 /* Model */,
 				47AE03489EEE8D180869CC64 /* Onboarding */,
 				6AD2580943EE695105EF3E68 /* LocalizedStrings.swift */,
 			);
@@ -252,6 +249,17 @@
 				EC481C9E78B84629FDB30B6B /* Club.swift */,
 			);
 			name = public;
+			sourceTree = "<group>";
+		};
+		A2B9AED12653E9D4008BF07E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CBCA7A9B1E3778A9001AF49E /* Main.storyboard */,
+				A2B9AECF2653E806008BF07E /* Register.storyboard */,
+				A2B9AECD2653E7F3008BF07E /* Login.storyboard */,
+				7A1315C31D4B982000A5DA56 /* LaunchScreen.storyboard */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		AE5F8EFB586000DE30E62209 /* Utils */ = {
