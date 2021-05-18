@@ -10,6 +10,9 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    //instantiate loginModel
+    let loginModel = LoginModel()
+
     
     //IBOutlets connected to Login.storyboard
     @IBOutlet weak var usernameTextField: UITextField!
@@ -17,16 +20,31 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        configureButtons()
+        configureTextFields()
     }
     
+    //What happens when Login Button is pressed
     @IBAction func loginPressed(_ sender: UIButton) {
+        //call to verifyLogin Method from model pass username and password and handle results based on completion handler
+        loginModel.verifyLogin(usernameTextFieldData: usernameTextField.text, passwordTextFieldData: passwordTextField.text) { (loginStatus, username) in
+            
+            switch loginStatus {
+            case Constants.Login.connectionError:
+                print()
+                
+            default:
+                print()
+            }
+        }
     }
     
-
+    //What happens when Register Button is pressed
     @IBAction func registerPressed(_ sender: UIButton) {
     }
     
