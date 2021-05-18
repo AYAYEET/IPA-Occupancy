@@ -11,7 +11,7 @@ import SAPFiori
 
 class LoginViewController: UIViewController {
 
-    //instantiate loginModel
+    //Instantiate loginModel
     let loginModel = LoginModel()
 
     
@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
     
     //What happens when Login Button is pressed
     @IBAction func loginPressed(_ sender: UIButton) {
-        //call to verifyLogin Method from model pass username and password and handle results based on completion handler
+        //Call to verifyLogin Method from model pass username and password and handle results based on completion handler
         loginModel.verifyLogin(usernameTextFieldData: usernameTextField.text, passwordTextFieldData: passwordTextField.text) { (loginStatus, username) in
             
             switch loginStatus {
@@ -78,7 +78,11 @@ class LoginViewController: UIViewController {
                                              maxNumberOfLines: 0)
                 
             case Constants.Login.userIsFree:
-                print("success")
+//                print("success")
+                //Setting userdefaults for decision between login and main at app launch --> Here true
+                UserDefaults.standard.set(true, forKey: "status")
+                //Segue to Main
+//                self.performSegue(withIdentifier: Constants.Login.loginSegue, sender: self)
 
             default:
                 FUIToastMessage.show(message: "Something went wrong.",
@@ -92,10 +96,13 @@ class LoginViewController: UIViewController {
     
     //What happens when Register Button is pressed
     @IBAction func registerPressed(_ sender: UIButton) {
+        //Segue to Register
+//        self.performSegue(withIdentifier: Constants.Login.registerSegue, sender: self)
+
     }
     
     // MARK: - Navigation
-    //navigation preparation
+    //Navigation preparation
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
         switch segue.identifier {
         case "loginSegue":
@@ -120,7 +127,7 @@ class LoginViewController: UIViewController {
         passwordTextField.layer.borderWidth = 1.0
         usernameTextField.layer.cornerRadius = 5
         passwordTextField.layer.cornerRadius = 5
-        //color choice is based on fiori guidelines
+        //Color choice is based on fiori guidelines
         usernameTextField.layer.borderColor = UIColor.preferredFioriColor(forStyle: .primary9).cgColor
         passwordTextField.layer.borderColor = UIColor.preferredFioriColor(forStyle: .primary9).cgColor
     }
