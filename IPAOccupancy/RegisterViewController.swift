@@ -11,6 +11,8 @@ import UIKit
 class RegisterViewController: UIViewController {
     //Instantiate registerModel
     let registerModel = RegisterModel()
+    //Variable for UIPicker default value
+    var club = "1"
 
     //constants from the class RegexExtensions
     let iNumberValidityType: String.ValidityType = .iNumber
@@ -33,6 +35,7 @@ class RegisterViewController: UIViewController {
         configureUsernameLabel()
         delegateTextFields()
         targetTextfields()
+        configureUIPicker()
     }
     
 
@@ -206,13 +209,29 @@ extension RegisterViewController: UITextFieldDelegate {
 //MARK: - PickerView Datasource & Delegate Methods
 
 extension RegisterViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    //Datasource and Delegate for uiPicker
+    func configureUIPicker() {
+        clubPicker.dataSource = self
+        clubPicker.delegate = self
+    }
+    
+    //Method that returns number of rows each value has (in this case we only need one)
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
     }
     
+    //Method that returns the number of components the UIPicker should have.
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        1
+        registerModel.clubNumbers.count
     }
+    //set the title for each row of the UIPicker
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "Club \(registerModel.clubNumbers[row])"
+    }
+   
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        club = registerModel.clubNumbers[row]
+    }
     
 }
