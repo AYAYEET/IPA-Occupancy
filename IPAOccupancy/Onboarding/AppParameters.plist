@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Application Identifier</key>
+	<string>com.IPAOccupancy.sap</string>
+	<key>Destinations</key>
+	<dict>
+		<key>IPA_Booking_Jaden</key>
+		<string>IPA_Booking_Jaden</string>
+	</dict>
+</dict>
+</plist>

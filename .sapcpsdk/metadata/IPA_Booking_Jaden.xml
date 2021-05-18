@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:DataServices>
+    <Schema Namespace="CatalogService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityContainer Name="EntityContainer">
+        <EntitySet Name="Club" EntityType="CatalogService.Club"/>
+        <EntitySet Name="User" EntityType="CatalogService.User"/>
+      </EntityContainer>
+      <EntityType Name="Club">
+        <Key>
+          <PropertyRef Name="club_ID"/>
+        </Key>
+        <Property Name="club_ID" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="clubName" Type="Edm.String"/>
+        <Property Name="currentlyFree" Type="Edm.Int32"/>
+      </EntityType>
+      <EntityType Name="User">
+        <Key>
+          <PropertyRef Name="i_User"/>
+        </Key>
+        <Property Name="i_User" Type="Edm.String" Nullable="false"/>
+        <Property Name="password" Type="Edm.String"/>
+        <Property Name="status" Type="Edm.String"/>
+        <Property Name="prefferedClub" Type="Edm.String"/>
+        <Property Name="hasReserved" Type="Edm.Boolean"/>
+        <Property Name="reservedClub" Type="Edm.String"/>
+      </EntityType>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>
