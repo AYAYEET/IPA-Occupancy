@@ -12,7 +12,7 @@
         <!--Register Page View Controller-->
         <scene sceneID="2Zq-cd-YhK">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="Qsz-Xe-C3n" customClass="RegisterPageViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Qsz-Xe-C3n" customClass="RegisterPageViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1QI-Kg-WJ3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-487" y="-66"/>
@@ -20,10 +20,23 @@
         <!--Onboarding2 View Controller-->
         <scene sceneID="e7P-De-3wS">
             <objects>
-                <viewController storyboardIdentifier="Onboarding2ViewController" id="33n-V1-j4G" customClass="Onboarding2ViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Onboarding2ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="33n-V1-j4G" customClass="Onboarding2ViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OjE-aF-xhV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sap_register_image" translatesAutoresizingMaskIntoConstraints="NO" id="edy-ZH-dcc">
+                                <rect key="frame" x="87" y="182" width="240" height="246"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="During your registration process you will be able to select your preferred Club. Don't worry, you can always change it later." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2TU-yU-MDL">
+                                <rect key="frame" x="52" y="456" width="310" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="1Iv-Bg-zaQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -35,7 +48,7 @@
         <!--Register View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="RegisterViewController" id="Y6W-OH-hqX" customClass="RegisterViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="RegisterViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -114,35 +127,65 @@
         <!--Onboarding1 View Controller-->
         <scene sceneID="Vgb-QU-Vbe">
             <objects>
-                <viewController storyboardIdentifier="Onboarding1ViewController" id="lv8-Fx-YCq" customClass="Onboarding1ViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Onboarding1ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lv8-Fx-YCq" customClass="Onboarding1ViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pQH-Xq-cr7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sap_desk_image" translatesAutoresizingMaskIntoConstraints="NO" id="TKE-Nb-8c9">
+                                <rect key="frame" x="87" y="176" width="240" height="246"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The SAP Occupancy App allows for easy booking of seats in our new office." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7o-Pm-470">
+                                <rect key="frame" x="52" y="454" width="310" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="MZO-mv-Kwl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgq-fX-NGw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-841" y="652"/>
+            <point key="canvasLocation" x="-842.02898550724649" y="651.5625"/>
         </scene>
         <!--Onboarding3 View Controller-->
         <scene sceneID="t6l-1d-P1T">
             <objects>
-                <viewController storyboardIdentifier="Onboarding3ViewController" id="dji-Hl-xky" customClass="Onboarding3ViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Onboarding3ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dji-Hl-xky" customClass="Onboarding3ViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YQy-y9-yIz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sap_clock_image" translatesAutoresizingMaskIntoConstraints="NO" id="83c-q4-mAi">
+                                <rect key="frame" x="87" y="183" width="240" height="246"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prQ-C2-eXd">
+                                <rect key="frame" x="52" y="460" width="310" height="117"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">After you complete your registration our HR Team will need some time to evaluate your Log In. It may take up to an hour for your account to be accepted.</string>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="8mz-kE-96I"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7w8-JK-uhX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="517" y="652"/>
+            <point key="canvasLocation" x="515.94202898550725" y="651.5625"/>
         </scene>
     </scenes>
     <resources>
+        <image name="sap_clock_image" width="1001" height="1001"/>
+        <image name="sap_desk_image" width="1034" height="1034"/>
+        <image name="sap_register_image" width="1034" height="1034"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

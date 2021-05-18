@@ -117,7 +117,7 @@ class LoginViewController: UIViewController {
     //What happens when Register Button is pressed
     @IBAction func registerPressed(_ sender: UIButton) {
         //Segue to Register
-//        self.performSegue(withIdentifier: Constants.Login.registerSegue, sender: self)
+        self.performSegue(withIdentifier: Constants.Login.registerSegue, sender: self)
 
     }
     
