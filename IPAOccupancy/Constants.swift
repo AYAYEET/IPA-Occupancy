@@ -41,4 +41,12 @@ struct Constants {
         static let userStatusDeleted = "Deleted"
     }
     
+    struct Register {
+        
+        static let validUsername = "Please Enter a valid i-Number above first"
+        static let passwordExample = "Must contain at least one: UPPERCASE, LOWERCASE, \nNumber & Special Character Example: Sa123*"
+        static let iNumberExample = "i-Number example: i45043"
+
+    }
+    
 }
