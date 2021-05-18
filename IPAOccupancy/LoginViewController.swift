@@ -46,18 +46,27 @@ class LoginViewController: UIViewController {
                                              inView: self.messageView,
                                              withDuration: 2.0,
                                              maxNumberOfLines: 1)
+
             case Constants.Login.emptyUsername:
                 self.usernameTextField.layer.borderColor = Constants.General.red
                 self.passwordTextField.layer.borderColor = Constants.General.red
+                self.resetColorOfTextfields()
+
             
             case Constants.Login.notEmptyUsername:
                 self.usernameTextField.layer.borderColor = Constants.General.green
+                self.resetColorOfTextfields()
+
                 
             case Constants.Login.passwordIsEmpty:
                 self.passwordTextField.layer.borderColor = Constants.General.red
+                self.resetColorOfTextfields()
+
             
             case Constants.Login.notEmptyPassword:
                 self.passwordTextField.layer.borderColor = Constants.General.green
+                self.resetColorOfTextfields()
+
                 
             case Constants.Login.userIsNew:
                 FUIToastMessage.show(message: "User has not been accepted yet.",
@@ -65,6 +74,8 @@ class LoginViewController: UIViewController {
                                              inView: self.messageView,
                                              withDuration: 2.0,
                                              maxNumberOfLines: 2)
+                self.resetColorOfTextfields()
+
                 
             case Constants.Login.userIsBlocked:
                 FUIToastMessage.show(message: "User has been blocked.",
@@ -72,6 +83,8 @@ class LoginViewController: UIViewController {
                                              inView: self.messageView,
                                              withDuration: 2.0,
                                              maxNumberOfLines: 1)
+                self.resetColorOfTextfields()
+
                 
             case Constants.Login.userIsDeleted:
                 FUIToastMessage.show(message: "User has been deleted.",
@@ -79,6 +92,8 @@ class LoginViewController: UIViewController {
                                              inView: self.messageView,
                                              withDuration: 2.0,
                                              maxNumberOfLines: 1)
+                self.resetColorOfTextfields()
+
                 
             case Constants.Login.userIsFree:
                 print("success")
@@ -93,6 +108,8 @@ class LoginViewController: UIViewController {
                                              inView: self.messageView,
                                              withDuration: 2.0,
                                              maxNumberOfLines: 0)
+                self.resetColorOfTextfields()
+
             }
         }
     }
@@ -134,6 +151,16 @@ class LoginViewController: UIViewController {
         //Color choice is based on fiori guidelines
         usernameTextField.layer.borderColor = UIColor.preferredFioriColor(forStyle: .primary9).cgColor
         passwordTextField.layer.borderColor = UIColor.preferredFioriColor(forStyle: .primary9).cgColor
+    }
+    
+    //Method for returning TextFields to default look after a few seconds
+    //Inspired by https://stackoverflow.com/questions/37801436/how-do-i-write-dispatch-after-gcd-in-swift-3-4-and-5
+    fileprivate func resetColorOfTextfields() {
+        DispatchQueue.main.asyncAfter(deadline: .now()+3.0 ) {
+
+            self.usernameTextField.layer.borderColor = Constants.General.gray
+            self.passwordTextField.layer.borderColor = Constants.General.gray
+        }
     }
 }
 
