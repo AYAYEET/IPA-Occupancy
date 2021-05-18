@@ -68,12 +68,18 @@
                                     <action selector="registerPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="sfx-t2-gZc"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7v9-Qh-R3v">
+                                <rect key="frame" x="20" y="320" width="374" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="nge-zS-HKD" id="Q1T-Jo-6IK"/>
+                        <outlet property="messageView" destination="7v9-Qh-R3v" id="cVs-Rt-pIS"/>
                         <outlet property="passwordTextField" destination="XcS-N6-iBK" id="G18-BZ-k6z"/>
                         <outlet property="registerButton" destination="Tbn-Lv-YTI" id="gFM-tf-DNO"/>
                         <outlet property="usernameTextField" destination="UxV-yp-dR4" id="zJE-34-MTJ"/>
