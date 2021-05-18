@@ -9,7 +9,13 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
+    //Instantiate registerModel
+    let registerModel = RegisterModel()
 
+    //constants from the class RegexExtensions
+    let iNumberValidityType: String.ValidityType = .iNumber
+    let pwdValidityType: String.ValidityType = .password
+    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordReTextField: UITextField!
@@ -24,8 +30,9 @@ class RegisterViewController: UIViewController {
         // Do any additional setup after loading the view.
         configureTextFields()
         configureButton()
-        delegateTextFields()
         configureUsernameLabel()
+        delegateTextFields()
+        targetTextfields()
     }
     
 
@@ -69,6 +76,103 @@ class RegisterViewController: UIViewController {
     fileprivate func configurePasswordLabel() {
         passwordLabel.text = Constants.Register.passwordExample
     }
+    
+    //MARK: - Methods for handling TextField changes and validating input
+    
+    //Add target to textfield for during editing for input validation
+    //functionality heavily based on https://www.youtube.com/watch?v=mqaHpG1vPs8&list=PL_csAAO9PQ8buBXpnohnRyEbnYnXh81JE&index=1&t=676s
+    fileprivate func targetTextfields() {
+        usernameTextField.addTarget(self, action: #selector(handleTextChangeUsername), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(handleTextChangePassword), for: .editingChanged)
+        passwordReTextField.addTarget(self, action: #selector(handleTextChangeRePassword), for: .editingChanged)
+    }
+    
+    //Method for handling text changes in textfield username --> used in targetTextfield Method
+    //functionality heavily based on https://www.youtube.com/watch?v=mqaHpG1vPs8&list=PL_csAAO9PQ8buBXpnohnRyEbnYnXh81JE&index=1&t=676s
+    @objc fileprivate func handleTextChangeUsername() {
+        guard let text = usernameTextField.text else { return }
+        
+        switch iNumberValidityType {
+        case .iNumber:
+            if text.isValid(iNumberValidityType) {
+                usernameTextField.layer.borderColor = Constants.General.green
+                
+                //Password Fields become available
+                passwordTextField.isUserInteractionEnabled = true
+                passwordReTextField.isUserInteractionEnabled = true
+                passwordTextField.placeholder = "Password"
+                registerButton.isEnabled = false
+                
+                //Remove Username Hint Text
+                usernameLabel.text = ""
+                configurePasswordLabel()
+                
+                //Reset other Textfields on Username changes to ensure Register Button can't be pressed
+                passwordTextField.text = ""
+                passwordReTextField.text = ""
+                passwordTextField.layer.borderColor = Constants.General.gray
+                passwordReTextField.layer.borderColor = Constants.General.gray
+            } else {
+                usernameTextField.layer.borderColor = Constants.General.red
+                passwordTextField.isUserInteractionEnabled = false
+                passwordReTextField.isUserInteractionEnabled = false
+                passwordTextField.placeholder = Constants.Register.validUsername
+                usernameLabel.text = Constants.Register.iNumberExample
+                registerButton.isEnabled = false
+            }
+        default:
+            do{}
+        }
+    }
+    
+    //Method for handling text changes in textfield password --> used in targetTextfield Method
+    //functionality heavily based on https://www.youtube.com/watch?v=mqaHpG1vPs8&list=PL_csAAO9PQ8buBXpnohnRyEbnYnXh81JE&index=1&t=676s
+    @objc fileprivate func handleTextChangePassword() {
+        guard let text = passwordTextField.text else { return }
+        
+        switch pwdValidityType {
+        
+        case .password:
+            if text.isValid(pwdValidityType) {
+                passwordTextField.layer.borderColor = Constants.General.green
+                //Password hint removed
+                passwordLabel.text = ""
+                
+                //Reset other Textfields on Username changes to ensure Register Button can't be pressed
+                passwordReTextField.text = ""
+                registerButton.isEnabled = false
+                passwordReTextField.layer.borderColor = Constants.General.gray
+            } else {
+                passwordTextField.layer.borderColor = Constants.General.red
+                registerButton.isEnabled = false
+                passwordLabel.text = Constants.Register.passwordExample
+                
+                //Reset other Textfields on Username changes to ensure Register Button can't be pressed
+                passwordReTextField.text = ""
+                passwordReTextField.layer.borderColor = Constants.General.gray
+            }
+        default:
+        do{}
+        }
+    }
+    
+    //Method for handling text changes in textfield Re Password
+    @objc fileprivate func handleTextChangeRePassword() {
+        //Color of Re Password textfield based on if it has correct input
+        if passwordReTextField.text == passwordTextField.text {
+            passwordReTextField.layer.borderColor = Constants.General.green
+            
+            //Register Button becomes available to press
+            registerButton.isEnabled = true
+            
+            //Show user that the UIPicker should be pressed
+            selectClubLabel.textColor = UIColor.label
+        } else {
+            passwordReTextField.layer.borderColor = Constants.General.red
+            registerButton.isEnabled = false
+            selectClubLabel.textColor = UIColor.preferredFioriColor(forStyle: .criticalLabel)
+        }
+    }
 }
 
 //MARK: - Textfield Delegate Methods
@@ -97,4 +201,18 @@ extension RegisterViewController: UITextFieldDelegate {
         passwordTextField.delegate = self
         passwordReTextField.delegate = self
     }
+}
+
+//MARK: - PickerView Datasource & Delegate Methods
+
+extension RegisterViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        1
+    }
+    
+    
 }

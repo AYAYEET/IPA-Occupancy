@@ -42,7 +42,7 @@ class RegisterPageViewController: UIPageViewController {
     //Method for basic traits of PageControl
     func pageControlStyle() {
         pageControl.translatesAutoresizingMaskIntoConstraints = false
-//        pageControl.currentPageIndicatorTintColor = .black
+        pageControl.currentPageIndicatorTintColor = .tertiarySystemFill
         pageControl.pageIndicatorTintColor = .systemGray2
         pageControl.numberOfPages = subViewControllers.count
         pageControl.currentPage = firstPage

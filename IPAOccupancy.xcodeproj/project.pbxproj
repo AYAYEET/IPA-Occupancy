@@ -46,6 +46,7 @@
 		A2B9AEE326541106008BF07E /* Onboarding2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AEE226541106008BF07E /* Onboarding2ViewController.swift */; };
 		A2B9AEE526541114008BF07E /* Onboarding3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AEE426541114008BF07E /* Onboarding3ViewController.swift */; };
 		A2B9AEE726542636008BF07E /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AEE626542636008BF07E /* RegisterModel.swift */; };
+		A2B9AEEB26542BC9008BF07E /* RegexExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AEEA26542BC9008BF07E /* RegexExtensions.swift */; };
 		A6B4EA55E80C53A589A7FC2A /* ODataOnboardingStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7713A41B719036DDCBB249EA /* ODataOnboardingStep.swift */; };
 		B043015C3A65739B1C251779 /* ConfigurationProvider.plist in Sources */ = {isa = PBXBuildFile; fileRef = 76CC561AFE1ED4364FD4BF99 /* ConfigurationProvider.plist */; };
 		B73F43DE5A6A35D6A478A802 /* OnboardingFlowProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A16F993422404F95BDE62 /* OnboardingFlowProvider.swift */; };
@@ -130,6 +131,7 @@
 		A2B9AEE226541106008BF07E /* Onboarding2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding2ViewController.swift; sourceTree = "<group>"; };
 		A2B9AEE426541114008BF07E /* Onboarding3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding3ViewController.swift; sourceTree = "<group>"; };
 		A2B9AEE626542636008BF07E /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
+		A2B9AEEA26542BC9008BF07E /* RegexExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexExtensions.swift; sourceTree = "<group>"; };
 		B0F2F58DEC627E64C9D2876E /* IPA_Booking_JadenOnlineODataController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IPA_Booking_JadenOnlineODataController.swift; path = OData/IPA_Booking_JadenOnlineODataController.swift; sourceTree = "<group>"; };
 		B5C9897F68EEB2F9B0132FCB /* AlertHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlertHelper.swift; path = Utils/AlertHelper.swift; sourceTree = "<group>"; };
 		B5CB276A643F8529CD084829 /* IPA_Booking_JadenCollectionType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IPA_Booking_JadenCollectionType.swift; path = Model/IPA_Booking_JadenCollectionType.swift; sourceTree = "<group>"; };
@@ -324,6 +326,14 @@
 			name = Register;
 			sourceTree = "<group>";
 		};
+		A2B9AEE926542BAE008BF07E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A2B9AEEA26542BC9008BF07E /* RegexExtensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		AE5F8EFB586000DE30E62209 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,6 +358,7 @@
 			children = (
 				A2B9AEE82654263F008BF07E /* Register */,
 				A2B9AED52653F2F7008BF07E /* Login */,
+				A2B9AEE926542BAE008BF07E /* Extensions */,
 				B5CB276A643F8529CD084829 /* IPA_Booking_JadenCollectionType.swift */,
 				A2B9AED82653F8D7008BF07E /* Constants.swift */,
 			);
@@ -527,6 +538,7 @@
 				D5ED2522A754A32AB9A02C6F /* EntityContainerMetadataText.swift in Sources */,
 				D029EA7099F3C23DFDCA3446 /* CellCreationHelper.swift in Sources */,
 				EA9BB69451C52013A69FE9E2 /* AlertHelper.swift in Sources */,
+				A2B9AEEB26542BC9008BF07E /* RegexExtensions.swift in Sources */,
 				A2B9AED72653F303008BF07E /* LoginModel.swift in Sources */,
 				A2B9AEE1265410F7008BF07E /* Onboarding1ViewController.swift in Sources */,
 				E850EB9AABF3C5418F7E5CC5 /* EntityContainer.swift in Sources */,
