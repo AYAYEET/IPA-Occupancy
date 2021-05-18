@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SAPFiori
 
 class LoginViewController: UIViewController {
 
@@ -37,10 +38,54 @@ class LoginViewController: UIViewController {
             
             switch loginStatus {
             case Constants.Login.connectionError:
-                print()
+                //FUI Design Elements
+                FUIToastMessage.show(message: "Connection Error, try again",
+                                             icon: UIImage(systemName: "exclamationmark.circle")!,
+                                             inView: self.messageView,
+                                             withDuration: 2.0,
+                                             maxNumberOfLines: 0)
+            case Constants.Login.emptyUsername:
+                self.usernameTextField.layer.borderColor = Constants.General.red
+                self.passwordTextField.layer.borderColor = Constants.General.red
+            
+            case Constants.Login.notEmptyUsername:
+                self.usernameTextField.layer.borderColor = Constants.General.green
                 
+            case Constants.Login.passwordIsEmpty:
+                self.passwordTextField.layer.borderColor = Constants.General.red
+            
+            case Constants.Login.notEmptyPassword:
+                self.passwordTextField.layer.borderColor = Constants.General.green
+                
+            case Constants.Login.userIsNew:
+                FUIToastMessage.show(message: "User has not been accepted yet.",
+                                             icon: UIImage(systemName: "exclamationmark.circle")!,
+                                             inView: self.messageView,
+                                             withDuration: 2.0,
+                                             maxNumberOfLines: 0)
+            case Constants.Login.userIsBlocked:
+                FUIToastMessage.show(message: "User has been blocked.",
+                                             icon: UIImage(systemName: "exclamationmark.circle")!,
+                                             inView: self.messageView,
+                                             withDuration: 2.0,
+                                             maxNumberOfLines: 0)
+                
+            case Constants.Login.userIsDeleted:
+                FUIToastMessage.show(message: "User has been deleted.",
+                                             icon: UIImage(systemName: "exclamationmark.circle")!,
+                                             inView: self.messageView,
+                                             withDuration: 2.0,
+                                             maxNumberOfLines: 0)
+                
+            case Constants.Login.userIsFree:
+                print("success")
+
             default:
-                print()
+                FUIToastMessage.show(message: "Something went wrong.",
+                                             icon: UIImage(systemName: "exclamationmark.circle")!,
+                                             inView: self.messageView,
+                                             withDuration: 2.0,
+                                             maxNumberOfLines: 0)
             }
         }
     }

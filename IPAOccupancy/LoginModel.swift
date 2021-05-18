@@ -102,7 +102,5 @@ struct LoginModel {
                 }
             }
         }
-
     }
-    
 }
