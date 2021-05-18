@@ -15,12 +15,12 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="Qsz-Xe-C3n" customClass="RegisterPageViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1QI-Kg-WJ3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-403" y="-35"/>
+            <point key="canvasLocation" x="-487" y="-66"/>
         </scene>
         <!--Onboarding2 View Controller-->
         <scene sceneID="e7P-De-3wS">
             <objects>
-                <viewController id="33n-V1-j4G" customClass="Onboarding2ViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Onboarding2ViewController" id="33n-V1-j4G" customClass="Onboarding2ViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OjE-aF-xhV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,7 +35,7 @@
         <!--Register View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="RegisterViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterViewController" id="Y6W-OH-hqX" customClass="RegisterViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -114,7 +114,7 @@
         <!--Onboarding1 View Controller-->
         <scene sceneID="Vgb-QU-Vbe">
             <objects>
-                <viewController id="lv8-Fx-YCq" customClass="Onboarding1ViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Onboarding1ViewController" id="lv8-Fx-YCq" customClass="Onboarding1ViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pQH-Xq-cr7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,7 +129,7 @@
         <!--Onboarding3 View Controller-->
         <scene sceneID="t6l-1d-P1T">
             <objects>
-                <viewController id="dji-Hl-xky" customClass="Onboarding3ViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Onboarding3ViewController" id="dji-Hl-xky" customClass="Onboarding3ViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YQy-y9-yIz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
