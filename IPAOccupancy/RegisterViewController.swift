@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SAPFiori
+import SAPCommon
 
 class RegisterViewController: UIViewController {
     //Instantiate registerModel
@@ -26,6 +28,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var messageView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,8 +42,32 @@ class RegisterViewController: UIViewController {
         configureUIPicker()
     }
     
-
+    //What happens when Register Button is pressed
     @IBAction func registerPressed(_ sender: Any) {
+        registerModel.registerUser(usernameTextFieldData: usernameTextField.text, passwordTextFieldData: passwordTextField.text, clubPickerValue: club) { (registerStatus) in
+            
+            switch registerStatus {
+            case Constants.Register.connectionError:
+                FUIToastMessage.show(message: "Connection Error, try again",
+                                             icon: UIImage(systemName: "exclamationmark.circle")!,
+                                             inView: self.messageView,
+                                             withDuration: 2.0,
+                                             maxNumberOfLines: 1)
+                
+            case Constants.Register.createSuccess:
+                //Dismiss the Register View
+                self.dismiss(animated: true, completion: nil)
+                
+            case Constants.Register.createExists:
+                FUIToastMessage.show(message: "This User already exists. Try loggin in",
+                                             icon: UIImage(systemName: "exclamationmark.circle")!,
+                                             inView: self.messageView,
+                                             withDuration: 3.0,
+                                             maxNumberOfLines: 1)
+            default:
+                do{}
+            }
+        }
     }
     
     //MARK: - UITextfield Methods

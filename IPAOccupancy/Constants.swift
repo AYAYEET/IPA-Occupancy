@@ -46,6 +46,9 @@ struct Constants {
         static let validUsername = "Please Enter a valid i-Number above first"
         static let passwordExample = "Must contain at least one: UPPERCASE, LOWERCASE, \nNumber & Special Character Example: Sa123*"
         static let iNumberExample = "i-Number example: i45043"
+        static let createSuccess = "success"
+        static let createExists = "exists"
+        static let connectionError = "ConnectionError"
 
     }
     

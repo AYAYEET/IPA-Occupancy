@@ -18,7 +18,40 @@ struct RegisterModel {
     let serviceRoot = URL(string: Constants.General.odataURL)!
     let sapURLSession = SAPURLSession()
     
-    func registerUser(usernameTextFieldData: String, passwordTextFieldData: String, clubPickerValie: String, completionHandler: @escaping (String) -> ()) {
+    //Method for sending the Registration details to the oData Service
+    func registerUser(usernameTextFieldData: String?, passwordTextFieldData: String?, clubPickerValue: String, completionHandler: @escaping (String) -> ()) {
         
+        let odataProvider = OnlineODataProvider(serviceName: "EntityContainer", serviceRoot: serviceRoot, sapURLSession: sapURLSession)
+        odataProvider.serviceOptions.checkVersion = false
+        let dataService = EntityContainer(provider: odataProvider)
+        let query = DataQuery()
+            .select(User.iUser, User.password, User.status, User.prefferedClub, User.hasReserved)
+            .top(1)
+        
+        do {
+            dataService.fetchUser(matching: query) { user, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                    completionHandler(Constants.Register.connectionError)
+                }
+                //Set all needed values for the new user
+                if let selectedUser = user {
+                    let newUser = selectedUser.first?.copy()
+                    newUser?.iUser = usernameTextFieldData
+                    newUser?.password = passwordTextFieldData
+                    newUser?.status = "new" // default status of a user when created
+                    newUser?.prefferedClub = clubPickerValue
+                    newUser?.hasReserved = false
+                    
+                    do {
+                        //Create the User in the oData Service
+                        try odataProvider.createEntity(newUser!, headers: .empty, options: .none)
+                        completionHandler(Constants.Register.createSuccess)
+                    } catch {
+                        completionHandler(Constants.Register.createExists)
+                    }
+                }
+            }
+        }
     }
 }
