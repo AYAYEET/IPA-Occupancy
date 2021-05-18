@@ -71,11 +71,29 @@
                         <outlet property="passwordTextField" destination="XcS-N6-iBK" id="G18-BZ-k6z"/>
                         <outlet property="registerButton" destination="Tbn-Lv-YTI" id="gFM-tf-DNO"/>
                         <outlet property="usernameTextField" destination="UxV-yp-dR4" id="zJE-34-MTJ"/>
+                        <segue destination="KC0-9u-JaQ" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="vGg-wl-qQ3"/>
+                        <segue destination="jIf-UT-wJ6" kind="presentation" identifier="registerSegue" id="gTT-G1-HbQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="28.985507246376812" y="88.392857142857139"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="lqp-QX-iHk">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="KC0-9u-JaQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m0O-Eg-jzH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="711" y="-72"/>
+        </scene>
+        <!--Register-->
+        <scene sceneID="E4M-fB-1Az">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Register" id="jIf-UT-wJ6" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1d0-OE-9nG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="727" y="236"/>
         </scene>
     </scenes>
     <resources>
