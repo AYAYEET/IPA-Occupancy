@@ -87,6 +87,9 @@
                                 <state key="disabled">
                                     <color key="titleColor" red="0.031372549020000001" green="0.3294117647" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="registerPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="klv-fV-Gch"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select your Club" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXj-jD-6Be">
                                 <rect key="frame" x="20" y="429" width="126" height="21"/>
@@ -119,6 +122,16 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="clubPicker" destination="iuc-Bd-qCP" id="6p1-gQ-R5Z"/>
+                        <outlet property="passwordLabel" destination="JK7-Rg-tmu" id="nI2-2S-8ro"/>
+                        <outlet property="passwordReTextField" destination="zlk-J9-sfb" id="fC8-FV-oLv"/>
+                        <outlet property="passwordTextField" destination="0v2-Jz-PPf" id="tA9-kv-TCG"/>
+                        <outlet property="registerButton" destination="x3e-Ec-ypr" id="e3G-BA-XgW"/>
+                        <outlet property="selectClubLabel" destination="pXj-jD-6Be" id="N5I-Jd-zPW"/>
+                        <outlet property="usernameLabel" destination="lc8-dC-UDG" id="iXi-KT-IXL"/>
+                        <outlet property="usernameTextField" destination="ubZ-FU-cWl" id="1GT-Wc-zJO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
