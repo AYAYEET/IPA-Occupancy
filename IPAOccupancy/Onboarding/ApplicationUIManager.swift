@@ -75,24 +75,17 @@ class ApplicationUIManager: ApplicationUIManaging {
             return
         }
 
-        // Restore the saved application screen or create a new one
         let appViewController: UIViewController
-        if let savedViewController = self._savedApplicationRootViewController {
-            appViewController = savedViewController
-        } else {
-            let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
-            let splitViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "MainSplitViewController") as! UISplitViewController
-            splitViewController.delegate = appDelegate
-            splitViewController.modalPresentationStyle = .currentContext
-            splitViewController.preferredDisplayMode = .allVisible
-            appViewController = splitViewController
+        
+        // UI Management Logic for IPA Occupancy
+        let loginStatus = UserDefaults.standard.bool(forKey: "status")
 
-            if UIDevice.current.userInterfaceIdiom == .pad {
-                let viewController = UIViewController()
-                viewController.view.backgroundColor = .systemBackground
-                let navigationViewController = splitViewController.viewControllers.last as! UINavigationController
-                navigationViewController.viewControllers = [viewController]
-            }
+        if loginStatus == false {
+            let loginVC = UIStoryboard(name: "Login", bundle: Bundle.main).instantiateInitialViewController()!
+            appViewController = loginVC
+        } else {
+            let mainVC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()!
+            appViewController = mainVC
         }
         self.window.rootViewController = appViewController
         self._onboardingSplashViewController = nil

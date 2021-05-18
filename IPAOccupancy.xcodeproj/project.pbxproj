@@ -35,6 +35,8 @@
 		91937989232F7A39001F9DAC /* SAPFoundation.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 91937980232F7A38001F9DAC /* SAPFoundation.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9193798A232F7A39001F9DAC /* SAPOData.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91937981232F7A38001F9DAC /* SAPOData.xcframework */; };
 		9193798B232F7A39001F9DAC /* SAPOData.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 91937981232F7A38001F9DAC /* SAPOData.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A2B9AECE2653E7F3008BF07E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2B9AECD2653E7F3008BF07E /* Login.storyboard */; };
+		A2B9AED02653E806008BF07E /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2B9AECF2653E806008BF07E /* Register.storyboard */; };
 		A6B4EA55E80C53A589A7FC2A /* ODataOnboardingStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7713A41B719036DDCBB249EA /* ODataOnboardingStep.swift */; };
 		B043015C3A65739B1C251779 /* ConfigurationProvider.plist in Sources */ = {isa = PBXBuildFile; fileRef = 76CC561AFE1ED4364FD4BF99 /* ConfigurationProvider.plist */; };
 		B73F43DE5A6A35D6A478A802 /* OnboardingFlowProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A16F993422404F95BDE62 /* OnboardingFlowProvider.swift */; };
@@ -108,6 +110,8 @@
 		9FD8CE236EC45ADFDB0A2B28 /* EntityContainerMetadata.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EntityContainerMetadata.swift; path = "Proxy Classes/public/EntityContainerMetadata.swift"; sourceTree = "<group>"; };
 		A07B22FB555D72E41E667F74 /* CellCreationHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CellCreationHelper.swift; path = Utils/CellCreationHelper.swift; sourceTree = "<group>"; };
 		A23BA71D466F288503A6DF4B /* ApplicationUIManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ApplicationUIManager.swift; path = Onboarding/ApplicationUIManager.swift; sourceTree = "<group>"; };
+		A2B9AECD2653E7F3008BF07E /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		A2B9AECF2653E806008BF07E /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		B0F2F58DEC627E64C9D2876E /* IPA_Booking_JadenOnlineODataController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IPA_Booking_JadenOnlineODataController.swift; path = OData/IPA_Booking_JadenOnlineODataController.swift; sourceTree = "<group>"; };
 		B5C9897F68EEB2F9B0132FCB /* AlertHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlertHelper.swift; path = Utils/AlertHelper.swift; sourceTree = "<group>"; };
 		B5CB276A643F8529CD084829 /* IPA_Booking_JadenCollectionType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IPA_Booking_JadenCollectionType.swift; path = Model/IPA_Booking_JadenCollectionType.swift; sourceTree = "<group>"; };
@@ -200,8 +204,10 @@
 			isa = PBXGroup;
 			children = (
 				7A1315B81D4B982000A5DA56 /* AppDelegate.swift */,
-				CBCA7A9B1E3778A9001AF49E /* Main.storyboard */,
 				7A1315C11D4B982000A5DA56 /* Assets.xcassets */,
+				CBCA7A9B1E3778A9001AF49E /* Main.storyboard */,
+				A2B9AECF2653E806008BF07E /* Register.storyboard */,
+				A2B9AECD2653E7F3008BF07E /* Login.storyboard */,
 				7A1315C31D4B982000A5DA56 /* LaunchScreen.storyboard */,
 				1277F7601F8E66AC0060AF58 /* SAPLogo@2x.png */,
 				7A1315C61D4B982000A5DA56 /* Info.plist */,
@@ -371,6 +377,8 @@
 			files = (
 				7A16F06D1FD1B3C700D2FABD /* README.md in Resources */,
 				7A1315C51D4B982000A5DA56 /* LaunchScreen.storyboard in Resources */,
+				A2B9AED02653E806008BF07E /* Register.storyboard in Resources */,
+				A2B9AECE2653E7F3008BF07E /* Login.storyboard in Resources */,
 				7A1315C21D4B982000A5DA56 /* Assets.xcassets in Resources */,
 				CBCA7A991E3778A9001AF49E /* Main.storyboard in Resources */,
 				1277F7611F8E66AF0060AF58 /* SAPLogo@2x.png in Resources */,
