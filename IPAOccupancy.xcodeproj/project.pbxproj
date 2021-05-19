@@ -47,6 +47,7 @@
 		A2B9AEE526541114008BF07E /* Onboarding3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AEE426541114008BF07E /* Onboarding3ViewController.swift */; };
 		A2B9AEE726542636008BF07E /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AEE626542636008BF07E /* RegisterModel.swift */; };
 		A2B9AEEB26542BC9008BF07E /* RegexExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AEEA26542BC9008BF07E /* RegexExtensions.swift */; };
+		A2B9AEEF2654E2EB008BF07E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AEEE2654E2EB008BF07E /* TabBarViewController.swift */; };
 		A6B4EA55E80C53A589A7FC2A /* ODataOnboardingStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7713A41B719036DDCBB249EA /* ODataOnboardingStep.swift */; };
 		B043015C3A65739B1C251779 /* ConfigurationProvider.plist in Sources */ = {isa = PBXBuildFile; fileRef = 76CC561AFE1ED4364FD4BF99 /* ConfigurationProvider.plist */; };
 		B73F43DE5A6A35D6A478A802 /* OnboardingFlowProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A16F993422404F95BDE62 /* OnboardingFlowProvider.swift */; };
@@ -132,6 +133,7 @@
 		A2B9AEE426541114008BF07E /* Onboarding3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding3ViewController.swift; sourceTree = "<group>"; };
 		A2B9AEE626542636008BF07E /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		A2B9AEEA26542BC9008BF07E /* RegexExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexExtensions.swift; sourceTree = "<group>"; };
+		A2B9AEEE2654E2EB008BF07E /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		B0F2F58DEC627E64C9D2876E /* IPA_Booking_JadenOnlineODataController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IPA_Booking_JadenOnlineODataController.swift; path = OData/IPA_Booking_JadenOnlineODataController.swift; sourceTree = "<group>"; };
 		B5C9897F68EEB2F9B0132FCB /* AlertHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlertHelper.swift; path = Utils/AlertHelper.swift; sourceTree = "<group>"; };
 		B5CB276A643F8529CD084829 /* IPA_Booking_JadenCollectionType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IPA_Booking_JadenCollectionType.swift; path = Model/IPA_Booking_JadenCollectionType.swift; sourceTree = "<group>"; };
@@ -334,6 +336,22 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		A2B9AEEC2654E29F008BF07E /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				A2B9AEED2654E2AC008BF07E /* NavigationVC */,
+			);
+			name = MainVC;
+			sourceTree = "<group>";
+		};
+		A2B9AEED2654E2AC008BF07E /* NavigationVC */ = {
+			isa = PBXGroup;
+			children = (
+				A2B9AEEE2654E2EB008BF07E /* TabBarViewController.swift */,
+			);
+			name = NavigationVC;
+			sourceTree = "<group>";
+		};
 		AE5F8EFB586000DE30E62209 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +386,7 @@
 		FF056DF0FE3F1D3426F049E7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A2B9AEEC2654E29F008BF07E /* MainVC */,
 				A2B9AEDA26540F36008BF07E /* RegisterVC */,
 				A2B9AED42653EBC4008BF07E /* LoginVC */,
 			);
@@ -551,6 +570,7 @@
 				C48EF88663DAD81352B9866E /* EntityContainerMetadataChanges.swift in Sources */,
 				D7D034E306E45ECD7E31B0A8 /* EntityContainerMetadataParser.swift in Sources */,
 				39C03430CF33AFDE983E6A15 /* IPA_Booking_JadenOnlineODataController.swift in Sources */,
+				A2B9AEEF2654E2EB008BF07E /* TabBarViewController.swift in Sources */,
 				3B76AC7FE730FAA70A9A576C /* OnboardingErrorHandler.swift in Sources */,
 				267F5750BE28EAE990F08261 /* ApplicationUIManager.swift in Sources */,
 				A2B9AEDE26540FF3008BF07E /* RegisterViewController.swift in Sources */,
