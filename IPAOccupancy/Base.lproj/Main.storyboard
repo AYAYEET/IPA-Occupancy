@@ -27,11 +27,11 @@
             </objects>
             <point key="canvasLocation" x="-414" y="-1521"/>
         </scene>
-        <!--Item-->
+        <!--Settings-->
         <scene sceneID="wau-ct-o8x">
             <objects>
                 <navigationController id="CcZ-ZB-DIH" customClass="SettingsNavigationViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="X8O-Zs-Y7n"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" selectedImage="gear" id="X8O-Zs-Y7n"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="x1g-Ci-5eT">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -111,11 +111,11 @@
             </objects>
             <point key="canvasLocation" x="571" y="-77"/>
         </scene>
-        <!--Item-->
+        <!--Floor Plan-->
         <scene sceneID="Xvc-zw-BMk">
             <objects>
                 <navigationController id="iV8-bb-oZc" customClass="MapNavigationViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="zGP-Bz-ifF"/>
+                    <tabBarItem key="tabBarItem" title="Floor Plan" image="map" catalog="system" selectedImage="map" id="zGP-Bz-ifF"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xfi-Mr-URT">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -128,11 +128,11 @@
             </objects>
             <point key="canvasLocation" x="-414" y="-797"/>
         </scene>
-        <!--Item-->
+        <!--Reservation-->
         <scene sceneID="pJb-M5-C2P">
             <objects>
                 <navigationController id="sZR-PR-Nt2" customClass="BookingNavigationViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="fMZ-Wp-fy0"/>
+                    <tabBarItem key="tabBarItem" title="Reservation" image="book" catalog="system" selectedImage="book" id="fMZ-Wp-fy0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tp7-ql-znO">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -147,6 +147,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="book" catalog="system" width="128" height="102"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="map" catalog="system" width="128" height="110"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
