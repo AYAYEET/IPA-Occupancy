@@ -98,9 +98,9 @@ class LoginViewController: UIViewController {
             case Constants.Login.userIsFree:
                 print("success")
                 //Setting userdefaults for decision between login and main at app launch --> Here true
-//                UserDefaults.standard.set(true, forKey: "status")
+                UserDefaults.standard.set(true, forKey: "status")
                 //Segue to Main
-//                self.performSegue(withIdentifier: Constants.Login.loginSegue, sender: self)
+                self.performSegue(withIdentifier: Constants.Login.loginSegue, sender: self)
 
             default:
                 FUIToastMessage.show(message: "Something went wrong.",
