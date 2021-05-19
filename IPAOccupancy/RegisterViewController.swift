@@ -59,11 +59,11 @@ class RegisterViewController: UIViewController {
                 self.dismiss(animated: true, completion: nil)
                 
             case Constants.Register.createExists:
-                FUIToastMessage.show(message: "This User already exists. Try loggin in",
+                FUIToastMessage.show(message: "This User already exists, retry login.",
                                              icon: UIImage(systemName: "exclamationmark.circle")!,
                                              inView: self.messageView,
                                              withDuration: 3.0,
-                                             maxNumberOfLines: 1)
+                                             maxNumberOfLines: 2)
             default:
                 do{}
             }
