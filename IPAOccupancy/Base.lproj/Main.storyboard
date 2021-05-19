@@ -32,8 +32,8 @@
             <objects>
                 <navigationController id="CcZ-ZB-DIH" customClass="SettingsNavigationViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" selectedImage="gear" id="X8O-Zs-Y7n"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="x1g-Ci-5eT">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x1g-Ci-5eT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -133,13 +133,38 @@
                     <view key="view" contentMode="scaleToFill" id="YC8-1J-YZh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ie-OV-MmG">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kDg-Nm-Bip">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="kDg-Nm-Bip" secondAttribute="trailing" id="1uW-Ye-pzQ"/>
+                                    <constraint firstItem="kDg-Nm-Bip" firstAttribute="top" secondItem="3Ie-OV-MmG" secondAttribute="top" id="7a7-t7-Gjn"/>
+                                    <constraint firstAttribute="bottom" secondItem="kDg-Nm-Bip" secondAttribute="bottom" id="U8I-SG-XVI"/>
+                                    <constraint firstItem="kDg-Nm-Bip" firstAttribute="leading" secondItem="3Ie-OV-MmG" secondAttribute="leading" id="X4U-S8-Seg"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3Ie-OV-MmG" firstAttribute="top" secondItem="qqf-ew-HHi" secondAttribute="bottom" id="5KV-KW-igA"/>
+                            <constraint firstItem="kDg-Nm-Bip" firstAttribute="height" secondItem="YC8-1J-YZh" secondAttribute="height" multiplier="0.809152" priority="250" id="JUW-gf-veL"/>
+                            <constraint firstItem="kDg-Nm-Bip" firstAttribute="width" secondItem="YC8-1J-YZh" secondAttribute="width" id="QrT-NT-Slo"/>
+                            <constraint firstAttribute="trailing" secondItem="3Ie-OV-MmG" secondAttribute="trailing" id="aXl-Ix-mmX"/>
+                            <constraint firstItem="3Ie-OV-MmG" firstAttribute="leading" secondItem="YC8-1J-YZh" secondAttribute="leading" id="eJA-gy-DXZ"/>
+                            <constraint firstItem="BZf-Jt-wIn" firstAttribute="top" secondItem="3Ie-OV-MmG" secondAttribute="bottom" id="ibV-SY-s4D"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Account Settings" id="Y5j-Ah-pq9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v6a-EK-1Xt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="571" y="658"/>
+            <point key="canvasLocation" x="569.56521739130437" y="657.58928571428567"/>
         </scene>
         <!--Club Settings-->
         <scene sceneID="9fR-qc-OXx">
@@ -152,13 +177,38 @@
                     <view key="view" contentMode="scaleToFill" id="qSr-jC-B3F">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5HU-FP-MXC">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YyU-JG-qo7">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="YyU-JG-qo7" secondAttribute="bottom" id="B4l-OZ-Oky"/>
+                                    <constraint firstItem="YyU-JG-qo7" firstAttribute="top" secondItem="5HU-FP-MXC" secondAttribute="top" id="STX-hV-c9j"/>
+                                    <constraint firstAttribute="trailing" secondItem="YyU-JG-qo7" secondAttribute="trailing" id="Zjg-vx-gxV"/>
+                                    <constraint firstItem="YyU-JG-qo7" firstAttribute="leading" secondItem="5HU-FP-MXC" secondAttribute="leading" id="tIr-zi-4ew"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jDx-1J-Ow4" firstAttribute="top" secondItem="5HU-FP-MXC" secondAttribute="bottom" id="S4O-6z-FNf"/>
+                            <constraint firstItem="5HU-FP-MXC" firstAttribute="leading" secondItem="qSr-jC-B3F" secondAttribute="leading" id="Syd-du-C1d"/>
+                            <constraint firstItem="YyU-JG-qo7" firstAttribute="height" secondItem="qSr-jC-B3F" secondAttribute="height" multiplier="0.809152" priority="250" id="VtU-ue-VXm"/>
+                            <constraint firstItem="5HU-FP-MXC" firstAttribute="top" secondItem="Kpu-lQ-iTh" secondAttribute="bottom" id="ZJF-eQ-uw3"/>
+                            <constraint firstItem="YyU-JG-qo7" firstAttribute="width" secondItem="qSr-jC-B3F" secondAttribute="width" id="cOQ-pM-0UJ"/>
+                            <constraint firstAttribute="trailing" secondItem="5HU-FP-MXC" secondAttribute="trailing" id="y3K-k7-noo"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Club Settings" id="c29-Vr-I7L"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zyk-KK-mfH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1316" y="658"/>
+            <point key="canvasLocation" x="1314.4927536231885" y="657.58928571428567"/>
         </scene>
         <!--Login-->
         <scene sceneID="5q9-Yv-k4e">
