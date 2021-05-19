@@ -14,6 +14,9 @@ class LoginViewController: UIViewController {
 
     //Instantiate loginModel
     let loginModel = LoginModel()
+    
+    //Variable to carry over to MainVC during segue
+    var CarryOverUsername: String?
 
     
     //IBOutlets connected to Login.storyboard
@@ -99,6 +102,8 @@ class LoginViewController: UIViewController {
                 print("success")
                 //Setting userdefaults for decision between login and main at app launch --> Here true
                 UserDefaults.standard.set(true, forKey: "status")
+                //Set our username for the TabBarViewController
+                self.CarryOverUsername = username
                 //Segue to Main
                 self.performSegue(withIdentifier: Constants.Login.loginSegue, sender: self)
 
@@ -125,12 +130,15 @@ class LoginViewController: UIViewController {
     //Navigation preparation
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
         switch segue.identifier {
-        case "loginSegue":
-        print()
-        case "registerSegue":
-            print()
+        case Constants.Login.loginSegue:
+            //When Login happens, send username to the TabBarViewController
+            let destinationVC = segue.destination as! TabBarViewController
+            
+            destinationVC.username = CarryOverUsername
+        case Constants.Login.registerSegue:
+            do{}
         default:
-            print("no segue")
+            do{}
         }
     }
     
