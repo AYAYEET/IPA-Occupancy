@@ -32,8 +32,8 @@
             <objects>
                 <navigationController id="CcZ-ZB-DIH" customClass="SettingsNavigationViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" selectedImage="gear" id="X8O-Zs-Y7n"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x1g-Ci-5eT">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="x1g-Ci-5eT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -44,7 +44,7 @@
             </objects>
             <point key="canvasLocation" x="572" y="-798"/>
         </scene>
-        <!--Booking View Controller-->
+        <!--Reservation-->
         <scene sceneID="szI-XK-IbJ">
             <objects>
                 <viewController id="V3A-vg-7f2" customClass="BookingViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,13 +57,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="O2a-oi-vqX"/>
+                    <navigationItem key="navigationItem" title="Reservation" id="O2a-oi-vqX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0dG-ZK-dFR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1375" y="-77"/>
         </scene>
-        <!--Map View Controller-->
+        <!--Floor Plan-->
         <scene sceneID="egd-Yd-U9H">
             <objects>
                 <viewController id="OGH-Gz-hK0" customClass="MapViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
@@ -76,13 +76,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1WA-A3-ruR"/>
+                    <navigationItem key="navigationItem" title="Floor Plan" id="1WA-A3-ruR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nEg-C4-Qsb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-414" y="-77"/>
         </scene>
-        <!--Settings Table View Controller-->
+        <!--Settings-->
         <scene sceneID="jAN-Ac-JYT">
             <objects>
                 <tableViewController id="2yc-0o-a4t" customClass="SettingsTableViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
@@ -105,7 +105,7 @@
                             <outlet property="delegate" destination="2yc-0o-a4t" id="ykY-LL-hfp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="BvM-Mf-MOD">
+                    <navigationItem key="navigationItem" title="Settings" id="BvM-Mf-MOD">
                         <barButtonItem key="rightBarButtonItem" title="Log Out" id="3Us-iX-N7Y">
                             <connections>
                                 <action selector="logoutPressed:" destination="2yc-0o-a4t" id="Ja4-Ub-x4h"/>
@@ -133,8 +133,8 @@
             <objects>
                 <navigationController id="iV8-bb-oZc" customClass="MapNavigationViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Floor Plan" image="map" catalog="system" selectedImage="map" id="zGP-Bz-ifF"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xfi-Mr-URT">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Xfi-Mr-URT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -150,8 +150,8 @@
             <objects>
                 <navigationController id="sZR-PR-Nt2" customClass="BookingNavigationViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Reservation" image="book" catalog="system" selectedImage="book" id="fMZ-Wp-fy0"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tp7-ql-znO">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="tp7-ql-znO">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
