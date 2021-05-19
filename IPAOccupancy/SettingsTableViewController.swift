@@ -10,8 +10,12 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController {
 
+    //Variable for passed username Value from TabBar
+    var username: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(username ?? "oops")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

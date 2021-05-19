@@ -10,6 +10,9 @@ import UIKit
 
 class BookingViewController: UIViewController {
 
+    //Variable for passed username Value from TabBar
+    var username: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
