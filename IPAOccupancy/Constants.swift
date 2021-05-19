@@ -12,7 +12,7 @@ import UIKit
 struct Constants {
     //constants that are for general use within the application
     struct General {
-        static let odataURL = "https://ims-ch-ims-ims-ch-cf-2021-ipa-booking-srv.cfapps.eu10.hana.ondemand.com/catalog"
+        static let odataURL = "https://ims-ch-ims-ims-ch-cf-2021-ipa-booking3-srv.cfapps.eu10.hana.ondemand.com/catalog"
         //Fiori Colors for red green and gray
         static let gray = UIColor.preferredFioriColor(forStyle: .primary9).cgColor
         static let red = UIColor.preferredFioriColor(forStyle: .negative).cgColor
@@ -39,6 +39,17 @@ struct Constants {
         static let userStatusBlocked = "Gesperrt"
         static let userStatusFree = "Freigegeben"
         static let userStatusDeleted = "Deleted"
+    }
+    
+    struct Register {
+        
+        static let validUsername = "Please Enter a valid i-Number above first"
+        static let passwordExample = "Must contain at least one: UPPERCASE, LOWERCASE, \nNumber & Special Character Example: Sa123*"
+        static let iNumberExample = "i-Number example: i45043"
+        static let createSuccess = "success"
+        static let createExists = "exists"
+        static let connectionError = "ConnectionError"
+
     }
     
 }

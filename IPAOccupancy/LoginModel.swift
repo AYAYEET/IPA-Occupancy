@@ -13,7 +13,7 @@ import SAPFiori
 
 struct LoginModel {
     //url for knowing where the oData service is
-    let serviceRoot = URL(string: "https://ims-ch-ims-ims-ch-cf-2021-ipa-booking-srv.cfapps.eu10.hana.ondemand.com/catalog")!
+    let serviceRoot = URL(string: Constants.General.odataURL)!
     //oData optimized version of URLSession
     let sapURLSession = SAPURLSession()
     
