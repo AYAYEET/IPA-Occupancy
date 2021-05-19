@@ -105,11 +105,28 @@
                             <outlet property="delegate" destination="2yc-0o-a4t" id="ykY-LL-hfp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="BvM-Mf-MOD"/>
+                    <navigationItem key="navigationItem" id="BvM-Mf-MOD">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="3Us-iX-N7Y">
+                            <connections>
+                                <action selector="logoutPressed:" destination="2yc-0o-a4t" id="Ja4-Ub-x4h"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="vFc-WC-gUU" kind="presentation" identifier="logoutSegue" modalPresentationStyle="fullScreen" id="Xbs-PT-AZP"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ar-TA-RW3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="571" y="-77"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="5q9-Yv-k4e">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="vFc-WC-gUU" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YVB-4c-FuV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1031" y="-368"/>
         </scene>
         <!--Floor Plan-->
         <scene sceneID="Xvc-zw-BMk">

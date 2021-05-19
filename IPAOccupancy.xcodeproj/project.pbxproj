@@ -54,6 +54,8 @@
 		A2B9AEFA2654E8C3008BF07E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AEF92654E8C3008BF07E /* SettingsTableViewController.swift */; };
 		A2B9AEFC2654E8E8008BF07E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AEFB2654E8E8008BF07E /* MapViewController.swift */; };
 		A2B9AEFE2654E8FC008BF07E /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AEFD2654E8FC008BF07E /* BookingViewController.swift */; };
+		A2B9AF01265506CD008BF07E /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AF00265506CD008BF07E /* SettingsModel.swift */; };
+		A2B9AF03265509CA008BF07E /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AF02265509CA008BF07E /* SettingsTableViewCell.swift */; };
 		A6B4EA55E80C53A589A7FC2A /* ODataOnboardingStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7713A41B719036DDCBB249EA /* ODataOnboardingStep.swift */; };
 		B043015C3A65739B1C251779 /* ConfigurationProvider.plist in Sources */ = {isa = PBXBuildFile; fileRef = 76CC561AFE1ED4364FD4BF99 /* ConfigurationProvider.plist */; };
 		B73F43DE5A6A35D6A478A802 /* OnboardingFlowProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A16F993422404F95BDE62 /* OnboardingFlowProvider.swift */; };
@@ -146,6 +148,8 @@
 		A2B9AEF92654E8C3008BF07E /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		A2B9AEFB2654E8E8008BF07E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A2B9AEFD2654E8FC008BF07E /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
+		A2B9AF00265506CD008BF07E /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		A2B9AF02265509CA008BF07E /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		B0F2F58DEC627E64C9D2876E /* IPA_Booking_JadenOnlineODataController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IPA_Booking_JadenOnlineODataController.swift; path = OData/IPA_Booking_JadenOnlineODataController.swift; sourceTree = "<group>"; };
 		B5C9897F68EEB2F9B0132FCB /* AlertHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlertHelper.swift; path = Utils/AlertHelper.swift; sourceTree = "<group>"; };
 		B5CB276A643F8529CD084829 /* IPA_Booking_JadenCollectionType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IPA_Booking_JadenCollectionType.swift; path = Model/IPA_Booking_JadenCollectionType.swift; sourceTree = "<group>"; };
@@ -394,6 +398,15 @@
 			name = BookingVC;
 			sourceTree = "<group>";
 		};
+		A2B9AEFF265506BB008BF07E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A2B9AF00265506CD008BF07E /* SettingsModel.swift */,
+				A2B9AF02265509CA008BF07E /* SettingsTableViewCell.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		AE5F8EFB586000DE30E62209 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -416,6 +429,7 @@
 		F6AE14B9E2294873B345BB94 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A2B9AEFF265506BB008BF07E /* Settings */,
 				A2B9AEE82654263F008BF07E /* Register */,
 				A2B9AED52653F2F7008BF07E /* Login */,
 				A2B9AEE926542BAE008BF07E /* Extensions */,
@@ -610,6 +624,7 @@
 				1CA0B58AF589BFCFE6FA5D60 /* User.swift in Sources */,
 				A2B9AEE526541114008BF07E /* Onboarding3ViewController.swift in Sources */,
 				A2B9AED32653EB7D008BF07E /* LoginViewController.swift in Sources */,
+				A2B9AF01265506CD008BF07E /* SettingsModel.swift in Sources */,
 				83FA34DA9B8A77CD12B373DE /* Club.swift in Sources */,
 				A2B9AEE326541106008BF07E /* Onboarding2ViewController.swift in Sources */,
 				272286E4D671A276574B8603 /* IPA_Booking_JadenCollectionType.swift in Sources */,
@@ -617,6 +632,7 @@
 				D7D034E306E45ECD7E31B0A8 /* EntityContainerMetadataParser.swift in Sources */,
 				39C03430CF33AFDE983E6A15 /* IPA_Booking_JadenOnlineODataController.swift in Sources */,
 				A2B9AEEF2654E2EB008BF07E /* TabBarViewController.swift in Sources */,
+				A2B9AF03265509CA008BF07E /* SettingsTableViewCell.swift in Sources */,
 				3B76AC7FE730FAA70A9A576C /* OnboardingErrorHandler.swift in Sources */,
 				267F5750BE28EAE990F08261 /* ApplicationUIManager.swift in Sources */,
 				A2B9AEDE26540FF3008BF07E /* RegisterViewController.swift in Sources */,
