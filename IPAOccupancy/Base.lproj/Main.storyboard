@@ -114,11 +114,51 @@
                     </navigationItem>
                     <connections>
                         <segue destination="vFc-WC-gUU" kind="presentation" identifier="logoutSegue" modalPresentationStyle="fullScreen" id="Xbs-PT-AZP"/>
+                        <segue destination="vva-Gd-aE0" kind="show" identifier="accountSettingsSegue" id="tL8-dS-Bw8"/>
+                        <segue destination="X1c-lV-rY6" kind="show" identifier="clubSettingsSegue" id="iYH-uK-5rl"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ar-TA-RW3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="571" y="-77"/>
+        </scene>
+        <!--Account Settings-->
+        <scene sceneID="vZt-vU-LPs">
+            <objects>
+                <viewController id="vva-Gd-aE0" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qqf-ew-HHi"/>
+                        <viewControllerLayoutGuide type="bottom" id="BZf-Jt-wIn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YC8-1J-YZh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Account Settings" id="Y5j-Ah-pq9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v6a-EK-1Xt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="571" y="658"/>
+        </scene>
+        <!--Club Settings-->
+        <scene sceneID="9fR-qc-OXx">
+            <objects>
+                <viewController id="X1c-lV-rY6" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kpu-lQ-iTh"/>
+                        <viewControllerLayoutGuide type="bottom" id="jDx-1J-Ow4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qSr-jC-B3F">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Club Settings" id="c29-Vr-I7L"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zyk-KK-mfH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1316" y="658"/>
         </scene>
         <!--Login-->
         <scene sceneID="5q9-Yv-k4e">

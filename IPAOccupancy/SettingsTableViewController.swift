@@ -13,10 +13,15 @@ class SettingsTableViewController: UITableViewController {
     //Variable for passed username Value from TabBar
     var username: String?
     
+    //Instantiate settingsRowModel
+    var settingsRowModel = [SettingsRowModel]()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureTable()
+        configureModel()
 
      
     }
@@ -31,18 +36,58 @@ class SettingsTableViewController: UITableViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
+        //Register a UITableViewCell as the class to use for creating new cells
+        tableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: SettingsTableViewCell.identifier)
     }
     
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
+    //Method that informs Table of number of cells it needs.
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        settingsRowModel.count
     }
+    
+    //Method that informs Table of how to create each cell.
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let model = settingsRowModel[indexPath.row]
+        
+        //Dequeue custom cell, if something goes wrong dequeue a standard cell
+        guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: SettingsTableViewCell.identifier,
+                for: indexPath
+        ) as? SettingsTableViewCell else {
+            return UITableViewCell()
+        }
+        //Add Model Data to cell
+        cell.configureCell(model: model)
+        return cell
+    }
+    
+    //Method that gets triggered when a cell is pressed.
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let model = settingsRowModel[indexPath.row]
+        model.action()
+    }
+    
+    //MARK: - settingsRowModel Data
+    //Method to add Values to the model
+    func configureModel() {
+        self.settingsRowModel = [
+            SettingsRowModel(iconBackgroundColor: .systemPink,
+                             icon: UIImage(systemName: "mappin.and.ellipse"),
+                             title: "Club Settings",
+                             action: {
+                                self.performSegue(withIdentifier: Constants.Settings.clubSettingsSegue, sender: self)
+            }),
+            SettingsRowModel(iconBackgroundColor: .blue,
+                             icon: UIImage(systemName: "person.crop.circle"),
+                             title: "Account Settings",
+                             action: {
+                                self.performSegue(withIdentifier: Constants.Settings.accountSettingsSegue, sender: self)
+            })
+        ]
+    }
+    
+    //TODO: Pass username to Account and Club Settings
 
 }
