@@ -41,6 +41,7 @@ class MapImageChildViewController: UIViewController {
     
     //What happens when reload button is pressed
     @IBAction func reloadPressed(_ sender: UIButton) {
+        setClubData()
     }
     
     //MARK: - Label Data
@@ -58,6 +59,15 @@ class MapImageChildViewController: UIViewController {
                 self.club7Label.text = "Club 7 \(self.mapModel.calculatePercent(value: currentlyFreeArray[6], maxValue: self.mapModel.club7Max))%"
                 self.club8Label.text = "Club 8 \(self.mapModel.calculatePercent(value: currentlyFreeArray[7], maxValue: self.mapModel.club8Max))%"
                 self.hintLabel.text = "Current occupancy data:\nTotal occupancy: \(self.mapModel.calculatePercent(value: currentlyFreeArray.reduce(0, +), maxValue: self.mapModel.occupancyMax))%"
+                
+                self.club1Label.textColor = self.mapModel.calculateColor(value: currentlyFreeArray[0], maxValue: self.mapModel.club1Max)
+                self.club2Label.textColor = self.mapModel.calculateColor(value: currentlyFreeArray[1], maxValue: self.mapModel.club2Max)
+                self.club3Label.textColor = self.mapModel.calculateColor(value: currentlyFreeArray[2], maxValue: self.mapModel.club3Max)
+                self.club4Label.textColor = self.mapModel.calculateColor(value: currentlyFreeArray[3], maxValue: self.mapModel.club4Max)
+                self.club5Label.textColor = self.mapModel.calculateColor(value: currentlyFreeArray[4], maxValue: self.mapModel.club5Max)
+                self.club6Label.textColor = self.mapModel.calculateColor(value: currentlyFreeArray[5], maxValue: self.mapModel.club6Max)
+                self.club7Label.textColor = self.mapModel.calculateColor(value: currentlyFreeArray[6], maxValue: self.mapModel.club7Max)
+                self.club8Label.textColor = self.mapModel.calculateColor(value: currentlyFreeArray[7], maxValue: self.mapModel.club8Max)
             } else {
                 FUIToastMessage.show(message: "There was an issue fetching the Club Data. Please retry.",
                                              icon: UIImage(systemName: "exclamationmark.circle")!,

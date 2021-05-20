@@ -66,6 +66,26 @@ struct MapModel {
         let doubleReturn = (100 / maxValue) * valueAsDouble
         let intReturn = 100 - doubleReturn
         return Int(intReturn)
-
     }
+    //Method to set color based on currentlyFree value
+    func calculateColor(value: Int, maxValue: Double) -> UIColor {
+        let valueAsDouble = Double(value)
+        let upToHalf = maxValue/2
+        let upToEighty = maxValue/5
+        
+        switch valueAsDouble {
+        case upToHalf...maxValue:
+            return UIColor.preferredFioriColor(forStyle: .positive)
+        case upToEighty...upToHalf-0.1:
+            return UIColor.preferredFioriColor(forStyle: .critical)
+        case 0...upToEighty-0.1:
+            return UIColor.preferredFioriColor(forStyle: .negative)
+        default:
+            return UIColor.black
+        }
+    }
+}
+
+struct MapTextModel {
+    
 }

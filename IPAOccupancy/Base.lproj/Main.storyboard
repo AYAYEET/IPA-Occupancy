@@ -98,7 +98,7 @@
                                                     <constraint firstAttribute="height" constant="60" id="qGX-wk-Dld"/>
                                                 </constraints>
                                                 <connections>
-                                                    <segue destination="XyW-8P-dfW" kind="embed" id="qMJ-Tl-KDB"/>
+                                                    <segue destination="XyW-8P-dfW" kind="embed" identifier="mapChildSegue" id="qMJ-Tl-KDB"/>
                                                 </connections>
                                             </containerView>
                                         </subviews>
@@ -556,7 +556,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="floorplan-transparent-bg" translatesAutoresizingMaskIntoConstraints="NO" id="VcN-gX-Sxl">
-                                <rect key="frame" x="181" y="56" width="177" height="474"/>
+                                <rect key="frame" x="186" y="56" width="172" height="474"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="474" id="MeO-li-fZF"/>
                                 </constraints>
@@ -580,17 +580,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current occupancy data:" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6j-eW-Kvb">
-                                <rect key="frame" x="16" y="73" width="150" height="40.666666666666657"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current occupancy data: Total 100% PlaceHolder" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6j-eW-Kvb">
+                                <rect key="frame" x="16" y="66" width="150" height="62"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40.670000000000002" id="A3g-qS-AUe"/>
+                                    <constraint firstAttribute="height" constant="62" id="A3g-qS-AUe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="0Hh-3y-asA">
-                                <rect key="frame" x="21" y="127.00000000000003" width="140" height="379.66666666666674"/>
+                                <rect key="frame" x="26" y="135.00000000000003" width="140" height="379.66666666666674"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Club 1 100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDQ-jh-A99">
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="20.333333333333332"/>
@@ -653,7 +653,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="VcN-gX-Sxl" firstAttribute="leading" secondItem="0Hh-3y-asA" secondAttribute="trailing" constant="20" id="3tu-sE-FbA"/>
-                            <constraint firstItem="0Hh-3y-asA" firstAttribute="top" secondItem="bgC-VP-au8" secondAttribute="top" constant="127.00000000000003" id="FGe-eJ-AyH"/>
+                            <constraint firstItem="0Hh-3y-asA" firstAttribute="top" secondItem="bgC-VP-au8" secondAttribute="top" constant="135" id="FGe-eJ-AyH"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="l6j-eW-Kvb" secondAttribute="trailing" constant="201" id="JPB-Ha-cHw"/>
                             <constraint firstAttribute="bottom" secondItem="gYS-4T-qld" secondAttribute="bottom" constant="211" id="Nib-q6-DHi"/>
                             <constraint firstItem="gYS-4T-qld" firstAttribute="top" secondItem="bgC-VP-au8" secondAttribute="top" constant="211" id="Rtb-Kw-iry"/>
@@ -667,9 +667,9 @@
                             <constraint firstItem="l6j-eW-Kvb" firstAttribute="leading" secondItem="bgC-VP-au8" secondAttribute="leading" constant="16" id="oSE-fb-nYK"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qhQ-3R-tY0" secondAttribute="trailing" constant="20" symbolic="YES" id="qXR-UW-qb5"/>
                             <constraint firstAttribute="trailing" secondItem="gYS-4T-qld" secondAttribute="trailing" constant="20" symbolic="YES" id="tnK-9N-LS8"/>
-                            <constraint firstItem="0Hh-3y-asA" firstAttribute="leading" secondItem="bgC-VP-au8" secondAttribute="leadingMargin" constant="5" id="vhb-O7-smi"/>
+                            <constraint firstItem="0Hh-3y-asA" firstAttribute="leading" secondItem="bgC-VP-au8" secondAttribute="leadingMargin" constant="10" id="vhb-O7-smi"/>
                             <constraint firstItem="1pB-MK-QJC" firstAttribute="top" secondItem="bgC-VP-au8" secondAttribute="top" constant="44" id="w0O-LL-WCV"/>
-                            <constraint firstItem="l6j-eW-Kvb" firstAttribute="top" secondItem="bgC-VP-au8" secondAttribute="top" constant="73" id="zjH-QH-GMd"/>
+                            <constraint firstItem="l6j-eW-Kvb" firstAttribute="top" secondItem="bgC-VP-au8" secondAttribute="top" constant="66" id="zjH-QH-GMd"/>
                         </constraints>
                     </view>
                     <connections>
@@ -690,10 +690,10 @@
             </objects>
             <point key="canvasLocation" x="-723.1884057971015" y="540.40178571428567"/>
         </scene>
-        <!--View Controller-->
+        <!--Map Text Child View Controller-->
         <scene sceneID="QdR-i3-fYx">
             <objects>
-                <viewController id="XyW-8P-dfW" sceneMemberID="viewController">
+                <viewController id="XyW-8P-dfW" customClass="MapTextChildViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Awi-1G-ipZ">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -715,6 +715,9 @@
                             <constraint firstItem="rlg-mo-cyT" firstAttribute="leading" secondItem="Awi-1G-ipZ" secondAttribute="leading" constant="16" id="lwB-j8-B0k"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bookedLabel" destination="rlg-mo-cyT" id="9Yl-WR-F6X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhB-k8-dpY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

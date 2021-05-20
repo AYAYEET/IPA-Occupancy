@@ -38,6 +38,7 @@
 		A20330BB26564C780031A00B /* ASChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20330BA26564C780031A00B /* ASChildViewController.swift */; };
 		A20330BD265689BF0031A00B /* MapImageChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20330BC265689BF0031A00B /* MapImageChildViewController.swift */; };
 		A20330BF26568EC70031A00B /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20330BE26568EC70031A00B /* MapModel.swift */; };
+		A20330C226569F4E0031A00B /* MapTextChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20330C126569F4E0031A00B /* MapTextChildViewController.swift */; };
 		A2B9AECE2653E7F3008BF07E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2B9AECD2653E7F3008BF07E /* Login.storyboard */; };
 		A2B9AED02653E806008BF07E /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2B9AECF2653E806008BF07E /* Register.storyboard */; };
 		A2B9AED32653EB7D008BF07E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AED22653EB7D008BF07E /* LoginViewController.swift */; };
@@ -138,6 +139,7 @@
 		A20330BA26564C780031A00B /* ASChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASChildViewController.swift; sourceTree = "<group>"; };
 		A20330BC265689BF0031A00B /* MapImageChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapImageChildViewController.swift; sourceTree = "<group>"; };
 		A20330BE26568EC70031A00B /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
+		A20330C126569F4E0031A00B /* MapTextChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTextChildViewController.swift; sourceTree = "<group>"; };
 		A23BA71D466F288503A6DF4B /* ApplicationUIManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ApplicationUIManager.swift; path = Onboarding/ApplicationUIManager.swift; sourceTree = "<group>"; };
 		A2B9AECD2653E7F3008BF07E /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		A2B9AECF2653E806008BF07E /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 			children = (
 				A2B9AEFB2654E8E8008BF07E /* MapViewController.swift */,
 				A20330BC265689BF0031A00B /* MapImageChildViewController.swift */,
+				A20330C126569F4E0031A00B /* MapTextChildViewController.swift */,
 			);
 			name = MapVC;
 			sourceTree = "<group>";
@@ -689,6 +692,7 @@
 				272286E4D671A276574B8603 /* IPA_Booking_JadenCollectionType.swift in Sources */,
 				C48EF88663DAD81352B9866E /* EntityContainerMetadataChanges.swift in Sources */,
 				D7D034E306E45ECD7E31B0A8 /* EntityContainerMetadataParser.swift in Sources */,
+				A20330C226569F4E0031A00B /* MapTextChildViewController.swift in Sources */,
 				39C03430CF33AFDE983E6A15 /* IPA_Booking_JadenOnlineODataController.swift in Sources */,
 				A2B9AEEF2654E2EB008BF07E /* TabBarViewController.swift in Sources */,
 				A2B9AF03265509CA008BF07E /* SettingsTableViewCell.swift in Sources */,
