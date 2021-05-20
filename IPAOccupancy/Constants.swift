@@ -67,4 +67,8 @@ struct Constants {
 
     }
     
+    struct Map { 
+        
+    }
+    
 }
