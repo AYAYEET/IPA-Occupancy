@@ -37,6 +37,7 @@
 		9193798B232F7A39001F9DAC /* SAPOData.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 91937981232F7A38001F9DAC /* SAPOData.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		A20330BB26564C780031A00B /* ASChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20330BA26564C780031A00B /* ASChildViewController.swift */; };
 		A20330BD265689BF0031A00B /* MapImageChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20330BC265689BF0031A00B /* MapImageChildViewController.swift */; };
+		A20330BF26568EC70031A00B /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20330BE26568EC70031A00B /* MapModel.swift */; };
 		A2B9AECE2653E7F3008BF07E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2B9AECD2653E7F3008BF07E /* Login.storyboard */; };
 		A2B9AED02653E806008BF07E /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2B9AECF2653E806008BF07E /* Register.storyboard */; };
 		A2B9AED32653EB7D008BF07E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AED22653EB7D008BF07E /* LoginViewController.swift */; };
@@ -136,6 +137,7 @@
 		A07B22FB555D72E41E667F74 /* CellCreationHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CellCreationHelper.swift; path = Utils/CellCreationHelper.swift; sourceTree = "<group>"; };
 		A20330BA26564C780031A00B /* ASChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASChildViewController.swift; sourceTree = "<group>"; };
 		A20330BC265689BF0031A00B /* MapImageChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapImageChildViewController.swift; sourceTree = "<group>"; };
+		A20330BE26568EC70031A00B /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 		A23BA71D466F288503A6DF4B /* ApplicationUIManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ApplicationUIManager.swift; path = Onboarding/ApplicationUIManager.swift; sourceTree = "<group>"; };
 		A2B9AECD2653E7F3008BF07E /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		A2B9AECF2653E806008BF07E /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
@@ -300,6 +302,14 @@
 				EC481C9E78B84629FDB30B6B /* Club.swift */,
 			);
 			name = public;
+			sourceTree = "<group>";
+		};
+		A20330C026568ECF0031A00B /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				A20330BE26568EC70031A00B /* MapModel.swift */,
+			);
+			name = Map;
 			sourceTree = "<group>";
 		};
 		A2B9AED12653E9D4008BF07E /* View */ = {
@@ -471,6 +481,7 @@
 		F6AE14B9E2294873B345BB94 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A20330C026568ECF0031A00B /* Map */,
 				A2B9AEFF265506BB008BF07E /* Settings */,
 				A2B9AEE82654263F008BF07E /* Register */,
 				A2B9AED52653F2F7008BF07E /* Login */,
@@ -688,6 +699,7 @@
 				B73F43DE5A6A35D6A478A802 /* OnboardingFlowProvider.swift in Sources */,
 				093D75F6630CC92C73BB573B /* AppParameters.plist in Sources */,
 				A2B9AEF52654E7F4008BF07E /* BookingNavigationViewController.swift in Sources */,
+				A20330BF26568EC70031A00B /* MapModel.swift in Sources */,
 				A2B9AEFE2654E8FC008BF07E /* BookingViewController.swift in Sources */,
 				EE0625A71E6260E7B7BFF10C /* LocalizedStrings.swift in Sources */,
 			);

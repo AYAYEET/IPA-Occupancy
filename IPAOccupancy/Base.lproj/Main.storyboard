@@ -567,6 +567,9 @@
                                     <constraint firstAttribute="height" constant="30" id="gZq-eC-4Lb"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="arrow.clockwise" catalog="system"/>
+                                <connections>
+                                    <action selector="reloadPressed:" destination="epQ-xZ-EIM" eventType="touchUpInside" id="4e7-Us-o3V"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Club Occupancy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pB-MK-QJC">
                                 <rect key="frame" x="15.999999999999993" y="44" width="126.33333333333331" height="20.333333333333329"/>
@@ -652,12 +655,24 @@
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1pB-MK-QJC" secondAttribute="trailing" constant="20" symbolic="YES" id="lR3-nq-ORq"/>
                             <constraint firstAttribute="bottom" secondItem="VcN-gX-Sxl" secondAttribute="bottom" constant="20" symbolic="YES" id="lqf-zS-mRR"/>
                             <constraint firstItem="l6j-eW-Kvb" firstAttribute="leading" secondItem="bgC-VP-au8" secondAttribute="leading" constant="16" id="oSE-fb-nYK"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qhQ-3R-tY0" secondAttribute="trailing" symbolic="YES" id="qXR-UW-qb5"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qhQ-3R-tY0" secondAttribute="trailing" constant="20" symbolic="YES" id="qXR-UW-qb5"/>
                             <constraint firstItem="0Hh-3y-asA" firstAttribute="leading" secondItem="bgC-VP-au8" secondAttribute="leadingMargin" constant="5" id="vhb-O7-smi"/>
                             <constraint firstItem="1pB-MK-QJC" firstAttribute="top" secondItem="bgC-VP-au8" secondAttribute="top" constant="44" id="w0O-LL-WCV"/>
                             <constraint firstItem="l6j-eW-Kvb" firstAttribute="top" secondItem="bgC-VP-au8" secondAttribute="top" constant="73" id="zjH-QH-GMd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="club1Label" destination="hDQ-jh-A99" id="A0j-Il-hmx"/>
+                        <outlet property="club2Label" destination="4JC-gy-g8e" id="VcO-Pi-sO9"/>
+                        <outlet property="club3Label" destination="jth-gD-hHl" id="0IJ-yv-ofa"/>
+                        <outlet property="club4Label" destination="Avs-Wt-Crs" id="d1d-U4-vHD"/>
+                        <outlet property="club5Label" destination="iCh-VZ-4uV" id="cOO-JV-XdG"/>
+                        <outlet property="club6Label" destination="MFE-Ej-1Vd" id="kEq-Xn-PfS"/>
+                        <outlet property="club7Label" destination="v9g-MO-g0J" id="F8E-Wz-xyl"/>
+                        <outlet property="club8Label" destination="yjX-aa-Qej" id="U9x-8R-OTN"/>
+                        <outlet property="hintLabel" destination="l6j-eW-Kvb" id="5hc-5F-hEd"/>
+                        <outlet property="occupancyLabel" destination="1pB-MK-QJC" id="Y0u-Us-zHF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P7r-UK-epF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
