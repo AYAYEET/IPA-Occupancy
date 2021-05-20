@@ -10,6 +10,9 @@ import UIKit
 
 class MapImageChildViewController: UIViewController {
 
+    //Instantiate mapModel
+    let mapModel = MapModel()
+    
     @IBOutlet weak var occupancyLabel: UILabel!
     @IBOutlet weak var hintLabel: UILabel!
     @IBOutlet weak var club1Label: UILabel!
@@ -21,6 +24,11 @@ class MapImageChildViewController: UIViewController {
     @IBOutlet weak var club7Label: UILabel!
     @IBOutlet weak var club8Label: UILabel!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        setClubData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,6 +39,27 @@ class MapImageChildViewController: UIViewController {
     
     //What happens when reload button is pressed
     @IBAction func reloadPressed(_ sender: UIButton) {
+    }
+    
+    //MARK: - Label Data
+    //Method to set value and color in labels
+    fileprivate func setClubData() {
+        mapModel.getCurrentClubData { (currentlyFreeArray, status) in
+            //Ensure OData Request was successful
+            if status == Constants.Map.success {
+                self.club1Label.text = "Club 1 \(self.mapModel.calculatePercent(value: currentlyFreeArray[0], maxValue: self.mapModel.club1Max))%"
+                self.club2Label.text = "Club 2 \(self.mapModel.calculatePercent(value: currentlyFreeArray[1], maxValue: self.mapModel.club2Max))%"
+                self.club3Label.text = "Club 3 \(self.mapModel.calculatePercent(value: currentlyFreeArray[2], maxValue: self.mapModel.club3Max))%"
+                self.club4Label.text = "Club 4 \(self.mapModel.calculatePercent(value: currentlyFreeArray[3], maxValue: self.mapModel.club4Max))%"
+                self.club5Label.text = "Club 5 \(self.mapModel.calculatePercent(value: currentlyFreeArray[4], maxValue: self.mapModel.club5Max))%"
+                self.club6Label.text = "Club 6 \(self.mapModel.calculatePercent(value: currentlyFreeArray[5], maxValue: self.mapModel.club6Max))%"
+                self.club7Label.text = "Club 7 \(self.mapModel.calculatePercent(value: currentlyFreeArray[6], maxValue: self.mapModel.club7Max))%"
+                self.club8Label.text = "Club 8 \(self.mapModel.calculatePercent(value: currentlyFreeArray[7], maxValue: self.mapModel.club8Max))%"
+                
+            } else {
+                print("error")
+            }
+        }
     }
     
     

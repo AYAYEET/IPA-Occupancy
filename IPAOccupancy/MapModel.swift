@@ -14,6 +14,17 @@ import SAPFoundation
 
 struct MapModel {
     
+    //Total Booking space for each club (not in OData service)
+    let club1Max = 16.0
+    let club2Max = 10.0
+    let club3Max = 16.0
+    let club4Max = 16.0
+    let club5Max = 12.0
+    let club6Max = 16.0
+    let club7Max = 16.0
+    let club8Max = 12.0
+    let occuplancyMax = 114.0
+    
     let serviceRoot = URL(string: Constants.General.odataURL)!
     let sapURLSession = SAPURLSession()
     
@@ -47,5 +58,14 @@ struct MapModel {
                 }
             }
         }
+    }
+    
+    //Method to get a percentage based on currentlyFree value (Conversion to double for accuracy)
+    func calculatePercent(value: Int, maxValue: Double) -> Int {
+        let valueAsDouble = Double(value)
+        let doubleReturn = (100 / maxValue) * valueAsDouble
+        let intReturn = 100 - doubleReturn
+        return Int(intReturn)
+
     }
 }
