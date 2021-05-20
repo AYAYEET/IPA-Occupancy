@@ -89,3 +89,5 @@ struct SettingsClubModel {
     }
     
 }
+
+

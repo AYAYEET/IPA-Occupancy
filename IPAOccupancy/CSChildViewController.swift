@@ -74,7 +74,7 @@ class CSChildViewController: UIViewController {
     
     
     //MARK: - View styling
-    //method to change look of the view
+    //Method to change look of the view
     func configureView() {
         view.backgroundColor = UIColor.preferredFioriColor(forStyle: .primary9)
         view.layer.cornerRadius = 10

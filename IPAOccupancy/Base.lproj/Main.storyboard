@@ -147,7 +147,7 @@
                                                     <constraint firstAttribute="height" constant="290" id="MsY-CN-FG4"/>
                                                 </constraints>
                                                 <connections>
-                                                    <segue destination="cNK-BI-NAB" kind="embed" id="H3f-w2-HjL"/>
+                                                    <segue destination="cNK-BI-NAB" kind="embed" identifier="ASChildSegue" id="H3f-w2-HjL"/>
                                                 </connections>
                                             </containerView>
                                         </subviews>
@@ -415,6 +415,10 @@
                                     <color key="titleColor" red="0.031372549020000001" green="0.3294117647" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MzX-dN-pm6">
+                                <rect key="frame" x="16" y="91" width="342" height="108"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
@@ -428,16 +432,28 @@
                             <constraint firstItem="Zrf-4i-maK" firstAttribute="top" secondItem="lj0-qY-IfQ" secondAttribute="top" constant="186" id="Hz6-K2-BfY"/>
                             <constraint firstAttribute="trailing" secondItem="Zrf-4i-maK" secondAttribute="trailing" constant="16" id="J7U-Wf-c1m"/>
                             <constraint firstItem="nna-IU-HPv" firstAttribute="leading" secondItem="lj0-qY-IfQ" secondAttribute="leading" constant="16" id="JAs-Es-1HO"/>
+                            <constraint firstAttribute="trailing" secondItem="MzX-dN-pm6" secondAttribute="trailing" constant="16" id="JT8-wD-4HO"/>
                             <constraint firstItem="VH1-qS-sbe" firstAttribute="top" secondItem="lj0-qY-IfQ" secondAttribute="top" constant="44" id="SCr-UO-reB"/>
+                            <constraint firstItem="MzX-dN-pm6" firstAttribute="top" secondItem="lj0-qY-IfQ" secondAttribute="top" constant="91" id="ZZp-A4-s75"/>
                             <constraint firstItem="0GJ-Ot-mUJ" firstAttribute="leading" secondItem="lj0-qY-IfQ" secondAttribute="leading" constant="134" id="aCT-sX-QrY"/>
                             <constraint firstItem="mSo-Xs-3yJ" firstAttribute="top" secondItem="lj0-qY-IfQ" secondAttribute="top" constant="144" id="g2e-Zf-guS"/>
                             <constraint firstItem="VH1-qS-sbe" firstAttribute="leading" secondItem="lj0-qY-IfQ" secondAttribute="leading" constant="16" id="hY4-rk-S7m"/>
+                            <constraint firstAttribute="bottom" secondItem="MzX-dN-pm6" secondAttribute="bottom" constant="91" id="hc4-lt-x1K"/>
                             <constraint firstAttribute="trailing" secondItem="mSo-Xs-3yJ" secondAttribute="trailing" constant="16" id="hs1-EE-Mtd"/>
                             <constraint firstAttribute="bottom" secondItem="Zrf-4i-maK" secondAttribute="bottom" constant="70" id="oE2-Ss-eRm"/>
+                            <constraint firstItem="MzX-dN-pm6" firstAttribute="leading" secondItem="lj0-qY-IfQ" secondAttribute="leading" constant="16" id="rIk-93-i6P"/>
                             <constraint firstItem="Zrf-4i-maK" firstAttribute="leading" secondItem="lj0-qY-IfQ" secondAttribute="leading" constant="16" id="vyr-uV-m38"/>
                             <constraint firstAttribute="bottom" secondItem="nna-IU-HPv" secondAttribute="bottom" constant="174" id="y9O-cl-TXe"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="confirmButton" destination="0GJ-Ot-mUJ" id="zSe-P8-WnP"/>
+                        <outlet property="messageView" destination="MzX-dN-pm6" id="lZQ-UM-dl4"/>
+                        <outlet property="newPasswordTextField" destination="mSo-Xs-3yJ" id="Kry-83-WaK"/>
+                        <outlet property="passwordTextField" destination="nna-IU-HPv" id="62U-Tg-UBy"/>
+                        <outlet property="reNewPasswordTextField" destination="Zrf-4i-maK" id="6cr-QN-JFu"/>
+                        <outlet property="titleLabel" destination="VH1-qS-sbe" id="ga2-pu-x3i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xgv-ki-HQ1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
