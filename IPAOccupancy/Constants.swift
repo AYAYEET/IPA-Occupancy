@@ -58,6 +58,8 @@ struct Constants {
         static let clubSettingsSegue = "clubSettingsSegue"
         static let accountSettingsSegue = "accountSettingsSegue"
         static let cSChildSegue = "CSChildSegue"
+        static let connectionError = "ConnectionError"
+        static let error = "Error"
     }
     
 }

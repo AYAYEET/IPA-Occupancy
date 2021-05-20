@@ -24,9 +24,40 @@ struct SettingsRowModel {
 }
 
 struct SettingsClubModel {
+    
     let clubNumbers: [String] = ["1","2","3","4","5","6","7","8"]
     
     let serviceRoot = URL(string: Constants.General.odataURL)!
     let sapURLSession = SAPURLSession()
+    
+    //Method for getting the current preferred Club of the user
+    func getCurrentClub(username: String?, completionHandler: @escaping (String) -> ()) {
+        
+        let odataProvider = OnlineODataProvider(serviceName: "EntityContainer", serviceRoot: serviceRoot, sapURLSession: sapURLSession)
+        odataProvider.serviceOptions.checkVersion = false
+        let dataService = EntityContainer(provider: odataProvider)
+        let query = DataQuery()
+            .select(User.iUser, User.prefferedClub)
+            .filter(User.iUser.equal(username!)) //there will always be a username
+            
+        do {
+            dataService.fetchUser(matching: query) { user, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                    completionHandler(Constants.Settings.connectionError) //change this to new constants
+
+                }
+                if let oDataUser = user {
+                    if let club = oDataUser[0].prefferedClub {
+                    completionHandler(club)
+                    } else {
+                        completionHandler(Constants.Settings.error)
+                    }
+                    
+                }
+            }
+        }
+    
+    }
     
 }

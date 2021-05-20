@@ -22,11 +22,22 @@ class CSChildViewController: UIViewController {
     @IBOutlet weak var newClubLabel: UILabel!
     @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var clubPicker: UIPickerView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        configureCurrentClubLabel()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configureView()
+        
         // Do any additional setup after loading the view.
+        configureView()
+        configureLabels()
+        configureButton()
+        configureUIPicker()
     }
     
 
@@ -56,7 +67,9 @@ class CSChildViewController: UIViewController {
     }
     //Method to configure current Club Label
     func configureCurrentClubLabel() {
-        //TODO: OData Call
+        settingsClubModel.getCurrentClub(username: username) { (club) in
+            self.currentClubLabel.text = "Your current Club is: Club \(club)"
+        }
     }
 }
 
