@@ -88,6 +88,23 @@ class SettingsTableViewController: UITableViewController {
         ]
     }
     
-    //TODO: Pass username to Account and Club Settings
-
+     //MARK: - Navigation Preparation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case Constants.Settings.clubSettingsSegue:
+            let destinationVC = segue.destination as! CSViewController
+            destinationVC.username = username
+            
+        case Constants.Settings.logoutSegue:
+            //setting userdefaults for decision between main and login --> Here false
+            UserDefaults.standard.set(false, forKey: "status")
+            
+        case Constants.Settings.accountSettingsSegue:
+            let destinationVC = segue.destination as! ASViewController
+            destinationVC.username = username
+            
+        default:
+            do{}
+        }
+    }
 }

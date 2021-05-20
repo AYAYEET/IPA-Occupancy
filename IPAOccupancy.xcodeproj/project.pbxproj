@@ -35,6 +35,7 @@
 		91937989232F7A39001F9DAC /* SAPFoundation.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 91937980232F7A38001F9DAC /* SAPFoundation.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9193798A232F7A39001F9DAC /* SAPOData.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91937981232F7A38001F9DAC /* SAPOData.xcframework */; };
 		9193798B232F7A39001F9DAC /* SAPOData.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 91937981232F7A38001F9DAC /* SAPOData.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A20330BB26564C780031A00B /* ASChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20330BA26564C780031A00B /* ASChildViewController.swift */; };
 		A2B9AECE2653E7F3008BF07E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2B9AECD2653E7F3008BF07E /* Login.storyboard */; };
 		A2B9AED02653E806008BF07E /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2B9AECF2653E806008BF07E /* Register.storyboard */; };
 		A2B9AED32653EB7D008BF07E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AED22653EB7D008BF07E /* LoginViewController.swift */; };
@@ -56,6 +57,10 @@
 		A2B9AEFE2654E8FC008BF07E /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AEFD2654E8FC008BF07E /* BookingViewController.swift */; };
 		A2B9AF01265506CD008BF07E /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AF00265506CD008BF07E /* SettingsModel.swift */; };
 		A2B9AF03265509CA008BF07E /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AF02265509CA008BF07E /* SettingsTableViewCell.swift */; };
+		A2B9AF06265546B3008BF07E /* DokuSnippets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AF05265546B3008BF07E /* DokuSnippets.swift */; };
+		A2B9AF0A26564077008BF07E /* CSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AF0926564077008BF07E /* CSViewController.swift */; };
+		A2B9AF0C26564164008BF07E /* ASViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AF0B26564164008BF07E /* ASViewController.swift */; };
+		A2B9AF0E2656441F008BF07E /* CSChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AF0D2656441F008BF07E /* CSChildViewController.swift */; };
 		A6B4EA55E80C53A589A7FC2A /* ODataOnboardingStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7713A41B719036DDCBB249EA /* ODataOnboardingStep.swift */; };
 		B043015C3A65739B1C251779 /* ConfigurationProvider.plist in Sources */ = {isa = PBXBuildFile; fileRef = 76CC561AFE1ED4364FD4BF99 /* ConfigurationProvider.plist */; };
 		B73F43DE5A6A35D6A478A802 /* OnboardingFlowProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A16F993422404F95BDE62 /* OnboardingFlowProvider.swift */; };
@@ -128,6 +133,7 @@
 		97C45778BB461862214038C6 /* User.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = User.swift; path = "Proxy Classes/public/User.swift"; sourceTree = "<group>"; };
 		9FD8CE236EC45ADFDB0A2B28 /* EntityContainerMetadata.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EntityContainerMetadata.swift; path = "Proxy Classes/public/EntityContainerMetadata.swift"; sourceTree = "<group>"; };
 		A07B22FB555D72E41E667F74 /* CellCreationHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CellCreationHelper.swift; path = Utils/CellCreationHelper.swift; sourceTree = "<group>"; };
+		A20330BA26564C780031A00B /* ASChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASChildViewController.swift; sourceTree = "<group>"; };
 		A23BA71D466F288503A6DF4B /* ApplicationUIManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ApplicationUIManager.swift; path = Onboarding/ApplicationUIManager.swift; sourceTree = "<group>"; };
 		A2B9AECD2653E7F3008BF07E /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		A2B9AECF2653E806008BF07E /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
@@ -150,6 +156,10 @@
 		A2B9AEFD2654E8FC008BF07E /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		A2B9AF00265506CD008BF07E /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		A2B9AF02265509CA008BF07E /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		A2B9AF05265546B3008BF07E /* DokuSnippets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DokuSnippets.swift; sourceTree = "<group>"; };
+		A2B9AF0926564077008BF07E /* CSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSViewController.swift; sourceTree = "<group>"; };
+		A2B9AF0B26564164008BF07E /* ASViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASViewController.swift; sourceTree = "<group>"; };
+		A2B9AF0D2656441F008BF07E /* CSChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSChildViewController.swift; sourceTree = "<group>"; };
 		B0F2F58DEC627E64C9D2876E /* IPA_Booking_JadenOnlineODataController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IPA_Booking_JadenOnlineODataController.swift; path = OData/IPA_Booking_JadenOnlineODataController.swift; sourceTree = "<group>"; };
 		B5C9897F68EEB2F9B0132FCB /* AlertHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlertHelper.swift; path = Utils/AlertHelper.swift; sourceTree = "<group>"; };
 		B5CB276A643F8529CD084829 /* IPA_Booking_JadenCollectionType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IPA_Booking_JadenCollectionType.swift; path = Model/IPA_Booking_JadenCollectionType.swift; sourceTree = "<group>"; };
@@ -241,6 +251,7 @@
 		7A1315B71D4B982000A5DA56 /* IPAOccupancy */ = {
 			isa = PBXGroup;
 			children = (
+				A2B9AF0426554699008BF07E /* DokuSnippets */,
 				7A1315B81D4B982000A5DA56 /* AppDelegate.swift */,
 				7A1315C11D4B982000A5DA56 /* Assets.xcassets */,
 				1277F7601F8E66AC0060AF58 /* SAPLogo@2x.png */,
@@ -378,6 +389,8 @@
 			isa = PBXGroup;
 			children = (
 				A2B9AEF92654E8C3008BF07E /* SettingsTableViewController.swift */,
+				A2B9AF0826563FE9008BF07E /* AccountSettingsVC */,
+				A2B9AF0726563FD3008BF07E /* ClubSettingsVC */,
 			);
 			name = SettingsVC;
 			sourceTree = "<group>";
@@ -405,6 +418,32 @@
 				A2B9AF02265509CA008BF07E /* SettingsTableViewCell.swift */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		A2B9AF0426554699008BF07E /* DokuSnippets */ = {
+			isa = PBXGroup;
+			children = (
+				A2B9AF05265546B3008BF07E /* DokuSnippets.swift */,
+			);
+			name = DokuSnippets;
+			sourceTree = "<group>";
+		};
+		A2B9AF0726563FD3008BF07E /* ClubSettingsVC */ = {
+			isa = PBXGroup;
+			children = (
+				A2B9AF0926564077008BF07E /* CSViewController.swift */,
+				A2B9AF0D2656441F008BF07E /* CSChildViewController.swift */,
+			);
+			name = ClubSettingsVC;
+			sourceTree = "<group>";
+		};
+		A2B9AF0826563FE9008BF07E /* AccountSettingsVC */ = {
+			isa = PBXGroup;
+			children = (
+				A2B9AF0B26564164008BF07E /* ASViewController.swift */,
+				A20330BA26564C780031A00B /* ASChildViewController.swift */,
+			);
+			name = AccountSettingsVC;
 			sourceTree = "<group>";
 		};
 		AE5F8EFB586000DE30E62209 /* Utils */ = {
@@ -610,10 +649,12 @@
 				A2B9AEDC26540F6F008BF07E /* RegisterPageViewController.swift in Sources */,
 				6E943C2007A16BEB8657A406 /* ODataControlling.swift in Sources */,
 				EEA0DF602BAAA32FB4DF6196 /* EntityContainerFactory.swift in Sources */,
+				A2B9AF0A26564077008BF07E /* CSViewController.swift in Sources */,
 				A2B9AED92653F8D7008BF07E /* Constants.swift in Sources */,
 				D5ED2522A754A32AB9A02C6F /* EntityContainerMetadataText.swift in Sources */,
 				D029EA7099F3C23DFDCA3446 /* CellCreationHelper.swift in Sources */,
 				EA9BB69451C52013A69FE9E2 /* AlertHelper.swift in Sources */,
+				A2B9AF0E2656441F008BF07E /* CSChildViewController.swift in Sources */,
 				A2B9AEEB26542BC9008BF07E /* RegexExtensions.swift in Sources */,
 				A2B9AEF32654E7DA008BF07E /* MapNavigationViewController.swift in Sources */,
 				A2B9AEFA2654E8C3008BF07E /* SettingsTableViewController.swift in Sources */,
@@ -622,8 +663,11 @@
 				A2B9AEFC2654E8E8008BF07E /* MapViewController.swift in Sources */,
 				E850EB9AABF3C5418F7E5CC5 /* EntityContainer.swift in Sources */,
 				1CA0B58AF589BFCFE6FA5D60 /* User.swift in Sources */,
+				A20330BB26564C780031A00B /* ASChildViewController.swift in Sources */,
 				A2B9AEE526541114008BF07E /* Onboarding3ViewController.swift in Sources */,
 				A2B9AED32653EB7D008BF07E /* LoginViewController.swift in Sources */,
+				A2B9AF0C26564164008BF07E /* ASViewController.swift in Sources */,
+				A2B9AF06265546B3008BF07E /* DokuSnippets.swift in Sources */,
 				A2B9AF01265506CD008BF07E /* SettingsModel.swift in Sources */,
 				83FA34DA9B8A77CD12B373DE /* Club.swift in Sources */,
 				A2B9AEE326541106008BF07E /* Onboarding2ViewController.swift in Sources */,
