@@ -414,6 +414,9 @@
                                 <state key="disabled">
                                     <color key="titleColor" red="0.031372549020000001" green="0.3294117647" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="confirmPressed:" destination="cNK-BI-NAB" eventType="touchUpInside" id="Ety-Hc-nBm"/>
+                                </connections>
                             </button>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MzX-dN-pm6">
                                 <rect key="frame" x="16" y="91" width="342" height="108"/>

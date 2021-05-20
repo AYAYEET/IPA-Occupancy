@@ -63,6 +63,8 @@ struct Constants {
         static let error = "Error"
         static let updateSuccess = "success"
         static let updateFailed = "failed"
+        static let previousPasswordIncorrect = "previousPasswordIncorrect"
+
     }
     
 }
