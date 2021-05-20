@@ -32,6 +32,7 @@ class ASChildViewController: UIViewController {
         configureTextFields()
         configureLabel()
         targetTextfields()
+        delegateTextfields()
 
     }
     
@@ -122,6 +123,34 @@ class ASChildViewController: UIViewController {
             self.newPasswordTextField.layer.borderColor = Constants.General.gray
             self.passwordTextField.layer.borderColor = Constants.General.gray
             self.reNewPasswordTextField.layer.borderColor = Constants.General.gray
+        }
+    }
+}
+
+//MARK: - Textfield Delegate Methods changed version from LoginVC
+extension ASChildViewController: UITextFieldDelegate {
+    //Method to delegate each textfield
+    func delegateTextfields() {
+        newPasswordTextField.delegate = self
+        reNewPasswordTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+    
+    //A Delegate Method of UITextfields, happens when return Button is pressed.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.nextTextField(textField)
+        return true
+    }
+    
+    //Switches selected textfield to the next textfield
+    private func nextTextField(_ textField: UITextField) {
+        switch textField {
+        case self.passwordTextField:
+            self.newPasswordTextField.becomeFirstResponder()
+        case self.newPasswordTextField:
+            self.reNewPasswordTextField.becomeFirstResponder()
+        default:
+            self.reNewPasswordTextField.resignFirstResponder()
         }
     }
 }
