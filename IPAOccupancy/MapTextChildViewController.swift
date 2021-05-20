@@ -17,6 +17,11 @@ class MapTextChildViewController: UIViewController {
     
     @IBOutlet weak var bookedLabel: UILabel!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        configureLabelText()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +35,11 @@ class MapTextChildViewController: UIViewController {
         view.layer.cornerRadius = 10
     }
     
+    //MARK: - Configure Label Data
+    
+    func configureLabelText() {
+        //TODO: Add oData function
+    }
 
 
 }
