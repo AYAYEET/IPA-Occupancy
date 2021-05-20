@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SAPFiori
 
 class ASChildViewController: UIViewController {
 
@@ -14,6 +15,8 @@ class ASChildViewController: UIViewController {
     var username: String?
     //Constant from the class RegexExtensions
     let pwdValidityType: String.ValidityType = .password
+    //Instantiate loginModel
+    let settingsAccountModel = SettingsAccountModel()
 
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -33,8 +36,48 @@ class ASChildViewController: UIViewController {
         configureLabel()
         targetTextfields()
         delegateTextfields()
-
     }
+    
+    //What happens when confirm Button is pressed
+    @IBAction func confirmPressed(_ sender: UIButton) {
+        settingsAccountModel.updatePassword(username: username, previousPassword: passwordTextField.text, newPassword: newPasswordTextField.text!) { (status) in
+            
+            switch status {
+            case Constants.Settings.previousPasswordIncorrect:
+                FUIToastMessage.show(message: "The password you entered doesn't match your previous password.",
+                                             icon: UIImage(systemName: "exclamationmark.circle")!,
+                                             inView: self.messageView,
+                                             withDuration: 3.0,
+                                             maxNumberOfLines: 0)
+                self.passwordTextField.text = ""
+                self.passwordTextField.layer.borderColor = Constants.General.red
+                self.resetColorOfTextfields()
+                
+            case Constants.Settings.updateSuccess:
+                FUIToastMessage.show(message: "Password changed",
+                                             inView: self.messageView,
+                                             withDuration: 2.0,
+                                             maxNumberOfLines: 1)
+                
+            case Constants.Settings.updateFailed:
+                FUIToastMessage.show(message: "Failed to update change Password",
+                                             icon: UIImage(systemName: "xmark.octagon")!,
+                                             inView: self.messageView,
+                                             withDuration: 2.0,
+                                             maxNumberOfLines: 0)
+                
+            default:
+                FUIToastMessage.show(message: "Connection Error, Please Retry",
+                                             icon: UIImage(systemName: "xmark.octagon")!,
+                                             inView: self.messageView,
+                                             withDuration: 2.0,
+                                             maxNumberOfLines: 0)
+                
+            }
+        }
+        
+    }
+    
     
     //MARK: - View styling
     //Method to change look of the view
