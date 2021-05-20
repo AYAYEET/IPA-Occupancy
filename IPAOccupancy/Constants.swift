@@ -67,8 +67,9 @@ struct Constants {
 
     }
     
-    struct Map { 
-        
+    struct Map {
+        static let connectionError = "ConnectionError"
+        static let success = "success"
     }
     
 }
