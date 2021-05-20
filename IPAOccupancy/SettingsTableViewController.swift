@@ -13,82 +13,98 @@ class SettingsTableViewController: UITableViewController {
     //Variable for passed username Value from TabBar
     var username: String?
     
+    //Instantiate settingsRowModel
+    var settingsRowModel = [SettingsRowModel]()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(username ?? "oops")
+        
+        configureTable()
+        configureModel()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+     
     }
-
+    //What happens when Log Out Button is pressed
+    @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: Constants.Settings.logoutSegue, sender: self)
+    }
+    
+    //MARK: - Design & Basic elements Table VC
+    //Method for general configuration of Table
+    func configureTable() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        //Register a UITableViewCell as the class to use for creating new cells
+        tableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: SettingsTableViewCell.identifier)
+    }
+    
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
+    //Method that informs Table of number of cells it needs.
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        settingsRowModel.count
     }
-
-    /*
+    
+    //Method that informs Table of how to create each cell.
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let model = settingsRowModel[indexPath.row]
+        
+        //Dequeue custom cell, if something goes wrong dequeue a standard cell
+        guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: SettingsTableViewCell.identifier,
+                for: indexPath
+        ) as? SettingsTableViewCell else {
+            return UITableViewCell()
+        }
+        //Add Model Data to cell
+        cell.configureCell(model: model)
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    //Method that gets triggered when a cell is pressed.
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let model = settingsRowModel[indexPath.row]
+        model.action()
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    //MARK: - settingsRowModel Data
+    //Method to add Values to the model
+    func configureModel() {
+        self.settingsRowModel = [
+            SettingsRowModel(iconBackgroundColor: .systemPink,
+                             icon: UIImage(systemName: "mappin.and.ellipse"),
+                             title: "Club Settings",
+                             action: {
+                                self.performSegue(withIdentifier: Constants.Settings.clubSettingsSegue, sender: self)
+            }),
+            SettingsRowModel(iconBackgroundColor: .blue,
+                             icon: UIImage(systemName: "person.crop.circle"),
+                             title: "Account Settings",
+                             action: {
+                                self.performSegue(withIdentifier: Constants.Settings.accountSettingsSegue, sender: self)
+            })
+        ]
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+     //MARK: - Navigation Preparation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        switch segue.identifier {
+        case Constants.Settings.clubSettingsSegue:
+            let destinationVC = segue.destination as! CSViewController
+            destinationVC.username = username
+            
+        case Constants.Settings.logoutSegue:
+            //setting userdefaults for decision between main and login --> Here false
+            UserDefaults.standard.set(false, forKey: "status")
+            
+        case Constants.Settings.accountSettingsSegue:
+            let destinationVC = segue.destination as! ASViewController
+            destinationVC.username = username
+            
+        default:
+            do{}
+        }
     }
-    */
-
 }

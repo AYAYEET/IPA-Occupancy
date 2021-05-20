@@ -16,7 +16,7 @@ class RegisterViewController: UIViewController {
     //Variable for UIPicker default value
     var club = "1"
 
-    //constants from the class RegexExtensions
+    //Constants from the class RegexExtensions
     let iNumberValidityType: String.ValidityType = .iNumber
     let pwdValidityType: String.ValidityType = .password
     

@@ -52,4 +52,19 @@ struct Constants {
 
     }
     
+    struct Settings {
+        static let logoutSegue = "logoutSegue"
+        static let settingsTableViewCell = "SettingsTableViewCell"
+        static let clubSettingsSegue = "clubSettingsSegue"
+        static let accountSettingsSegue = "accountSettingsSegue"
+        static let cSChildSegue = "CSChildSegue"
+        static let aSChildSegue = "ASChildSegue"
+        static let connectionError = "ConnectionError"
+        static let error = "Error"
+        static let updateSuccess = "success"
+        static let updateFailed = "failed"
+        static let previousPasswordIncorrect = "previousPasswordIncorrect"
+
+    }
+    
 }
