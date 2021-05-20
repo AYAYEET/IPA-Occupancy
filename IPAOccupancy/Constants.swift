@@ -60,6 +60,8 @@ struct Constants {
         static let cSChildSegue = "CSChildSegue"
         static let connectionError = "ConnectionError"
         static let error = "Error"
+        static let updateSuccess = "success"
+        static let updateFailed = "failed"
     }
     
 }

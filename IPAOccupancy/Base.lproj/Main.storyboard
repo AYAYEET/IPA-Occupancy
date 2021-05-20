@@ -329,9 +329,8 @@
                                     <action selector="confirmPressed:" destination="puW-6k-h8I" eventType="touchUpInside" id="TVH-D3-nZy"/>
                                 </connections>
                             </button>
-                            <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bfM-S9-hpC">
-                                <rect key="frame" x="15" y="73" width="342" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bfM-S9-hpC">
+                                <rect key="frame" x="15" y="73" width="342" height="108"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -340,16 +339,20 @@
                             <constraint firstItem="v47-bn-DQV" firstAttribute="top" secondItem="H5k-GK-1qg" secondAttribute="top" constant="73" id="1XG-e7-gue"/>
                             <constraint firstItem="N3x-91-ZrU" firstAttribute="top" secondItem="H5k-GK-1qg" secondAttribute="top" constant="44" id="2Ze-n6-ukA"/>
                             <constraint firstAttribute="trailing" secondItem="N3x-91-ZrU" secondAttribute="trailing" constant="16" id="2tu-cb-7FI"/>
+                            <constraint firstItem="bfM-S9-hpC" firstAttribute="leading" secondItem="H5k-GK-1qg" secondAttribute="leading" constant="15" id="7u9-hV-z2D"/>
+                            <constraint firstAttribute="trailing" secondItem="bfM-S9-hpC" secondAttribute="trailing" constant="17" id="CTn-Sj-NVZ"/>
                             <constraint firstAttribute="bottom" secondItem="A8s-GA-NX1" secondAttribute="bottom" constant="110" id="E0u-LR-Qbe"/>
                             <constraint firstItem="A8s-GA-NX1" firstAttribute="leading" secondItem="H5k-GK-1qg" secondAttribute="leading" constant="16" id="EB7-wb-eFF"/>
                             <constraint firstItem="A8s-GA-NX1" firstAttribute="top" secondItem="H5k-GK-1qg" secondAttribute="top" constant="144" id="HC9-6c-PPs"/>
                             <constraint firstAttribute="trailing" secondItem="v47-bn-DQV" secondAttribute="trailing" constant="16" id="KKp-xQ-tJh"/>
                             <constraint firstItem="v47-bn-DQV" firstAttribute="leading" secondItem="N3x-91-ZrU" secondAttribute="trailing" constant="-178" id="Rof-3A-r19"/>
+                            <constraint firstItem="bfM-S9-hpC" firstAttribute="top" secondItem="pCB-OI-bHH" secondAttribute="bottom" constant="29" id="U0i-nm-1bI"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="A8s-GA-NX1" secondAttribute="trailing" constant="20" symbolic="YES" id="Wgx-y2-7gO"/>
                             <constraint firstItem="v47-bn-DQV" firstAttribute="leading" secondItem="H5k-GK-1qg" secondAttribute="leading" constant="180" id="cRK-i5-SJz"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="SkC-Ni-Jfc" secondAttribute="trailing" constant="20" symbolic="YES" id="ieF-Qb-fV2"/>
                             <constraint firstItem="SkC-Ni-Jfc" firstAttribute="leading" secondItem="H5k-GK-1qg" secondAttribute="leading" constant="16" id="jQQ-ms-7Wo"/>
                             <constraint firstItem="N3x-91-ZrU" firstAttribute="leading" secondItem="H5k-GK-1qg" secondAttribute="leading" constant="16" id="naV-qu-Usl"/>
+                            <constraint firstItem="Byw-yr-5vB" firstAttribute="top" secondItem="bfM-S9-hpC" secondAttribute="bottom" constant="94" id="s2b-6C-7gg"/>
                             <constraint firstAttribute="bottom" secondItem="v47-bn-DQV" secondAttribute="bottom" constant="40" id="tXM-AJ-V1m"/>
                             <constraint firstItem="SkC-Ni-Jfc" firstAttribute="top" secondItem="H5k-GK-1qg" secondAttribute="top" constant="214" id="twp-FI-f5l"/>
                         </constraints>
@@ -358,12 +361,13 @@
                         <outlet property="clubPicker" destination="v47-bn-DQV" id="0d4-IS-yhX"/>
                         <outlet property="confirmButton" destination="SkC-Ni-Jfc" id="TkI-30-m5Y"/>
                         <outlet property="currentClubLabel" destination="N3x-91-ZrU" id="rcm-6r-F6R"/>
+                        <outlet property="messageView" destination="bfM-S9-hpC" id="AL3-IT-eQs"/>
                         <outlet property="newClubLabel" destination="A8s-GA-NX1" id="JmR-ns-Kpw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jjM-7p-y4U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2120" y="658"/>
+            <point key="canvasLocation" x="2118.840579710145" y="657.92410714285711"/>
         </scene>
         <!--Child View Controller-->
         <scene sceneID="XQd-Vh-FC5">

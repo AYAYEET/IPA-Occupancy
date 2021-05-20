@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SAPFiori
 
 class CSChildViewController: UIViewController {
 
@@ -22,6 +23,7 @@ class CSChildViewController: UIViewController {
     @IBOutlet weak var newClubLabel: UILabel!
     @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var clubPicker: UIPickerView!
+    @IBOutlet weak var messageView: UIView!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -40,8 +42,34 @@ class CSChildViewController: UIViewController {
         configureUIPicker()
     }
     
-
+    //What happens when confirm Button is pressed
     @IBAction func confirmPressed(_ sender: UIButton) {
+        settingsClubModel.setCurrentClub(username: username, club: club) { (status) in
+            switch status{
+            case Constants.Settings.updateSuccess:
+                FUIToastMessage.show(message: "Successfully updated preferred Club",
+                                             inView: self.messageView,
+                                             withDuration: 2.0,
+                                             maxNumberOfLines: 0)
+
+                //Call to reload current Club Label
+                self.configureCurrentClubLabel()
+                
+            case Constants.Settings.updateFailed:
+                FUIToastMessage.show(message: "Failed to update preferred Club",
+                                             icon: UIImage(systemName: "xmark.octagon")!,
+                                             inView: self.messageView,
+                                             withDuration: 2.0,
+                                             maxNumberOfLines: 0)
+            default:
+                FUIToastMessage.show(message: "Connection Error, Please Retry",
+                                             icon: UIImage(systemName: "xmark.octagon")!,
+                                             inView: self.messageView,
+                                             withDuration: 3.0,
+                                             maxNumberOfLines: 0)
+                
+            }
+        }
     }
     
     
