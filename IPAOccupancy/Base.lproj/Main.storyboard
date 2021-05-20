@@ -571,7 +571,7 @@
                                     <action selector="reloadPressed:" destination="epQ-xZ-EIM" eventType="touchUpInside" id="4e7-Us-o3V"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Club Occupancy 100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pB-MK-QJC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Club Occupancy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pB-MK-QJC">
                                 <rect key="frame" x="16" y="44" width="215" height="20.333333333333329"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="215" id="kjk-yq-eek"/>
@@ -645,20 +645,28 @@
                                     <constraint firstAttribute="width" constant="140" id="70S-xx-kgp"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gYS-4T-qld">
+                                <rect key="frame" x="16" y="211" width="338" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="VcN-gX-Sxl" firstAttribute="leading" secondItem="0Hh-3y-asA" secondAttribute="trailing" constant="20" id="3tu-sE-FbA"/>
                             <constraint firstItem="0Hh-3y-asA" firstAttribute="top" secondItem="bgC-VP-au8" secondAttribute="top" constant="127.00000000000003" id="FGe-eJ-AyH"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="l6j-eW-Kvb" secondAttribute="trailing" constant="201" id="JPB-Ha-cHw"/>
+                            <constraint firstAttribute="bottom" secondItem="gYS-4T-qld" secondAttribute="bottom" constant="211" id="Nib-q6-DHi"/>
+                            <constraint firstItem="gYS-4T-qld" firstAttribute="top" secondItem="bgC-VP-au8" secondAttribute="top" constant="211" id="Rtb-Kw-iry"/>
                             <constraint firstItem="qhQ-3R-tY0" firstAttribute="top" secondItem="bgC-VP-au8" secondAttribute="top" constant="18" id="XPc-c0-dP1"/>
                             <constraint firstAttribute="trailing" secondItem="VcN-gX-Sxl" secondAttribute="trailing" constant="16" id="gnD-6d-Y47"/>
                             <constraint firstItem="qhQ-3R-tY0" firstAttribute="leading" secondItem="bgC-VP-au8" secondAttribute="leading" constant="338" id="hBO-np-0Lf"/>
                             <constraint firstItem="1pB-MK-QJC" firstAttribute="leading" secondItem="bgC-VP-au8" secondAttribute="leading" constant="16" id="hIa-7Y-ZKL"/>
+                            <constraint firstItem="gYS-4T-qld" firstAttribute="leading" secondItem="bgC-VP-au8" secondAttribute="leading" constant="16" id="k00-6i-MLS"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1pB-MK-QJC" secondAttribute="trailing" constant="20" symbolic="YES" id="lR3-nq-ORq"/>
                             <constraint firstAttribute="bottom" secondItem="VcN-gX-Sxl" secondAttribute="bottom" constant="20" symbolic="YES" id="lqf-zS-mRR"/>
                             <constraint firstItem="l6j-eW-Kvb" firstAttribute="leading" secondItem="bgC-VP-au8" secondAttribute="leading" constant="16" id="oSE-fb-nYK"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qhQ-3R-tY0" secondAttribute="trailing" constant="20" symbolic="YES" id="qXR-UW-qb5"/>
+                            <constraint firstAttribute="trailing" secondItem="gYS-4T-qld" secondAttribute="trailing" constant="20" symbolic="YES" id="tnK-9N-LS8"/>
                             <constraint firstItem="0Hh-3y-asA" firstAttribute="leading" secondItem="bgC-VP-au8" secondAttribute="leadingMargin" constant="5" id="vhb-O7-smi"/>
                             <constraint firstItem="1pB-MK-QJC" firstAttribute="top" secondItem="bgC-VP-au8" secondAttribute="top" constant="44" id="w0O-LL-WCV"/>
                             <constraint firstItem="l6j-eW-Kvb" firstAttribute="top" secondItem="bgC-VP-au8" secondAttribute="top" constant="73" id="zjH-QH-GMd"/>
@@ -674,6 +682,7 @@
                         <outlet property="club7Label" destination="v9g-MO-g0J" id="F8E-Wz-xyl"/>
                         <outlet property="club8Label" destination="yjX-aa-Qej" id="U9x-8R-OTN"/>
                         <outlet property="hintLabel" destination="l6j-eW-Kvb" id="5hc-5F-hEd"/>
+                        <outlet property="messageView" destination="gYS-4T-qld" id="jL0-8o-AHb"/>
                         <outlet property="occupancyLabel" destination="1pB-MK-QJC" id="Y0u-Us-zHF"/>
                     </connections>
                 </viewController>

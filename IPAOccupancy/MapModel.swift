@@ -23,7 +23,7 @@ struct MapModel {
     let club6Max = 16.0
     let club7Max = 16.0
     let club8Max = 12.0
-    let occuplancyMax = 114.0
+    let occupancyMax = 114.0
     
     let serviceRoot = URL(string: Constants.General.odataURL)!
     let sapURLSession = SAPURLSession()

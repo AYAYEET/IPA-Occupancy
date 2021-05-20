@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SAPFiori
 
 class MapImageChildViewController: UIViewController {
 
@@ -23,6 +24,7 @@ class MapImageChildViewController: UIViewController {
     @IBOutlet weak var club6Label: UILabel!
     @IBOutlet weak var club7Label: UILabel!
     @IBOutlet weak var club8Label: UILabel!
+    @IBOutlet weak var messageView: UIView!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -55,9 +57,13 @@ class MapImageChildViewController: UIViewController {
                 self.club6Label.text = "Club 6 \(self.mapModel.calculatePercent(value: currentlyFreeArray[5], maxValue: self.mapModel.club6Max))%"
                 self.club7Label.text = "Club 7 \(self.mapModel.calculatePercent(value: currentlyFreeArray[6], maxValue: self.mapModel.club7Max))%"
                 self.club8Label.text = "Club 8 \(self.mapModel.calculatePercent(value: currentlyFreeArray[7], maxValue: self.mapModel.club8Max))%"
-                
+                self.hintLabel.text = "Current occupancy data:\nTotal occupancy: \(self.mapModel.calculatePercent(value: currentlyFreeArray.reduce(0, +), maxValue: self.mapModel.occupancyMax))%"
             } else {
-                print("error")
+                FUIToastMessage.show(message: "There was an issue fetching the Club Data. Please retry.",
+                                             icon: UIImage(systemName: "exclamationmark.circle")!,
+                                             inView: self.messageView,
+                                             withDuration: 3.0,
+                                             maxNumberOfLines: 0)
             }
         }
     }
