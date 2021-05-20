@@ -57,6 +57,7 @@ struct Constants {
         static let settingsTableViewCell = "SettingsTableViewCell"
         static let clubSettingsSegue = "clubSettingsSegue"
         static let accountSettingsSegue = "accountSettingsSegue"
+        static let cSChildSegue = "CSChildSegue"
     }
     
 }

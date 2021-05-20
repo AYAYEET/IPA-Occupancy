@@ -208,7 +208,7 @@
                                                     <constraint firstAttribute="height" constant="275" id="rLa-8o-5YZ"/>
                                                 </constraints>
                                                 <connections>
-                                                    <segue destination="puW-6k-h8I" kind="embed" identifier="clubSettingsChildSegue" id="h3N-bU-xAT"/>
+                                                    <segue destination="puW-6k-h8I" kind="embed" identifier="CSChildSegue" id="h3N-bU-xAT"/>
                                                 </connections>
                                             </containerView>
                                         </subviews>
@@ -325,6 +325,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="confirmPressed:" destination="puW-6k-h8I" eventType="touchUpInside" id="TVH-D3-nZy"/>
+                                </connections>
                             </button>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bfM-S9-hpC">
                                 <rect key="frame" x="15" y="73" width="342" height="75"/>
@@ -351,6 +354,12 @@
                             <constraint firstItem="SkC-Ni-Jfc" firstAttribute="top" secondItem="H5k-GK-1qg" secondAttribute="top" constant="214" id="twp-FI-f5l"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="clubPicker" destination="v47-bn-DQV" id="0d4-IS-yhX"/>
+                        <outlet property="confirmButton" destination="SkC-Ni-Jfc" id="TkI-30-m5Y"/>
+                        <outlet property="currentClubLabel" destination="N3x-91-ZrU" id="rcm-6r-F6R"/>
+                        <outlet property="newClubLabel" destination="A8s-GA-NX1" id="JmR-ns-Kpw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jjM-7p-y4U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

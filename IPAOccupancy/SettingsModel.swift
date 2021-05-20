@@ -22,3 +22,11 @@ struct SettingsRowModel {
     //Allow for an action to be assigned to cell
     let action: (() -> Void)
 }
+
+struct SettingsClubModel {
+    let clubNumbers: [String] = ["1","2","3","4","5","6","7","8"]
+    
+    let serviceRoot = URL(string: Constants.General.odataURL)!
+    let sapURLSession = SAPURLSession()
+    
+}

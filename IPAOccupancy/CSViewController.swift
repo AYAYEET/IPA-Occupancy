@@ -19,15 +19,14 @@ class CSViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+//MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        switch segue.identifier {
+        case Constants.Settings.cSChildSegue:
+            let destinationVC = segue.destination as! CSChildViewController
+            destinationVC.username = username
+        default:
+            do{}
+        }
     }
-    */
-
 }
