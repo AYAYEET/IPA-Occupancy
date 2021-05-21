@@ -88,4 +88,54 @@ struct MapModel {
 
 struct MapTextModel {
     
+    let serviceRoot = URL(string: Constants.General.odataURL)!
+    let sapURLSession = SAPURLSession()
+    
+    //Method to check whether user has booked, if he has return the booked club
+    func checkForBooked(username: String?, completionHandler: @escaping (String) -> ()) {
+        
+        let odataProvider = OnlineODataProvider(serviceName: "EntityContainer", serviceRoot: serviceRoot, sapURLSession: sapURLSession)
+        odataProvider.serviceOptions.checkVersion = false
+        let dataService = EntityContainer(provider: odataProvider)
+        let query = DataQuery()
+            .select(User.iUser, User.hasReserved, User.reservedClub)
+            .filter(User.iUser.equal(username!)) //there will always be a username
+        
+        do {
+            dataService.fetchUser(matching: query) { user, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                    completionHandler(Constants.Map.connectionError)
+
+                }
+                if let oDataUser = user {
+                    
+                    if oDataUser[0].hasReserved ?? false {
+                        switch oDataUser[0].reservedClub {
+                        case "1":
+                            completionHandler("1")
+                        case "2":
+                            completionHandler("2")
+                        case "3":
+                            completionHandler("3")
+                        case "4":
+                            completionHandler("4")
+                        case "5":
+                            completionHandler("5")
+                        case "6":
+                            completionHandler("6")
+                        case "7":
+                            completionHandler("7")
+                        case "8":
+                            completionHandler("8")
+                        default:
+                            completionHandler(Constants.Map.notReserved)
+                        }
+                    } else {
+                        completionHandler(Constants.Map.notReserved)
+                    }  
+                }
+            }
+        }
+    }
 }

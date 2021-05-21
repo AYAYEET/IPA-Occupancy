@@ -26,6 +26,7 @@ class MapTextChildViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        configureView()
     }
     
     //MARK: - View styling
@@ -38,7 +39,30 @@ class MapTextChildViewController: UIViewController {
     //MARK: - Configure Label Data
     
     func configureLabelText() {
-        //TODO: Add oData function
+        mapTextModel.checkForBooked(username: username) { (club) in
+            switch club {
+            case "1":
+                self.bookedLabel.text = "You have a Desk booked in Club \(club)"
+            case "2":
+                self.bookedLabel.text = "You have a Desk booked in Club \(club)"
+            case "3":
+                self.bookedLabel.text = "You have a Desk booked in Club \(club)"
+            case "4":
+                self.bookedLabel.text = "You have a Desk booked in Club \(club)"
+            case "5":
+                self.bookedLabel.text = "You have a Desk booked in Club \(club)"
+            case "6":
+                self.bookedLabel.text = "You have a Desk booked in Club \(club)"
+            case "7":
+                self.bookedLabel.text = "You have a Desk booked in Club \(club)"
+            case "8":
+                self.bookedLabel.text = "You have a Desk booked in Club \(club)"
+            case Constants.Map.notReserved:
+                self.bookedLabel.text = "You haven't reserved yet."
+            default:
+                do{}
+            }
+        }
     }
 
 
