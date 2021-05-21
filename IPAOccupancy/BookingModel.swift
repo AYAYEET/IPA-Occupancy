@@ -55,25 +55,25 @@ struct BookingReserveModel {
     let serviceRoot = URL(string: Constants.General.odataURL)!
     let sapURLSession = SAPURLSession()
     
-    //Method to get currently Users preferred club
-    func getUserClubReservation(username: String?, completionHandler: @escaping (String, Bool) -> ()) {
+    //Method to get currently Users preferred club and reserved club
+    func getUserClubReservation(username: String?, completionHandler: @escaping (String, String, Bool) -> ()) {
         
         let odataProvider = OnlineODataProvider(serviceName: "EntityContainer", serviceRoot: serviceRoot, sapURLSession: sapURLSession)
         odataProvider.serviceOptions.checkVersion = false
         let dataService = EntityContainer(provider: odataProvider)
         let query = DataQuery()
-            .select(User.prefferedClub, User.hasReserved)
+            .select(User.prefferedClub,User.reservedClub, User.hasReserved)
             .filter(User.iUser.equal(username!)) //there will always be a username
         
         do {
             dataService.fetchUser(matching: query) { user, error in
                 if let error = error {
                     print(error.localizedDescription)
-                    completionHandler(Constants.Booking.connectionError, true)
+                    //Value true to ensure booking isn't possible if there is a conneciton problem.
+                    completionHandler(Constants.Booking.connectionError, "", true)
                 }
                 if let oDataUser = user {
-                    completionHandler(oDataUser[0].prefferedClub ?? "1", oDataUser[0].hasReserved ?? true) //Value true to ensure booking isn't possible even if there is a conneciton problem.
-                    
+                    completionHandler(oDataUser[0].prefferedClub ?? "1",oDataUser[0].reservedClub ?? "1", oDataUser[0].hasReserved ?? true)
                 }
             }
         }
