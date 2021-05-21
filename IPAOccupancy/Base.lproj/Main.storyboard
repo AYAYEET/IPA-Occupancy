@@ -1013,11 +1013,16 @@ Your preffered club is: (Club 5)</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6f-g1-8DZ">
+                                <rect key="frame" x="16" y="91" width="338" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="7Hb-ct-unp" firstAttribute="top" secondItem="hp3-Ts-DP0" secondAttribute="top" constant="141" id="1og-Jw-4IN"/>
                             <constraint firstItem="GHD-2K-xgh" firstAttribute="top" secondItem="hp3-Ts-DP0" secondAttribute="top" constant="63" id="2ww-qt-k80"/>
+                            <constraint firstItem="f6f-g1-8DZ" firstAttribute="top" secondItem="hp3-Ts-DP0" secondAttribute="top" constant="91" id="B8u-lc-DB9"/>
                             <constraint firstItem="hVH-tc-3ee" firstAttribute="top" secondItem="hp3-Ts-DP0" secondAttribute="top" constant="241" id="Jw9-tq-OIE"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VKO-bO-n9M" secondAttribute="trailing" constant="20" symbolic="YES" id="LCa-7H-Bz4"/>
                             <constraint firstItem="7ov-VV-Adg" firstAttribute="leading" secondItem="hp3-Ts-DP0" secondAttribute="leading" constant="16" id="MDk-eh-T0V"/>
@@ -1026,11 +1031,14 @@ Your preffered club is: (Club 5)</string>
                             <constraint firstAttribute="bottom" secondItem="GHD-2K-xgh" secondAttribute="bottom" constant="177" id="SVt-z5-eNy"/>
                             <constraint firstItem="VKO-bO-n9M" firstAttribute="top" secondItem="hp3-Ts-DP0" secondAttribute="top" constant="178" id="ULh-Ip-CHT"/>
                             <constraint firstItem="VKO-bO-n9M" firstAttribute="leading" secondItem="hp3-Ts-DP0" secondAttribute="leading" constant="35" id="adh-aL-hPi"/>
+                            <constraint firstItem="f6f-g1-8DZ" firstAttribute="leading" secondItem="hp3-Ts-DP0" secondAttribute="leading" constant="16" id="cRP-LK-BMX"/>
                             <constraint firstItem="7Hb-ct-unp" firstAttribute="centerX" secondItem="hp3-Ts-DP0" secondAttribute="centerX" id="dSY-2g-LfZ"/>
                             <constraint firstAttribute="bottom" secondItem="hVH-tc-3ee" secondAttribute="bottom" constant="40" id="g04-rL-Uor"/>
                             <constraint firstAttribute="bottom" secondItem="VKO-bO-n9M" secondAttribute="bottom" constant="77" id="jLG-XF-6cw"/>
                             <constraint firstAttribute="trailing" secondItem="7ov-VV-Adg" secondAttribute="trailing" constant="16" id="k85-hk-CFv"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GHD-2K-xgh" secondAttribute="trailing" constant="20" symbolic="YES" id="l57-dN-6su"/>
+                            <constraint firstAttribute="bottom" secondItem="f6f-g1-8DZ" secondAttribute="bottom" constant="91" id="m4z-DW-6HA"/>
+                            <constraint firstAttribute="trailing" secondItem="f6f-g1-8DZ" secondAttribute="trailing" constant="20" symbolic="YES" id="nLY-ko-8Vr"/>
                             <constraint firstAttribute="bottom" secondItem="7Hb-ct-unp" secondAttribute="bottom" constant="140" id="qlU-wI-fte"/>
                             <constraint firstItem="GHD-2K-xgh" firstAttribute="leading" secondItem="hp3-Ts-DP0" secondAttribute="leading" constant="35" id="txX-Hx-txE"/>
                             <constraint firstItem="hVH-tc-3ee" firstAttribute="centerX" secondItem="hp3-Ts-DP0" secondAttribute="centerX" id="xfj-SY-BEc"/>
@@ -1039,6 +1047,7 @@ Your preffered club is: (Club 5)</string>
                     <connections>
                         <outlet property="descClubLabel" destination="GHD-2K-xgh" id="A5v-2q-caa"/>
                         <outlet property="descRandomLabel" destination="VKO-bO-n9M" id="HPH-jJ-RXf"/>
+                        <outlet property="messageView" destination="f6f-g1-8DZ" id="xw5-8S-wH4"/>
                         <outlet property="reservepreferredButton" destination="7Hb-ct-unp" id="eBX-VC-gMj"/>
                         <outlet property="reserverandomButton" destination="hVH-tc-3ee" id="zXK-tI-amd"/>
                         <outlet property="titleLabel" destination="7ov-VV-Adg" id="hZB-DB-L3O"/>

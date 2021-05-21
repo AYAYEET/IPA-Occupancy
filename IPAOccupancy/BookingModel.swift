@@ -52,4 +52,52 @@ struct BookingModel {
 
 struct BookingReserveModel {
     
+    let serviceRoot = URL(string: Constants.General.odataURL)!
+    let sapURLSession = SAPURLSession()
+    
+    //Method to get currently Users preferred club
+    func getUserClubReservation(username: String?, completionHandler: @escaping (String, Bool) -> ()) {
+        
+        let odataProvider = OnlineODataProvider(serviceName: "EntityContainer", serviceRoot: serviceRoot, sapURLSession: sapURLSession)
+        odataProvider.serviceOptions.checkVersion = false
+        let dataService = EntityContainer(provider: odataProvider)
+        let query = DataQuery()
+            .select(User.prefferedClub, User.hasReserved)
+            .filter(User.iUser.equal(username!)) //there will always be a username
+        
+        do {
+            dataService.fetchUser(matching: query) { user, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                    completionHandler(Constants.Booking.connectionError, true)
+                }
+                if let oDataUser = user {
+                    completionHandler(oDataUser[0].prefferedClub ?? "1", oDataUser[0].hasReserved ?? true) //Value true to ensure booking isn't possible even if there is a conneciton problem.
+                    
+                }
+            }
+        }
+    }
+    
+    //Uses preferred club of user to to check for available space in that club
+    func getFreeInPreferredClub(prefferedClub: String, completionHandler: @escaping (Int?, String) -> ()) {
+        let odataProvider = OnlineODataProvider(serviceName: "EntityContainer", serviceRoot: serviceRoot, sapURLSession: sapURLSession)
+        odataProvider.serviceOptions.checkVersion = false
+        let dataService = EntityContainer(provider: odataProvider)
+        let query = DataQuery()
+            .select(Club.currentlyFree)
+            .filter(Club.clubName.equal(prefferedClub))
+        
+        do {
+            dataService.fetchClub(matching: query) { club, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                    completionHandler(1,Constants.Booking.connectionError)
+                }
+                if let prefferedClub = club {
+                    completionHandler(prefferedClub[0].currentlyFree ?? 1, Constants.Booking.success)
+                }
+            }
+        }
+    }
 }
