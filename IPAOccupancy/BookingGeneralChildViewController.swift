@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SAPFiori
 
 class BookingGeneralChildViewController: UIViewController {
     
@@ -23,6 +24,7 @@ class BookingGeneralChildViewController: UIViewController {
     @IBOutlet weak var club6Label: UILabel!
     @IBOutlet weak var club7Label: UILabel!
     @IBOutlet weak var club8Label: UILabel!
+    @IBOutlet weak var messageView: UIView!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -37,7 +39,9 @@ class BookingGeneralChildViewController: UIViewController {
         configureLabels()
     }
     
+    //What happens when reload Button is pressed
     @IBAction func reloadPressed(_ sender: UIButton) {
+        configureLabelText()
     }
     
     //MARK: - View styling
@@ -66,9 +70,24 @@ class BookingGeneralChildViewController: UIViewController {
     //MARK: - Configure Label Data
     //Method for changing label text to currentlyFree
     func configureLabelText() {
-
-        
-        
+        bookingModel.getCurrentClubData { (currentlyFreeArray, status) in
+            if status == Constants.Map.success {
+                self.descTotalLabel.text = "A look at the current occupancy at\nThe Circle Office.\nCurrent free spaces: \(currentlyFreeArray.reduce(0, +))"
+                self.club1Label.text = "Club 1: \(currentlyFreeArray[0])"
+                self.club2Label.text = "Club 2: \(currentlyFreeArray[1])"
+                self.club3Label.text = "Club 3: \(currentlyFreeArray[2])"
+                self.club4Label.text = "Club 4: \(currentlyFreeArray[3])"
+                self.club5Label.text = "Club 5: \(currentlyFreeArray[4])"
+                self.club6Label.text = "Club 6: \(currentlyFreeArray[5])"
+                self.club7Label.text = "Club 7: \(currentlyFreeArray[6])"
+                self.club8Label.text = "Club 8: \(currentlyFreeArray[7])"
+            } else {
+                FUIToastMessage.show(message: "There was an issue fetching the Club Data. Please retry.",
+                                             icon: UIImage(systemName: "exclamationmark.circle")!,
+                                             inView: self.messageView,
+                                             withDuration: 3.0,
+                                             maxNumberOfLines: 0)
+            }
+        }
     }
-
 }

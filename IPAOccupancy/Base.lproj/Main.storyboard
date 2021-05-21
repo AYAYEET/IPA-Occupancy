@@ -912,6 +912,10 @@ Current free spaces: 114</string>
                                     <action selector="reloadPressed:" destination="Wrf-yW-uKr" eventType="touchUpInside" id="EFV-53-30F"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c3Q-CH-RdH">
+                                <rect key="frame" x="16" y="86" width="338" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
@@ -922,16 +926,20 @@ Current free spaces: 114</string>
                             <constraint firstItem="kmq-Va-ME4" firstAttribute="leading" secondItem="q5l-a8-LNg" secondAttribute="leading" constant="341" id="IkL-97-Tp2"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Hy8-54-hgK" secondAttribute="trailing" constant="20" symbolic="YES" id="JN4-Hh-bp4"/>
                             <constraint firstAttribute="trailing" secondItem="eL4-ct-Xj9" secondAttribute="trailing" constant="41" id="LCf-YR-bJ6"/>
+                            <constraint firstItem="c3Q-CH-RdH" firstAttribute="top" secondItem="q5l-a8-LNg" secondAttribute="top" constant="86" id="VRn-8U-Apd"/>
                             <constraint firstItem="kmq-Va-ME4" firstAttribute="top" secondItem="q5l-a8-LNg" secondAttribute="top" constant="18" id="WQZ-Rk-QeK"/>
                             <constraint firstAttribute="bottom" secondItem="kmq-Va-ME4" secondAttribute="bottom" constant="249" id="d5W-z1-PEQ"/>
                             <constraint firstItem="uIE-e2-fcp" firstAttribute="top" secondItem="q5l-a8-LNg" secondAttribute="top" constant="44" id="fJg-ZE-qNc"/>
+                            <constraint firstItem="c3Q-CH-RdH" firstAttribute="leading" secondItem="q5l-a8-LNg" secondAttribute="leading" constant="16" id="g0c-CY-V3A"/>
                             <constraint firstItem="eL4-ct-Xj9" firstAttribute="leading" secondItem="q5l-a8-LNg" secondAttribute="leading" constant="203" id="gfh-qK-4h5"/>
                             <constraint firstAttribute="bottom" secondItem="6Kh-F5-7ZD" secondAttribute="bottom" constant="40.666666666666686" id="iPG-hB-Xb9"/>
                             <constraint firstItem="Hy8-54-hgK" firstAttribute="leading" secondItem="q5l-a8-LNg" secondAttribute="leading" constant="35" id="jlx-f9-BUV"/>
                             <constraint firstItem="eL4-ct-Xj9" firstAttribute="top" secondItem="q5l-a8-LNg" secondAttribute="top" constant="151" id="lTk-nl-agf"/>
+                            <constraint firstAttribute="trailing" secondItem="c3Q-CH-RdH" secondAttribute="trailing" constant="20" symbolic="YES" id="mpb-BS-ByW"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kmq-Va-ME4" secondAttribute="trailing" constant="16" id="qzK-v5-yK2"/>
                             <constraint firstAttribute="bottom" secondItem="uIE-e2-fcp" secondAttribute="bottom" constant="235.66666666666669" id="uwq-Jg-COE"/>
                             <constraint firstAttribute="bottom" secondItem="eL4-ct-Xj9" secondAttribute="bottom" constant="40.666666666666686" id="vBi-5T-BfQ"/>
+                            <constraint firstAttribute="bottom" secondItem="c3Q-CH-RdH" secondAttribute="bottom" constant="86" id="wfS-Wr-u5g"/>
                             <constraint firstItem="6Kh-F5-7ZD" firstAttribute="top" secondItem="q5l-a8-LNg" secondAttribute="top" constant="151" id="wkR-ww-3eg"/>
                             <constraint firstAttribute="trailing" secondItem="6Kh-F5-7ZD" secondAttribute="trailing" constant="209" id="z2w-BQ-giQ"/>
                         </constraints>
@@ -946,6 +954,7 @@ Current free spaces: 114</string>
                         <outlet property="club7Label" destination="Yg4-BF-HGC" id="Hhn-pM-w4L"/>
                         <outlet property="club8Label" destination="nrx-3D-veS" id="WcL-r3-EBg"/>
                         <outlet property="descTotalLabel" destination="Hy8-54-hgK" id="7mH-og-9g4"/>
+                        <outlet property="messageView" destination="c3Q-CH-RdH" id="xPd-Vk-R1V"/>
                         <outlet property="titleLabel" destination="uIE-e2-fcp" id="FXo-6a-0ha"/>
                     </connections>
                 </viewController>
