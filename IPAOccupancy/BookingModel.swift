@@ -29,7 +29,7 @@ struct BookingModel {
             dataService.fetchClub(matching: query) { club, error in
                 if let error = error {
                     print(error.localizedDescription)
-                    completionHandler([1], Constants.Map.connectionError)
+                    completionHandler([1], Constants.Booking.connectionError)
                 }
                 if let allClubs = club {
                     let currentlyFreeArray = [
@@ -42,10 +42,14 @@ struct BookingModel {
                         allClubs[6].currentlyFree!,
                         allClubs[7].currentlyFree!
                     ]
-                    completionHandler(currentlyFreeArray, Constants.Map.success)
+                    completionHandler(currentlyFreeArray, Constants.Booking.success)
                     
                 }
             }
         }
     }
+}
+
+struct BookingReserveModel {
+    
 }

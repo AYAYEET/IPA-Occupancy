@@ -79,7 +79,7 @@
                                                     <constraint firstAttribute="width" constant="374" id="jwN-i1-tQh"/>
                                                 </constraints>
                                                 <connections>
-                                                    <segue destination="zYx-Ql-vWS" kind="embed" id="HJ1-cC-HU5"/>
+                                                    <segue destination="zYx-Ql-vWS" kind="embed" identifier="bookingReserveChildSegue" id="HJ1-cC-HU5"/>
                                                 </connections>
                                             </containerView>
                                         </subviews>
@@ -1036,6 +1036,13 @@ Your preffered club is: (Club 5)</string>
                             <constraint firstItem="hVH-tc-3ee" firstAttribute="centerX" secondItem="hp3-Ts-DP0" secondAttribute="centerX" id="xfj-SY-BEc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="descClubLabel" destination="GHD-2K-xgh" id="A5v-2q-caa"/>
+                        <outlet property="descRandomLabel" destination="VKO-bO-n9M" id="HPH-jJ-RXf"/>
+                        <outlet property="reservepreferredButton" destination="7Hb-ct-unp" id="eBX-VC-gMj"/>
+                        <outlet property="reserverandomButton" destination="hVH-tc-3ee" id="zXK-tI-amd"/>
+                        <outlet property="titleLabel" destination="7ov-VV-Adg" id="hZB-DB-L3O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dd1-mN-t9c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

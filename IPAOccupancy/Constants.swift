@@ -74,4 +74,12 @@ struct Constants {
         static let notReserved = "notReserved"
     }
     
+    struct Booking {
+        static let bookingReserveChildSegue = "bookingReserveChildSegue"
+        static let connectionError = "ConnectionError"
+        static let success = "success"
+
+
+    }
+    
 }

@@ -71,7 +71,7 @@ class BookingGeneralChildViewController: UIViewController {
     //Method for changing label text to currentlyFree
     func configureLabelText() {
         bookingModel.getCurrentClubData { (currentlyFreeArray, status) in
-            if status == Constants.Map.success {
+            if status == Constants.Booking.success {
                 self.descTotalLabel.text = "A look at the current occupancy at\nThe Circle Office.\nCurrent free spaces: \(currentlyFreeArray.reduce(0, +))"
                 self.club1Label.text = "Club 1: \(currentlyFreeArray[0])"
                 self.club2Label.text = "Club 2: \(currentlyFreeArray[1])"
