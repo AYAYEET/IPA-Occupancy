@@ -21,7 +21,7 @@ extension String {
        
 
     }
-    
+    //Method for checking if Regex matches text
     func isValid(_ validityType: ValidityType) -> Bool {
         let format = "SELF MATCHES %@"
         var regex = ""

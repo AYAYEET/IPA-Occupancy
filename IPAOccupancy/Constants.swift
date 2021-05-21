@@ -67,4 +67,11 @@ struct Constants {
 
     }
     
+    struct Map {
+        static let connectionError = "ConnectionError"
+        static let success = "success"
+        static let mapChildSegue = "mapChildSegue"
+        static let notReserved = "notReserved"
+    }
+    
 }
