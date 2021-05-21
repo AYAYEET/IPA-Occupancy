@@ -42,6 +42,7 @@
 		A20330C42657983B0031A00B /* MapFullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20330C32657983B0031A00B /* MapFullViewController.swift */; };
 		A20330C62657A85A0031A00B /* BookingGeneralChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20330C52657A85A0031A00B /* BookingGeneralChildViewController.swift */; };
 		A20330C82657A8710031A00B /* BookingReserveChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20330C72657A8710031A00B /* BookingReserveChildViewController.swift */; };
+		A20330CB2657B1F80031A00B /* BookingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20330CA2657B1F80031A00B /* BookingModel.swift */; };
 		A2B9AECE2653E7F3008BF07E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2B9AECD2653E7F3008BF07E /* Login.storyboard */; };
 		A2B9AED02653E806008BF07E /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2B9AECF2653E806008BF07E /* Register.storyboard */; };
 		A2B9AED32653EB7D008BF07E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AED22653EB7D008BF07E /* LoginViewController.swift */; };
@@ -146,6 +147,7 @@
 		A20330C32657983B0031A00B /* MapFullViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFullViewController.swift; sourceTree = "<group>"; };
 		A20330C52657A85A0031A00B /* BookingGeneralChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingGeneralChildViewController.swift; sourceTree = "<group>"; };
 		A20330C72657A8710031A00B /* BookingReserveChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingReserveChildViewController.swift; sourceTree = "<group>"; };
+		A20330CA2657B1F80031A00B /* BookingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingModel.swift; sourceTree = "<group>"; };
 		A23BA71D466F288503A6DF4B /* ApplicationUIManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ApplicationUIManager.swift; path = Onboarding/ApplicationUIManager.swift; sourceTree = "<group>"; };
 		A2B9AECD2653E7F3008BF07E /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		A2B9AECF2653E806008BF07E /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
@@ -318,6 +320,14 @@
 				A20330BE26568EC70031A00B /* MapModel.swift */,
 			);
 			name = Map;
+			sourceTree = "<group>";
+		};
+		A20330C92657B1EA0031A00B /* Booking */ = {
+			isa = PBXGroup;
+			children = (
+				A20330CA2657B1F80031A00B /* BookingModel.swift */,
+			);
+			name = Booking;
 			sourceTree = "<group>";
 		};
 		A2B9AED12653E9D4008BF07E /* View */ = {
@@ -493,6 +503,7 @@
 		F6AE14B9E2294873B345BB94 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A20330C92657B1EA0031A00B /* Booking */,
 				A20330C026568ECF0031A00B /* Map */,
 				A2B9AEFF265506BB008BF07E /* Settings */,
 				A2B9AEE82654263F008BF07E /* Register */,
@@ -682,6 +693,7 @@
 				D029EA7099F3C23DFDCA3446 /* CellCreationHelper.swift in Sources */,
 				EA9BB69451C52013A69FE9E2 /* AlertHelper.swift in Sources */,
 				A2B9AF0E2656441F008BF07E /* CSChildViewController.swift in Sources */,
+				A20330CB2657B1F80031A00B /* BookingModel.swift in Sources */,
 				A2B9AEEB26542BC9008BF07E /* RegexExtensions.swift in Sources */,
 				A2B9AEF32654E7DA008BF07E /* MapNavigationViewController.swift in Sources */,
 				A2B9AEFA2654E8C3008BF07E /* SettingsTableViewController.swift in Sources */,
