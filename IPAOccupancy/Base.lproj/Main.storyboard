@@ -384,8 +384,8 @@
             <objects>
                 <navigationController id="sZR-PR-Nt2" customClass="BookingNavigationViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Reservation" image="book" catalog="system" selectedImage="book" id="fMZ-Wp-fy0"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="tp7-ql-znO">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tp7-ql-znO">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
