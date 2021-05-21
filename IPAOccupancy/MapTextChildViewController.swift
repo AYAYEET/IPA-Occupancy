@@ -37,7 +37,7 @@ class MapTextChildViewController: UIViewController {
     }
     
     //MARK: - Configure Label Data
-    
+    //Method for changing label text based on booked club
     func configureLabelText() {
         mapTextModel.checkForBooked(username: username) { (club) in
             switch club {

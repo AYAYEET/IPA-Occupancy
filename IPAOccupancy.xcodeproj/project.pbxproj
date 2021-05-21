@@ -39,6 +39,7 @@
 		A20330BD265689BF0031A00B /* MapImageChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20330BC265689BF0031A00B /* MapImageChildViewController.swift */; };
 		A20330BF26568EC70031A00B /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20330BE26568EC70031A00B /* MapModel.swift */; };
 		A20330C226569F4E0031A00B /* MapTextChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20330C126569F4E0031A00B /* MapTextChildViewController.swift */; };
+		A20330C42657983B0031A00B /* MapFullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20330C32657983B0031A00B /* MapFullViewController.swift */; };
 		A2B9AECE2653E7F3008BF07E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2B9AECD2653E7F3008BF07E /* Login.storyboard */; };
 		A2B9AED02653E806008BF07E /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2B9AECF2653E806008BF07E /* Register.storyboard */; };
 		A2B9AED32653EB7D008BF07E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AED22653EB7D008BF07E /* LoginViewController.swift */; };
@@ -140,6 +141,7 @@
 		A20330BC265689BF0031A00B /* MapImageChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapImageChildViewController.swift; sourceTree = "<group>"; };
 		A20330BE26568EC70031A00B /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 		A20330C126569F4E0031A00B /* MapTextChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTextChildViewController.swift; sourceTree = "<group>"; };
+		A20330C32657983B0031A00B /* MapFullViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFullViewController.swift; sourceTree = "<group>"; };
 		A23BA71D466F288503A6DF4B /* ApplicationUIManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ApplicationUIManager.swift; path = Onboarding/ApplicationUIManager.swift; sourceTree = "<group>"; };
 		A2B9AECD2653E7F3008BF07E /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		A2B9AECF2653E806008BF07E /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
@@ -415,6 +417,7 @@
 				A2B9AEFB2654E8E8008BF07E /* MapViewController.swift */,
 				A20330BC265689BF0031A00B /* MapImageChildViewController.swift */,
 				A20330C126569F4E0031A00B /* MapTextChildViewController.swift */,
+				A20330C32657983B0031A00B /* MapFullViewController.swift */,
 			);
 			name = MapVC;
 			sourceTree = "<group>";
@@ -704,6 +707,7 @@
 				093D75F6630CC92C73BB573B /* AppParameters.plist in Sources */,
 				A2B9AEF52654E7F4008BF07E /* BookingNavigationViewController.swift in Sources */,
 				A20330BF26568EC70031A00B /* MapModel.swift in Sources */,
+				A20330C42657983B0031A00B /* MapFullViewController.swift in Sources */,
 				A2B9AEFE2654E8FC008BF07E /* BookingViewController.swift in Sources */,
 				EE0625A71E6260E7B7BFF10C /* LocalizedStrings.swift in Sources */,
 			);

@@ -184,10 +184,10 @@
             </objects>
             <point key="canvasLocation" x="571" y="-77"/>
         </scene>
-        <!--View Controller-->
+        <!--Map Full View Controller-->
         <scene sceneID="iXL-im-J7N">
             <objects>
-                <viewController id="GOE-iU-FWR" sceneMemberID="viewController">
+                <viewController id="GOE-iU-FWR" customClass="MapFullViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JzP-7W-sxf"/>
                         <viewControllerLayoutGuide type="bottom" id="NCK-d7-IYl"/>
@@ -195,13 +195,41 @@
                     <view key="view" contentMode="scaleToFill" id="tlH-st-cgZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Qi-hS-HHc">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="floorplan-extended-transparent-bg" translatesAutoresizingMaskIntoConstraints="NO" id="h0h-ig-26A">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="h0h-ig-26A" secondAttribute="bottom" id="2iU-fU-fmA"/>
+                                    <constraint firstAttribute="trailing" secondItem="h0h-ig-26A" secondAttribute="trailing" id="9dK-xb-D33"/>
+                                    <constraint firstItem="h0h-ig-26A" firstAttribute="leading" secondItem="5Qi-hS-HHc" secondAttribute="leading" id="uUX-HQ-0i3"/>
+                                    <constraint firstItem="h0h-ig-26A" firstAttribute="top" secondItem="5Qi-hS-HHc" secondAttribute="top" id="zhm-O3-fjK"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5Qi-hS-HHc" firstAttribute="leading" secondItem="tlH-st-cgZ" secondAttribute="leading" id="6bc-Yb-TH2"/>
+                            <constraint firstAttribute="trailing" secondItem="5Qi-hS-HHc" secondAttribute="trailing" id="8bh-Wj-WUH"/>
+                            <constraint firstItem="5Qi-hS-HHc" firstAttribute="top" secondItem="JzP-7W-sxf" secondAttribute="bottom" id="NgS-Du-QOM"/>
+                            <constraint firstItem="h0h-ig-26A" firstAttribute="height" secondItem="tlH-st-cgZ" secondAttribute="height" multiplier="0.809152" id="ba9-aG-tkx"/>
+                            <constraint firstItem="h0h-ig-26A" firstAttribute="width" secondItem="tlH-st-cgZ" secondAttribute="width" id="mOj-LJ-NTh"/>
+                            <constraint firstItem="NCK-d7-IYl" firstAttribute="top" secondItem="5Qi-hS-HHc" secondAttribute="bottom" id="ub7-g7-fIh"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6BN-Qo-Eh8"/>
+                    <connections>
+                        <outlet property="imageView" destination="h0h-ig-26A" id="Ufy-qF-hFL"/>
+                        <outlet property="scrollView" destination="5Qi-hS-HHc" id="v5k-X2-rph"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GOn-bL-TMD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-101" y="857"/>
+            <point key="canvasLocation" x="-101.44927536231884" y="856.47321428571422"/>
         </scene>
         <!--Account Settings-->
         <scene sceneID="vZt-vU-LPs">
@@ -551,6 +579,10 @@
         <scene sceneID="fmj-5Q-GEY">
             <objects>
                 <viewController id="epQ-xZ-EIM" customClass="MapImageChildViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="piz-QV-K5f"/>
+                        <viewControllerLayoutGuide type="bottom" id="tMh-bz-Pvt"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bgC-VP-au8">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="550"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -694,6 +726,10 @@
         <scene sceneID="QdR-i3-fYx">
             <objects>
                 <viewController id="XyW-8P-dfW" customClass="MapTextChildViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4zr-Nd-OoO"/>
+                        <viewControllerLayoutGuide type="bottom" id="nYg-6a-cOv"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Awi-1G-ipZ">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -727,6 +763,7 @@
     <resources>
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="book" catalog="system" width="128" height="102"/>
+        <image name="floorplan-extended-transparent-bg" width="1212" height="3508"/>
         <image name="floorplan-transparent-bg" width="1212" height="3508"/>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="map" catalog="system" width="128" height="110"/>
