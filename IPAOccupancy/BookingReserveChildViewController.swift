@@ -135,7 +135,36 @@ class BookingReserveChildViewController: UIViewController {
             }
         } else {
             bookingReserveModel.bookrandomClub(username: username) { (status) in
-                self.configureDataInElements()
+                switch status {
+                case Constants.Booking.noneFree:
+                    FUIToastMessage.show(message: "There are no free clubs. Retry later.",
+                                                 icon: UIImage(systemName: "exclamationmark.circle")!,
+                                                 inView: self.messageView,
+                                                 withDuration: 2.0,
+                                                 maxNumberOfLines: 0)
+                    
+                case Constants.Booking.connectionError:
+                    FUIToastMessage.show(message: "There was an issue cancelling your connection. Please retry.",
+                                                 icon: UIImage(systemName: "exclamationmark.circle")!,
+                                                 inView: self.messageView,
+                                                 withDuration: 3.0,
+                                                 maxNumberOfLines: 0)
+                    
+                case Constants.Booking.failed:
+                    FUIToastMessage.show(message: "There was an issue cancelling your reservation. Please retry.",
+                                                 icon: UIImage(systemName: "exclamationmark.circle")!,
+                                                 inView: self.messageView,
+                                                 withDuration: 3.0,
+                                                 maxNumberOfLines: 0)
+                    
+                default:
+                    FUIToastMessage.show(message: "Random Reservation complete.",
+                                                 icon: UIImage(systemName: "exclamationmark.circle")!,
+                                                 inView: self.messageView,
+                                                 withDuration: 2.0,
+                                                 maxNumberOfLines: 0)
+                    self.configureDataInElements()
+                }
             }
         }
     }

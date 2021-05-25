@@ -234,8 +234,8 @@ struct BookingReserveModel {
                         if let oDataClub = club {
                             while oDataClub[randomClub].currentlyFree! == 0 {
                                 randomClub += 1
-                                if randomClub == 8 && maxTries == 0 {
-                                    randomClub = 1
+                                if randomClub == 7 && maxTries == 0 {
+                                    randomClub = 0
                                     maxTries += 1
                                 } else {
                                     completionHandler(Constants.Booking.noneFree)
@@ -247,7 +247,6 @@ struct BookingReserveModel {
 
                                 do {
                                     try odataProvider.updateEntity(oDataClub[randomClub], headers: .empty, options: .none)
-                                    print("OMGLOL \(oDataClub[randomClub])")
                                 } catch {
                                     completionHandler(Constants.Booking.failed)
                                 }
