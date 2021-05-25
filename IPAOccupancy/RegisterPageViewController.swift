@@ -48,7 +48,7 @@ class RegisterPageViewController: UIPageViewController {
         pageControl.currentPage = firstPage
     }
     
-    //Method for adding PageControlLayout to the view<<<
+    //Method for adding PageControlLayout to the view
     func pageControlLayout() {
         view.addSubview(pageControl)
         //Inspired by https://www.youtube.com/watch?v=a5yjOMLBfSc

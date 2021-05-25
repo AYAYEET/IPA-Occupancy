@@ -819,6 +819,10 @@
         <scene sceneID="MjH-yD-Vgg">
             <objects>
                 <viewController id="Wrf-yW-uKr" customClass="BookingGeneralChildViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3iv-SN-3Dp"/>
+                        <viewControllerLayoutGuide type="bottom" id="sOf-p4-fKa"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="q5l-a8-LNg">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -966,6 +970,10 @@ Current free spaces: 114</string>
         <scene sceneID="QPG-yX-PdU">
             <objects>
                 <viewController id="zYx-Ql-vWS" customClass="BookingReserveChildViewController" customModule="IPAOccupancy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vsP-Sy-Eoy"/>
+                        <viewControllerLayoutGuide type="bottom" id="vDI-hp-YpW"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hp3-Ts-DP0">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="310"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -995,25 +1003,34 @@ Your preffered club is: (Club 5)</string>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Hb-ct-unp">
                                 <rect key="frame" x="63.666666666666657" y="141" width="246.99999999999997" height="29"/>
-                                <color key="backgroundColor" red="0.031372549020000001" green="0.3294117647" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.039215686270000001" green="0.43137254899999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="247" id="esX-Ed-O4K"/>
                                 </constraints>
                                 <state key="normal" title="Reserve in your club">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="reservepreferredPressed:" destination="zYx-Ql-vWS" eventType="touchUpInside" id="Pjo-BM-w8E"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVH-tc-3ee">
                                 <rect key="frame" x="63.666666666666657" y="241" width="246.99999999999997" height="29"/>
-                                <color key="backgroundColor" red="0.031372549020000001" green="0.3294117647" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.039215686270000001" green="0.43137254899999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="247" id="lyt-Z4-bO6"/>
                                 </constraints>
                                 <state key="normal" title="Reserve in your club">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <state key="disabled">
+                                    <color key="titleColor" red="0.031372549020000001" green="0.3294117647" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="reserverandomPressed:" destination="zYx-Ql-vWS" eventType="touchUpInside" id="zh0-Zm-pWQ"/>
+                                </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6f-g1-8DZ">
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6f-g1-8DZ">
                                 <rect key="frame" x="16" y="91" width="338" height="128"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>

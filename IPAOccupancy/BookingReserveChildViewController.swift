@@ -18,6 +18,7 @@ class BookingReserveChildViewController: UIViewController {
     //Variables for Buttons to know what actions to perform when pressed
     var reserved = false
     var preferred = "1"
+    var reservedClub = "1"
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descClubLabel: UILabel!
@@ -39,6 +40,31 @@ class BookingReserveChildViewController: UIViewController {
         configureLabels()
         configureButtons()
     }
+    
+    //What happens when reserve in club Button is pressed
+    @IBAction func reservepreferredPressed(_ sender: UIButton) {
+        if reserved {
+            bookingReserveModel.cancelBookClub(reservedClub: reservedClub, username: username) { (status) in
+                //TODO: Error message
+                self.configureDataInElements()
+            }
+        } else {
+            bookingReserveModel.bookpreferredClub(preferredClub: preferred, username: username) { (status) in
+                if status == Constants.Booking.fullClub {
+                    //TODO: Full club message
+                } else {
+                    //Reload view data
+                    self.configureDataInElements()
+                }
+            }
+        }
+    }
+
+    //What happens when reserve random Button is pressed
+    @IBAction func reserverandomPressed(_ sender: UIButton) {
+        
+    }
+    
     
     //MARK: - View styling
     //Method for changing look of view
@@ -86,6 +112,9 @@ class BookingReserveChildViewController: UIViewController {
                         self.reservepreferredButton.isEnabled = false
                         self.reserverandomButton.isEnabled = false
                     } else {
+                        //Variables for button logic
+                        self.reserved = hasReserved
+                        self.preferred = preferredClub
                         if hasReserved {
                             //what happens in the label when the user has already reserved
                             self.reservepreferredButton.isEnabled = true
@@ -96,6 +125,8 @@ class BookingReserveChildViewController: UIViewController {
                             self.reserverandomButton.setTitle("Cancel your Reservation above", for: .normal)
                             self.descRandomLabel.text = "Cancel your reservation in Club \(reservedClub)\nbefore you can reserve again."
                             
+                            self.reservedClub = reservedClub
+
                         } else {
                             //what happens in the label when you haven't reserved
                             self.reservepreferredButton.isEnabled = true
@@ -104,7 +135,7 @@ class BookingReserveChildViewController: UIViewController {
                             
                             self.reserverandomButton.isEnabled = true
                             self.reserverandomButton.setTitle("Reserve in any Club", for: .normal)
-                            self.descClubLabel.text = "Feel like sitting somewhere else today?"
+                            self.descRandomLabel.text = "Feel like sitting somewhere else today?"
                             
                             
                         }
