@@ -1031,7 +1031,7 @@ Your preffered club is: (Club 5)</string>
                                 </connections>
                             </button>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6f-g1-8DZ">
-                                <rect key="frame" x="16" y="91" width="338" height="128"/>
+                                <rect key="frame" x="16" y="91" width="338" height="165"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -1054,7 +1054,7 @@ Your preffered club is: (Club 5)</string>
                             <constraint firstAttribute="bottom" secondItem="VKO-bO-n9M" secondAttribute="bottom" constant="77" id="jLG-XF-6cw"/>
                             <constraint firstAttribute="trailing" secondItem="7ov-VV-Adg" secondAttribute="trailing" constant="16" id="k85-hk-CFv"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GHD-2K-xgh" secondAttribute="trailing" constant="20" symbolic="YES" id="l57-dN-6su"/>
-                            <constraint firstAttribute="bottom" secondItem="f6f-g1-8DZ" secondAttribute="bottom" constant="91" id="m4z-DW-6HA"/>
+                            <constraint firstAttribute="bottom" secondItem="f6f-g1-8DZ" secondAttribute="bottom" constant="54" id="m4z-DW-6HA"/>
                             <constraint firstAttribute="trailing" secondItem="f6f-g1-8DZ" secondAttribute="trailing" constant="20" symbolic="YES" id="nLY-ko-8Vr"/>
                             <constraint firstAttribute="bottom" secondItem="7Hb-ct-unp" secondAttribute="bottom" constant="140" id="qlU-wI-fte"/>
                             <constraint firstItem="GHD-2K-xgh" firstAttribute="leading" secondItem="hp3-Ts-DP0" secondAttribute="leading" constant="35" id="txX-Hx-txE"/>

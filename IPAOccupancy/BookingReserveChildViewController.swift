@@ -45,15 +45,60 @@ class BookingReserveChildViewController: UIViewController {
     @IBAction func reservepreferredPressed(_ sender: UIButton) {
         if reserved {
             bookingReserveModel.cancelBookClub(reservedClub: reservedClub, username: username) { (status) in
-                //TODO: Error message
-                self.configureDataInElements()
+                switch status {
+                case Constants.Booking.connectionError:
+                    FUIToastMessage.show(message: "There was an issue cancelling your connection. Please retry.",
+                                                 icon: UIImage(systemName: "exclamationmark.circle")!,
+                                                 inView: self.messageView,
+                                                 withDuration: 3.0,
+                                                 maxNumberOfLines: 0)
+                    
+                case Constants.Booking.failed:
+                    FUIToastMessage.show(message: "There was an issue cancelling your reservation. Please retry.",
+                                                 icon: UIImage(systemName: "exclamationmark.circle")!,
+                                                 inView: self.messageView,
+                                                 withDuration: 3.0,
+                                                 maxNumberOfLines: 0)
+                    
+                default:
+                    FUIToastMessage.show(message: "Reservation cancelled.",
+                                                 icon: UIImage(systemName: "exclamationmark.circle")!,
+                                                 inView: self.messageView,
+                                                 withDuration: 2.0,
+                                                 maxNumberOfLines: 0)
+                    self.configureDataInElements()
+                }
             }
         } else {
             bookingReserveModel.bookpreferredClub(preferredClub: preferred, username: username) { (status) in
-                if status == Constants.Booking.fullClub {
-                    //TODO: Full club message
-                } else {
-                    //Reload view data
+                switch status {
+                case Constants.Booking.fullClub:
+                    FUIToastMessage.show(message: "Your preferred Club is full.",
+                                                 icon: UIImage(systemName: "exclamationmark.circle")!,
+                                                 inView: self.messageView,
+                                                 withDuration: 2.0,
+                                                 maxNumberOfLines: 0)
+                    
+                case Constants.Booking.connectionError:
+                    FUIToastMessage.show(message: "There was an issue with your connection. Please retry.",
+                                                 icon: UIImage(systemName: "exclamationmark.circle")!,
+                                                 inView: self.messageView,
+                                                 withDuration: 3.0,
+                                                 maxNumberOfLines: 0)
+                    
+                case Constants.Booking.failed:
+                    FUIToastMessage.show(message: "There was an issue with your reservation. Please retry.",
+                                                 icon: UIImage(systemName: "exclamationmark.circle")!,
+                                                 inView: self.messageView,
+                                                 withDuration: 3.0,
+                                                 maxNumberOfLines: 0)
+                    
+                default:
+                    FUIToastMessage.show(message: "Reservation successful.",
+                                                 icon: UIImage(systemName: "exclamationmark.circle")!,
+                                                 inView: self.messageView,
+                                                 withDuration: 2.0,
+                                                 maxNumberOfLines: 0)
                     self.configureDataInElements()
                 }
             }
