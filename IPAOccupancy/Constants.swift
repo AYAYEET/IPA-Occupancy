@@ -80,6 +80,7 @@ struct Constants {
         static let success = "success"
         static let failed = "failed"
         static let fullClub = "fullClub"
+        static let noneFree = "noneFree"
 
 
     }

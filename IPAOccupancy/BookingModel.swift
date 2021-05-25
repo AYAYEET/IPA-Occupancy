@@ -100,7 +100,7 @@ struct BookingReserveModel {
             }
         }
     }
-    //Book space in preferred Club and ensure Club is not full
+    //Method to book space in preferred Club and ensure Club is not full
     func bookpreferredClub(preferredClub: String, username: String?, completionHandler: @escaping (String) -> ()) {
         let odataProvider = OnlineODataProvider(serviceName: "EntityContainer", serviceRoot: serviceRoot, sapURLSession: sapURLSession)
         odataProvider.serviceOptions.checkVersion = false
@@ -155,7 +155,7 @@ struct BookingReserveModel {
             }
         }
     }
-    
+    //Method to cancel booking
     func cancelBookClub(reservedClub: String, username: String?, completionHandler: @escaping (String) -> ()) {
         let odataProvider = OnlineODataProvider(serviceName: "EntityContainer", serviceRoot: serviceRoot, sapURLSession: sapURLSession)
         odataProvider.serviceOptions.checkVersion = false
@@ -201,5 +201,68 @@ struct BookingReserveModel {
                 }
             }
         }
+    }
+    
+    //Method to book space in random Club and ensure Club is not full
+    func bookrandomClub(username: String?, completionHandler: @escaping (String) -> ()) {
+        let odataProvider = OnlineODataProvider(serviceName: "EntityContainer", serviceRoot: serviceRoot, sapURLSession: sapURLSession)
+        odataProvider.serviceOptions.checkVersion = false
+        let dataService = EntityContainer(provider: odataProvider)
+        let queryUser = DataQuery()
+            .select(User.iUser, User.hasReserved, User.reservedClub, User.prefferedClub)
+            .filter(User.iUser.equal(username!)) //username exists
+        let queryClub = DataQuery()
+            .select(Club.currentlyFree)
+        
+        var randomClub = Int.random(in: 0...7)
+        var maxTries = 0
+        do {
+            dataService.fetchUser(matching: queryUser) { user, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                    completionHandler(Constants.Booking.connectionError)
+                }
+                if let oDataUser = user {
+                                       
+                    //Ensure Club is not full
+                    dataService.fetchClub(matching: queryClub) { club, error in
+                        if let error = error {
+                            print(error.localizedDescription)
+                            completionHandler(Constants.Booking.connectionError)
+                        }
+                        //If the random club is not free try another
+                        if let oDataClub = club {
+                            while oDataClub[randomClub].currentlyFree! == 0 {
+                                randomClub += 1
+                                if randomClub == 8 && maxTries == 0 {
+                                    randomClub = 1
+                                    maxTries += 1
+                                } else {
+                                    completionHandler(Constants.Booking.noneFree)
+                                }
+                            }
+                            oDataClub[randomClub].currentlyFree! -= 1
+                            oDataUser[0].reservedClub = String(randomClub + 1)
+                            oDataUser[0].hasReserved = true
+
+                                do {
+                                    try odataProvider.updateEntity(oDataClub[randomClub], headers: .empty, options: .none)
+                                    print("OMGLOL \(oDataClub[randomClub])")
+                                } catch {
+                                    completionHandler(Constants.Booking.failed)
+                                }
+                                do {
+                                    try odataProvider.updateEntity(oDataUser[0], headers: .empty, options: .none)
+                                    completionHandler(Constants.Booking.success)
+                                } catch {
+                                    completionHandler(Constants.Booking.failed)
+                                }
+                            }
+
+                        }
+                    }
+
+                }
+            }
     }
 }

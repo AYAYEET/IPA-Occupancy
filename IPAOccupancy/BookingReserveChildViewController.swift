@@ -107,7 +107,37 @@ class BookingReserveChildViewController: UIViewController {
 
     //What happens when reserve random Button is pressed
     @IBAction func reserverandomPressed(_ sender: UIButton) {
-        
+        if reserved {
+            bookingReserveModel.cancelBookClub(reservedClub: reservedClub, username: username) { (status) in
+                switch status {
+                case Constants.Booking.connectionError:
+                    FUIToastMessage.show(message: "There was an issue cancelling your connection. Please retry.",
+                                                 icon: UIImage(systemName: "exclamationmark.circle")!,
+                                                 inView: self.messageView,
+                                                 withDuration: 3.0,
+                                                 maxNumberOfLines: 0)
+                    
+                case Constants.Booking.failed:
+                    FUIToastMessage.show(message: "There was an issue cancelling your reservation. Please retry.",
+                                                 icon: UIImage(systemName: "exclamationmark.circle")!,
+                                                 inView: self.messageView,
+                                                 withDuration: 3.0,
+                                                 maxNumberOfLines: 0)
+                    
+                default:
+                    FUIToastMessage.show(message: "Reservation cancelled.",
+                                                 icon: UIImage(systemName: "exclamationmark.circle")!,
+                                                 inView: self.messageView,
+                                                 withDuration: 2.0,
+                                                 maxNumberOfLines: 0)
+                    self.configureDataInElements()
+                }
+            }
+        } else {
+            bookingReserveModel.bookrandomClub(username: username) { (status) in
+                self.configureDataInElements()
+            }
+        }
     }
     
     
