@@ -9,21 +9,22 @@
 import UIKit
 
 class SettingsTableViewController: UITableViewController {
-
+    
     //Variable for passed username Value from TabBar
     var username: String?
     
     //Instantiate settingsRowModel
     var settingsRowModel = [SettingsRowModel]()
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Do any additional setup after loading the view.
         configureTable()
         configureModel()
-
-     
+        
+        
     }
     //What happens when Log Out Button is pressed
     @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
@@ -52,8 +53,8 @@ class SettingsTableViewController: UITableViewController {
         
         //Dequeue custom cell, if something goes wrong dequeue a standard cell
         guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: SettingsTableViewCell.identifier,
-                for: indexPath
+            withIdentifier: SettingsTableViewCell.identifier,
+            for: indexPath
         ) as? SettingsTableViewCell else {
             return UITableViewCell()
         }
@@ -78,17 +79,17 @@ class SettingsTableViewController: UITableViewController {
                              title: "Club Settings",
                              action: {
                                 self.performSegue(withIdentifier: Constants.Settings.clubSettingsSegue, sender: self)
-            }),
+                             }),
             SettingsRowModel(iconBackgroundColor: .blue,
                              icon: UIImage(systemName: "person.crop.circle"),
                              title: "Account Settings",
                              action: {
                                 self.performSegue(withIdentifier: Constants.Settings.accountSettingsSegue, sender: self)
-            })
+                             })
         ]
     }
     
-     //MARK: - Navigation Preparation
+    //MARK: - Navigation Preparation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case Constants.Settings.clubSettingsSegue:

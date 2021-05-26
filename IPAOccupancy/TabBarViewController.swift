@@ -4,17 +4,14 @@
 //
 //  Created by Scheidegger, Jaden on 19.05.21.
 //  Copyright © 2021 SAP. All rights reserved.
-//  This VC gets the password from loginVC and also ensures it gets saved to UserDefaults for future use
-//  Also passes the username to SettingsVC, MapVC and BookingVC
+//  Used for passing the username to SettingsVC, MapVC and BookingVC
 
 import UIKit
 
 class TabBarViewController: UITabBarController {
     
-    
     //Variable passed from LoginVC
     var username: String?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +20,6 @@ class TabBarViewController: UITabBarController {
         checkUsername()
         passUsername()
     }
-    
-    
     
     //MARK: - iNumber (username) reference
     //Method to save the iNumber for future use
@@ -44,11 +39,9 @@ class TabBarViewController: UITabBarController {
     func passUsername() {
         //Creates an array of the viewControllers in TabBarVC
         guard let viewControllers = viewControllers else { return }
-        
         //Searches for the NaviationVC that matches type SettingsNav... in the viewControllers array
         for viewController in viewControllers {
             if let SettingsNavigationViewController = viewController as? SettingsNavigationViewController {
-                
                 //Ensures the correct VC is chosen from NavigationVC
                 if let SettingsViewController = SettingsNavigationViewController.viewControllers.first as? SettingsTableViewController {
                     //Pass the username
@@ -56,7 +49,6 @@ class TabBarViewController: UITabBarController {
                 }
             }
         }
-        
         for viewController in viewControllers {
             if let MapNavigationController = viewController as? MapNavigationViewController {
                 
@@ -65,7 +57,6 @@ class TabBarViewController: UITabBarController {
                 }
             }
         }
-        
         for viewController in viewControllers {
             if let BookingNavigationController = viewController as? BookingNavigationViewController {
                 

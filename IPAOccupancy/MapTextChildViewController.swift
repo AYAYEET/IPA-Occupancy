@@ -9,12 +9,14 @@
 import UIKit
 
 class MapTextChildViewController: UIViewController {
-
+    
     //Variable for passed username Value from TabBar
     var username: String?
+    
     //Instantiate mapTextModel
     let mapTextModel = MapTextModel()
     
+    //Storyboard connection
     @IBOutlet weak var bookedLabel: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
@@ -24,14 +26,14 @@ class MapTextChildViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         configureView()
     }
     
     //MARK: - View styling
     //Method for changing look of view
-    fileprivate func configureView() {
+    func configureView() {
         view.backgroundColor = UIColor.preferredFioriColor(forStyle: .primary9)
         view.layer.cornerRadius = 10
     }
@@ -40,6 +42,7 @@ class MapTextChildViewController: UIViewController {
     //Method for changing label text based on booked club
     func configureLabelText() {
         mapTextModel.checkForBooked(username: username) { (club) in
+            //For all different returned values set a specified text.
             switch club {
             case "1":
                 self.bookedLabel.text = "You have a Desk booked in Club \(club)"
@@ -64,6 +67,6 @@ class MapTextChildViewController: UIViewController {
             }
         }
     }
-
-
+    
+    
 }

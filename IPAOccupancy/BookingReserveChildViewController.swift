@@ -13,13 +13,16 @@ class BookingReserveChildViewController: UIViewController {
     
     //Variable for passed username Value from TabBar
     var username: String?
+    
     //Instantiate bookingReserveModel
     let bookingReserveModel = BookingReserveModel()
-    //Variables for Buttons to know what actions to perform when pressed
+    
+    //Variables for Buttons to know what actions to perform when pressed.
     var reserved = false
     var preferred = "1"
     var reservedClub = "1"
     
+    //Storyboard connections
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descClubLabel: UILabel!
     @IBOutlet weak var descRandomLabel: UILabel!
@@ -41,13 +44,13 @@ class BookingReserveChildViewController: UIViewController {
         configureButtons()
     }
     
-    //What happens when reserve in club Button is pressed
+    //What happens when "reserve in Club" Button is pressed.
     @IBAction func reservepreferredPressed(_ sender: UIButton) {
         if reserved {
-            bookingReserveModel.cancelBookClub(reservedClub: reservedClub, username: username) { (status) in
+            bookingReserveModel.cancelBookedClub(reservedClub: reservedClub, username: username) { (status) in
                 switch status {
                 case Constants.Booking.connectionError:
-                    FUIToastMessage.show(message: "There was an issue cancelling your connection. Please retry.",
+                    FUIToastMessage.show(message: "There was an issue with your connection. Please retry.",
                                                  icon: UIImage(systemName: "exclamationmark.circle")!,
                                                  inView: self.messageView,
                                                  withDuration: 3.0,
@@ -62,7 +65,7 @@ class BookingReserveChildViewController: UIViewController {
                     
                 default:
                     FUIToastMessage.show(message: "Reservation cancelled.",
-                                                 icon: UIImage(systemName: "exclamationmark.circle")!,
+                                                 icon: UIImage(systemName: "checkmark")!,
                                                  inView: self.messageView,
                                                  withDuration: 2.0,
                                                  maxNumberOfLines: 0)
@@ -95,7 +98,7 @@ class BookingReserveChildViewController: UIViewController {
                     
                 default:
                     FUIToastMessage.show(message: "Reservation successful.",
-                                                 icon: UIImage(systemName: "exclamationmark.circle")!,
+                                                 icon: UIImage(systemName: "checkmark")!,
                                                  inView: self.messageView,
                                                  withDuration: 2.0,
                                                  maxNumberOfLines: 0)
@@ -105,13 +108,13 @@ class BookingReserveChildViewController: UIViewController {
         }
     }
 
-    //What happens when reserve random Button is pressed
+    //What happens when "reserve random" Button is pressed.
     @IBAction func reserverandomPressed(_ sender: UIButton) {
         if reserved {
-            bookingReserveModel.cancelBookClub(reservedClub: reservedClub, username: username) { (status) in
+            bookingReserveModel.cancelBookedClub(reservedClub: reservedClub, username: username) { (status) in
                 switch status {
                 case Constants.Booking.connectionError:
-                    FUIToastMessage.show(message: "There was an issue cancelling your connection. Please retry.",
+                    FUIToastMessage.show(message: "There was an issue with your connection. Please retry.",
                                                  icon: UIImage(systemName: "exclamationmark.circle")!,
                                                  inView: self.messageView,
                                                  withDuration: 3.0,
@@ -126,7 +129,7 @@ class BookingReserveChildViewController: UIViewController {
                     
                 default:
                     FUIToastMessage.show(message: "Reservation cancelled.",
-                                                 icon: UIImage(systemName: "exclamationmark.circle")!,
+                                                 icon: UIImage(systemName: "checkmark")!,
                                                  inView: self.messageView,
                                                  withDuration: 2.0,
                                                  maxNumberOfLines: 0)
@@ -144,7 +147,7 @@ class BookingReserveChildViewController: UIViewController {
                                                  maxNumberOfLines: 0)
                     
                 case Constants.Booking.connectionError:
-                    FUIToastMessage.show(message: "There was an issue cancelling your connection. Please retry.",
+                    FUIToastMessage.show(message: "There was an issue with your connection. Please retry.",
                                                  icon: UIImage(systemName: "exclamationmark.circle")!,
                                                  inView: self.messageView,
                                                  withDuration: 3.0,
@@ -159,7 +162,7 @@ class BookingReserveChildViewController: UIViewController {
                     
                 default:
                     FUIToastMessage.show(message: "Random Reservation complete.",
-                                                 icon: UIImage(systemName: "exclamationmark.circle")!,
+                                                 icon: UIImage(systemName: "checkmark")!,
                                                  inView: self.messageView,
                                                  withDuration: 2.0,
                                                  maxNumberOfLines: 0)
@@ -216,11 +219,11 @@ class BookingReserveChildViewController: UIViewController {
                         self.reservepreferredButton.isEnabled = false
                         self.reserverandomButton.isEnabled = false
                     } else {
-                        //Variables for button logic
+                        //Set Variables for button logic
                         self.reserved = hasReserved
                         self.preferred = preferredClub
                         if hasReserved {
-                            //what happens in the label when the user has already reserved
+                            //What happens in the label when the user has already reserved
                             self.reservepreferredButton.isEnabled = true
                             self.reservepreferredButton.setTitle("Cancel your Reservation", for: .normal)
                             self.descClubLabel.text = "You currently have a desk reserved\nin Club \(reservedClub).\nYou can cancel your reservation below."
@@ -228,11 +231,11 @@ class BookingReserveChildViewController: UIViewController {
                             self.reserverandomButton.isEnabled = false
                             self.reserverandomButton.setTitle("Cancel your Reservation above", for: .normal)
                             self.descRandomLabel.text = "Cancel your reservation in Club \(reservedClub)\nbefore you can reserve again."
-                            
+                            //If the User has reserved save that Club.
                             self.reservedClub = reservedClub
 
                         } else {
-                            //what happens in the label when you haven't reserved
+                            //What happens in the label when you haven't reserved
                             self.reservepreferredButton.isEnabled = true
                             self.reservepreferredButton.setTitle("Reserve in preferred Club", for: .normal)
                             self.descClubLabel.text = "There are currently \(freeSpaces ?? 1) desks\navailable in your preferred Club.\nYour preferred club is: Club \(preferredClub)"

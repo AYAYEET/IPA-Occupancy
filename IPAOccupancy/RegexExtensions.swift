@@ -7,7 +7,7 @@
 //  Class for creating REGEX cases for textfields based on video https://www.youtube.com/watch?v=mqaHpG1vPs8&list=PL_csAAO9PQ8buBXpnohnRyEbnYnXh81JE&index=1&t=676s
 
 import Foundation
-
+//New capability of String
 extension String {
     
     enum ValidityType {
@@ -16,7 +16,7 @@ extension String {
     }
     
     enum Regex: String {
-        case iNumber = "^i[0-9]{7,7}+$"
+        case iNumber = "^i[0-9]{6,6}+$"
         case password = "^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{3,25}$" //one uppercase, one symbol, one number, one lowercase
        
 
@@ -33,7 +33,7 @@ extension String {
             regex = Regex.password.rawValue
  
         }
-        
+        //Each character will be matched using format to regex
         return NSPredicate(format: format, regex).evaluate(with: self)
         
     }

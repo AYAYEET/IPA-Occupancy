@@ -25,6 +25,7 @@ struct SettingsRowModel {
 
 struct SettingsClubModel {
     
+    //Array for UIPicker
     let clubNumbers: [String] = ["1","2","3","4","5","6","7","8"]
     
     let serviceRoot = URL(string: Constants.General.odataURL)!
@@ -38,9 +39,9 @@ struct SettingsClubModel {
         let dataService = EntityContainer(provider: odataProvider)
         let query = DataQuery()
             .select(User.iUser, User.prefferedClub)
-            .filter(User.iUser.equal(username!)) //there will always be a username
-            
+            .filter(User.iUser.equal(username!))
         do {
+            //Do OData request
             dataService.fetchUser(matching: query) { user, error in
                 if let error = error {
                     print(error.localizedDescription)
@@ -58,26 +59,28 @@ struct SettingsClubModel {
         }
     
     }
-    //Method to set the newly selected club of the User
+    //Method to set the newly selected Club of the User
     func setCurrentClub(username: String?,club: String?, completionHandler: @escaping (String) -> ()) {
         let odataProvider = OnlineODataProvider(serviceName: "EntityContainer", serviceRoot: serviceRoot, sapURLSession: sapURLSession)
         odataProvider.serviceOptions.checkVersion = false
         let dataService = EntityContainer(provider: odataProvider)
         let query = DataQuery()
             .select(User.iUser, User.prefferedClub)
-            .filter(User.iUser.equal(username!)) //there will always be a username
+            .filter(User.iUser.equal(username!))
             .top(1)
         
         do {
+            //Do OData request
             dataService.fetchUser(matching: query) { user, error in
                 if let error = error {
                     print(error.localizedDescription)
                     completionHandler(Constants.Settings.connectionError)
                 }
                 if let oDataUser = user {
+                    //Set new club
                     oDataUser[0].prefferedClub = club
                     do {
-                        //Update the current Users club using method provided by iOS SDK
+                        //Update Club
                         try odataProvider.updateEntity(oDataUser[0], headers: .empty, options: .none)
                         completionHandler(Constants.Settings.updateSuccess)
                     } catch {
@@ -87,24 +90,24 @@ struct SettingsClubModel {
             }
         }
     }
-    
 }
 
 struct SettingsAccountModel {
     
     let serviceRoot = URL(string: Constants.General.odataURL)!
     let sapURLSession = SAPURLSession()
-    //Method for updating Password of user
+    
+    //Method for updating Password of User and ensuring the given password is equal to the old password
     func updatePassword(username: String?, previousPassword: String?, newPassword: String, completionHandler: @escaping (String) -> ()) {
         let odataProvider = OnlineODataProvider(serviceName: "EntityContainer", serviceRoot: serviceRoot, sapURLSession: sapURLSession)
         odataProvider.serviceOptions.checkVersion = false
         let dataService = EntityContainer(provider: odataProvider)
         let query = DataQuery()
             .select(User.iUser, User.password)
-            .filter(User.iUser.equal(username!)) //there will always be a username
+            .filter(User.iUser.equal(username!))
             .top(1)
-        
         do {
+            //Do OData Request
             dataService.fetchUser(matching: query) { user, error in
                 if let error = error {
                     print(error.localizedDescription)

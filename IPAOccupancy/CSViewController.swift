@@ -9,17 +9,17 @@
 import UIKit
 
 class CSViewController: UIViewController {
-
+    
     //Variable for passed username Value from TabBar
     var username: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
-//MARK: - Navigation
+    //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case Constants.Settings.cSChildSegue:
