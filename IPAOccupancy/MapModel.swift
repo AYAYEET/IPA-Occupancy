@@ -14,7 +14,7 @@ import SAPFoundation
 
 struct MapModel {
     
-    //Total Booking space for each club (not in OData service)
+    //Total Booking space for each Club
     let club1Max = 16.0
     let club2Max = 10.0
     let club3Max = 16.0
@@ -35,14 +35,15 @@ struct MapModel {
         let dataService = EntityContainer(provider: odataProvider)
         let query = DataQuery()
             .select(Club.currentlyFree)
-            
         do {
+            //Do OData request
             dataService.fetchClub(matching: query) { club, error in
                 if let error = error {
                     print(error.localizedDescription)
                     completionHandler([1], Constants.Map.connectionError)
                 }
                 if let allClubs = club {
+                    //Create an array of all free space numbers
                     let currentlyFreeArray = [
                         allClubs[0].currentlyFree!,
                         allClubs[1].currentlyFree!,
@@ -54,13 +55,12 @@ struct MapModel {
                         allClubs[7].currentlyFree!
                     ]
                     completionHandler(currentlyFreeArray, Constants.Map.success)
-                    
                 }
             }
         }
     }
     
-    //Method to get a percentage based on currentlyFree value (Conversion to double for accuracy)
+    //Method to get a percentage based on currentlyFree value.
     func calculatePercent(value: Int, maxValue: Double) -> Int {
         let valueAsDouble = Double(value)
         let doubleReturn = (100 / maxValue) * valueAsDouble
@@ -72,7 +72,7 @@ struct MapModel {
         let valueAsDouble = Double(value)
         let upToHalf = maxValue/2
         let upToEighty = maxValue/5
-        
+        //Decide which color is needed
         switch valueAsDouble {
         case upToHalf...maxValue:
             return UIColor.preferredFioriColor(forStyle: .positive)
@@ -99,38 +99,19 @@ struct MapTextModel {
         let dataService = EntityContainer(provider: odataProvider)
         let query = DataQuery()
             .select(User.iUser, User.hasReserved, User.reservedClub)
-            .filter(User.iUser.equal(username!)) //there will always be a username
-        
+            .filter(User.iUser.equal(username!))
         do {
+            //Do OData request
             dataService.fetchUser(matching: query) { user, error in
                 if let error = error {
                     print(error.localizedDescription)
                     completionHandler(Constants.Map.connectionError)
-
+                    
                 }
                 if let oDataUser = user {
-                    
+                    //Check if the user has reserved and return accordingly.
                     if oDataUser[0].hasReserved ?? false {
-                        switch oDataUser[0].reservedClub {
-                        case "1":
-                            completionHandler("1")
-                        case "2":
-                            completionHandler("2")
-                        case "3":
-                            completionHandler("3")
-                        case "4":
-                            completionHandler("4")
-                        case "5":
-                            completionHandler("5")
-                        case "6":
-                            completionHandler("6")
-                        case "7":
-                            completionHandler("7")
-                        case "8":
-                            completionHandler("8")
-                        default:
-                            completionHandler(Constants.Map.notReserved)
-                        }
+                        completionHandler(oDataUser[0].reservedClub ?? Constants.Map.notReserved)
                     } else {
                         completionHandler(Constants.Map.notReserved)
                     }  
