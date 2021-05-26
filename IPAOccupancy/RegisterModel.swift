@@ -12,7 +12,7 @@ import SAPFoundation
 import SAPFiori
 
 struct RegisterModel {
-    
+    //Array for UIPicker
     let clubNumbers: [String] = ["1","2","3","4","5","6","7","8"]
     
     let serviceRoot = URL(string: Constants.General.odataURL)!
@@ -27,8 +27,8 @@ struct RegisterModel {
         let query = DataQuery()
             .select(User.iUser, User.password, User.status, User.prefferedClub, User.hasReserved)
             .top(1)
-        
         do {
+            //Do OData request
             dataService.fetchUser(matching: query) { user, error in
                 if let error = error {
                     print(error.localizedDescription)

@@ -13,6 +13,7 @@ import SAPCommon
 class RegisterViewController: UIViewController {
     //Instantiate registerModel
     let registerModel = RegisterModel()
+    
     //Variable for UIPicker default value
     var club = "1"
 
@@ -20,6 +21,7 @@ class RegisterViewController: UIViewController {
     let iNumberValidityType: String.ValidityType = .iNumber
     let pwdValidityType: String.ValidityType = .password
     
+    //Storyboard connections
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordReTextField: UITextField!
@@ -45,7 +47,7 @@ class RegisterViewController: UIViewController {
     //What happens when Register Button is pressed
     @IBAction func registerPressed(_ sender: Any) {
         registerModel.registerUser(usernameTextFieldData: usernameTextField.text, passwordTextFieldData: passwordTextField.text, clubPickerValue: club) { (registerStatus) in
-            
+            //How to handle each return
             switch registerStatus {
             case Constants.Register.connectionError:
                 FUIToastMessage.show(message: "Connection Error, try again",
@@ -72,7 +74,7 @@ class RegisterViewController: UIViewController {
     
     //MARK: - UITextfield Methods
     //Method to change look of TextFields
-    fileprivate func configureTextFields() {
+    func configureTextFields() {
         usernameTextField.layer.borderWidth = 1.0
         passwordTextField.layer.borderWidth = 1.0
         passwordReTextField.layer.borderWidth = 1.0
@@ -93,18 +95,18 @@ class RegisterViewController: UIViewController {
     
     //MARK: - Button Styling
     //Method to change look of button
-    fileprivate func configureButton() {
+    func configureButton() {
         registerButton.layer.cornerRadius = 5
         registerButton.isEnabled = false
     }
     
     //MARK: - Text for username and password Labels (Password hints)
     //Method to set text in username Label
-    fileprivate func configureUsernameLabel() {
+    func configureUsernameLabel() {
         usernameLabel.text = Constants.Register.iNumberExample
     }
     //Method to set text in password Label
-    fileprivate func configurePasswordLabel() {
+    func configurePasswordLabel() {
         passwordLabel.text = Constants.Register.passwordExample
     }
     
@@ -112,7 +114,7 @@ class RegisterViewController: UIViewController {
     
     //Add target to textfield for during editing for input validation
     //functionality heavily based on https://www.youtube.com/watch?v=mqaHpG1vPs8&list=PL_csAAO9PQ8buBXpnohnRyEbnYnXh81JE&index=1&t=676s
-    fileprivate func targetTextfields() {
+    func targetTextfields() {
         usernameTextField.addTarget(self, action: #selector(handleTextChangeUsername), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(handleTextChangePassword), for: .editingChanged)
         passwordReTextField.addTarget(self, action: #selector(handleTextChangeRePassword), for: .editingChanged)
@@ -252,12 +254,12 @@ extension RegisterViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         registerModel.clubNumbers.count
     }
-    //set the title for each row of the UIPicker
+    //Set the title for each row of the UIPicker
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return "Club \(registerModel.clubNumbers[row])"
     }
    
-    
+    //Set the User selected club
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         club = registerModel.clubNumbers[row]
     }

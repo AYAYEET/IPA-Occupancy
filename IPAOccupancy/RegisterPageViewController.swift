@@ -20,6 +20,7 @@ class RegisterPageViewController: UIPageViewController {
         ]
     }()
     
+    //Variables for UIPageControl
     let pageControl = UIPageControl()
     let firstPage = 0
     
@@ -30,12 +31,6 @@ class RegisterPageViewController: UIPageViewController {
         sourcesPageViewControl()
         pageControlStyle()
         pageControlLayout()
-        
-        
-        
-  
-        
-       
     }
     
     //MARK: - PageControl Styling & Setup
@@ -64,9 +59,8 @@ class RegisterPageViewController: UIPageViewController {
     func sourcesPageViewControl() {
         dataSource = self
         delegate = self
-        //How to display VC
+        //How Views will be displayed
         setViewControllers([subViewControllers[0]], direction: .forward, animated: true, completion: nil)
-
     }
     
 }
@@ -74,7 +68,6 @@ class RegisterPageViewController: UIPageViewController {
 //MARK: - Extension to UIPageViewControllerDataSource
 //Help needed here from Apple Docs https://developer.apple.com/documentation/uikit/uipageviewcontroller
 extension RegisterPageViewController: UIPageViewControllerDataSource {
-    
     //Method to tell PageViewController how many views it has (mandatory)
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return subViewControllers.count
