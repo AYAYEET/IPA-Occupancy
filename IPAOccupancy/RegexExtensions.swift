@@ -16,7 +16,7 @@ extension String {
     }
     
     enum Regex: String {
-        case iNumber = "^i[0-9]{7,7}+$"
+        case iNumber = "^i[0-9]{6,6}+$"
         case password = "^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{3,25}$" //one uppercase, one symbol, one number, one lowercase
        
 
