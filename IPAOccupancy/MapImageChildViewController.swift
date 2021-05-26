@@ -47,7 +47,7 @@ class MapImageChildViewController: UIViewController {
     
     //MARK: - Label styling
     //Method for changing look of labels
-    fileprivate func configureLabel() {
+    func configureLabel() {
         occupancyLabel.font = UIFont.preferredFioriFont(forTextStyle: .headline)
         
         hintLabel.font = UIFont.preferredFioriFont(forTextStyle: .subheadline)
@@ -65,14 +65,14 @@ class MapImageChildViewController: UIViewController {
     
     //MARK: - View styling
     //Method for changing look of view
-    fileprivate func configureView() {
+    func configureView() {
         view.backgroundColor = UIColor.preferredFioriColor(forStyle: .primary9)
         view.layer.cornerRadius = 10
     }
     
     //MARK: - Label Data
     //Method to set value and color in labels
-    fileprivate func setClubData() {
+    func setClubData() {
         mapModel.getCurrentClubData { (currentlyFreeArray, status) in
             //Ensure OData Request was successful
             if status == Constants.Map.success {

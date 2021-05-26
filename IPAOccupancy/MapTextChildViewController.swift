@@ -33,7 +33,7 @@ class MapTextChildViewController: UIViewController {
     
     //MARK: - View styling
     //Method for changing look of view
-    fileprivate func configureView() {
+    func configureView() {
         view.backgroundColor = UIColor.preferredFioriColor(forStyle: .primary9)
         view.layer.cornerRadius = 10
     }
