@@ -31,10 +31,8 @@ struct Constants {
         static let userIsBlocked = "UserIsBlocked"
         static let userIsDeleted = "UserIsDeleted"
         static let userIsFree = "UserIsFree"
-        //login segues
         static let loginSegue = "loginSegue"
         static let registerSegue = "registerSegue"
-        //status of users
         static let userStatusNew = "new"
         static let userStatusBlocked = "Gesperrt"
         static let userStatusFree = "Freigegeben"
@@ -49,7 +47,7 @@ struct Constants {
         static let createSuccess = "success"
         static let createExists = "exists"
         static let connectionError = "ConnectionError"
-
+        
     }
     
     struct Settings {
@@ -64,7 +62,7 @@ struct Constants {
         static let updateSuccess = "success"
         static let updateFailed = "failed"
         static let previousPasswordIncorrect = "previousPasswordIncorrect"
-
+        
     }
     
     struct Map {
@@ -81,8 +79,8 @@ struct Constants {
         static let failed = "failed"
         static let fullClub = "fullClub"
         static let noneFree = "noneFree"
-
-
+        
+        
     }
     
 }
