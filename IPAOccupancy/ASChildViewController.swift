@@ -10,15 +10,17 @@ import UIKit
 import SAPFiori
 
 class ASChildViewController: UIViewController {
-
+    
     //Variable for passed username Value from TabBar
     var username: String?
+    
     //Constant from the class RegexExtensions
     let pwdValidityType: String.ValidityType = .password
+    
     //Instantiate loginModel
     let settingsAccountModel = SettingsAccountModel()
-
     
+    //Storyboard connections
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var newPasswordTextField: UITextField!
@@ -28,7 +30,7 @@ class ASChildViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         configureView()
         configureButton()
@@ -41,43 +43,40 @@ class ASChildViewController: UIViewController {
     //What happens when confirm Button is pressed
     @IBAction func confirmPressed(_ sender: UIButton) {
         settingsAccountModel.updatePassword(username: username, previousPassword: passwordTextField.text, newPassword: newPasswordTextField.text!) { (status) in
-            
+            //How to handle each possible return
             switch status {
             case Constants.Settings.previousPasswordIncorrect:
                 FUIToastMessage.show(message: "The password you entered doesn't match your previous password.",
-                                             icon: UIImage(systemName: "exclamationmark.circle")!,
-                                             inView: self.messageView,
-                                             withDuration: 3.0,
-                                             maxNumberOfLines: 0)
+                                     icon: UIImage(systemName: "exclamationmark.circle")!,
+                                     inView: self.messageView,
+                                     withDuration: 3.0,
+                                     maxNumberOfLines: 0)
                 self.passwordTextField.text = ""
                 self.passwordTextField.layer.borderColor = Constants.General.red
                 self.resetColorOfTextfields()
                 
             case Constants.Settings.updateSuccess:
                 FUIToastMessage.show(message: "Password changed",
-                                             inView: self.messageView,
-                                             withDuration: 2.0,
-                                             maxNumberOfLines: 1)
+                                     inView: self.messageView,
+                                     withDuration: 2.0,
+                                     maxNumberOfLines: 1)
                 
             case Constants.Settings.updateFailed:
                 FUIToastMessage.show(message: "Failed to update change Password",
-                                             icon: UIImage(systemName: "xmark.octagon")!,
-                                             inView: self.messageView,
-                                             withDuration: 2.0,
-                                             maxNumberOfLines: 0)
+                                     icon: UIImage(systemName: "xmark.octagon")!,
+                                     inView: self.messageView,
+                                     withDuration: 2.0,
+                                     maxNumberOfLines: 0)
                 
             default:
                 FUIToastMessage.show(message: "Connection Error, Please Retry",
-                                             icon: UIImage(systemName: "xmark.octagon")!,
-                                             inView: self.messageView,
-                                             withDuration: 2.0,
-                                             maxNumberOfLines: 0)
-                
+                                     icon: UIImage(systemName: "xmark.octagon")!,
+                                     inView: self.messageView,
+                                     withDuration: 2.0,
+                                     maxNumberOfLines: 0)
             }
         }
-        
     }
-    
     
     //MARK: - View styling
     //Method to change look of the view
@@ -102,7 +101,7 @@ class ASChildViewController: UIViewController {
     
     //MARK: - Textfield Styling
     //Method to change look of Textfields
-    fileprivate func configureTextFields() {
+    func configureTextFields() {
         passwordTextField.layer.borderWidth = 1.0
         newPasswordTextField.layer.borderWidth = 1.0
         reNewPasswordTextField.layer.borderWidth = 1.0
@@ -117,7 +116,8 @@ class ASChildViewController: UIViewController {
     }
     
     //MARK: - Methods for handling TextField changes and validating input
-    
+    //Add target to textfield for during editing for input validation
+    //functionality heavily based on https://www.youtube.com/watch?v=mqaHpG1vPs8&list=PL_csAAO9PQ8buBXpnohnRyEbnYnXh81JE&index=1&t=676s
     fileprivate func targetTextfields() {
         newPasswordTextField.addTarget(self, action: #selector(handleTextChangePassword), for: .editingChanged)
         reNewPasswordTextField.addTarget(self, action: #selector(handleTextChangeRePassword), for: .editingChanged)
@@ -149,20 +149,16 @@ class ASChildViewController: UIViewController {
     @objc fileprivate func handleTextChangeRePassword() {
         if reNewPasswordTextField.text == newPasswordTextField.text {
             reNewPasswordTextField.layer.borderColor = Constants.General.green
-            
             confirmButton.isEnabled = true
         } else {
             reNewPasswordTextField.layer.borderColor = Constants.General.red
-            
             confirmButton.isEnabled = false
         }
     }
     
     //Method for returning TextFields to default look after a few seconds
-    //Inspired by https://stackoverflow.com/questions/37801436/how-do-i-write-dispatch-after-gcd-in-swift-3-4-and-5
     fileprivate func resetColorOfTextfields() {
         DispatchQueue.main.asyncAfter(deadline: .now()+3.0 ) {
-
             self.newPasswordTextField.layer.borderColor = Constants.General.gray
             self.passwordTextField.layer.borderColor = Constants.General.gray
             self.reNewPasswordTextField.layer.borderColor = Constants.General.gray
