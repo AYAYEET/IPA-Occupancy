@@ -11,15 +11,15 @@ import SAPFiori
 import SAPCommon
 
 class LoginViewController: UIViewController {
-
+    
     //Instantiate loginModel
     let loginModel = LoginModel()
     
     //Variable to carry over to MainVC during segue
     var CarryOverUsername: String?
-
     
-    //IBOutlets connected to Login.storyboard
+    
+    //Storyboard Connections
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         configureButtons()
         configureTextFields()
@@ -40,81 +40,80 @@ class LoginViewController: UIViewController {
     @IBAction func loginPressed(_ sender: UIButton) {
         //Call to verifyLogin Method from model pass username and password and handle results based on completion handler
         loginModel.verifyLogin(usernameTextFieldData: usernameTextField.text, passwordTextFieldData: passwordTextField.text) { (loginStatus, username) in
-            
+            //How to handle each return
             switch loginStatus {
             case Constants.Login.connectionError:
                 //FUI Design Elements
                 FUIToastMessage.show(message: "Connection Error, try again",
-                                             icon: UIImage(systemName: "exclamationmark.circle")!,
-                                             inView: self.messageView,
-                                             withDuration: 2.0,
-                                             maxNumberOfLines: 1)
-
+                                     icon: UIImage(systemName: "exclamationmark.circle")!,
+                                     inView: self.messageView,
+                                     withDuration: 2.0,
+                                     maxNumberOfLines: 1)
+                
             case Constants.Login.emptyUsername:
                 self.usernameTextField.layer.borderColor = Constants.General.red
                 self.passwordTextField.layer.borderColor = Constants.General.red
                 self.resetColorOfTextfields()
-
-            
+                
+                
             case Constants.Login.notEmptyUsername:
                 self.usernameTextField.layer.borderColor = Constants.General.green
                 self.resetColorOfTextfields()
-
+                
                 
             case Constants.Login.passwordIsEmpty:
                 self.passwordTextField.layer.borderColor = Constants.General.red
                 self.resetColorOfTextfields()
-
-            
+                
+                
             case Constants.Login.notEmptyPassword:
                 self.passwordTextField.layer.borderColor = Constants.General.green
                 self.resetColorOfTextfields()
-
+                
                 
             case Constants.Login.userIsNew:
                 FUIToastMessage.show(message: "User has not been accepted yet.",
-                                             icon: UIImage(systemName: "exclamationmark.circle")!,
-                                             inView: self.messageView,
-                                             withDuration: 2.0,
-                                             maxNumberOfLines: 2)
+                                     icon: UIImage(systemName: "exclamationmark.circle")!,
+                                     inView: self.messageView,
+                                     withDuration: 2.0,
+                                     maxNumberOfLines: 2)
                 self.resetColorOfTextfields()
-
+                
                 
             case Constants.Login.userIsBlocked:
                 FUIToastMessage.show(message: "User has been blocked.",
-                                             icon: UIImage(systemName: "exclamationmark.circle")!,
-                                             inView: self.messageView,
-                                             withDuration: 2.0,
-                                             maxNumberOfLines: 1)
+                                     icon: UIImage(systemName: "exclamationmark.circle")!,
+                                     inView: self.messageView,
+                                     withDuration: 2.0,
+                                     maxNumberOfLines: 1)
                 self.resetColorOfTextfields()
-
+                
                 
             case Constants.Login.userIsDeleted:
                 FUIToastMessage.show(message: "User has been deleted.",
-                                             icon: UIImage(systemName: "exclamationmark.circle")!,
-                                             inView: self.messageView,
-                                             withDuration: 2.0,
-                                             maxNumberOfLines: 1)
+                                     icon: UIImage(systemName: "exclamationmark.circle")!,
+                                     inView: self.messageView,
+                                     withDuration: 2.0,
+                                     maxNumberOfLines: 1)
                 self.resetColorOfTextfields()
-
+                
                 
             case Constants.Login.userIsFree:
-                print("success")
                 //Setting userdefaults for decision between login and main at app launch --> Here true
                 UserDefaults.standard.set(true, forKey: "status")
                 //Set our username for the TabBarViewController
                 self.CarryOverUsername = username
                 //Segue to Main
                 self.performSegue(withIdentifier: Constants.Login.loginSegue, sender: self)
-
+                
             default:
                 FUIToastMessage.show(message: "Something went wrong.",
-                                             icon: UIImage(systemName: "exclamationmark.circle")!,
-                                             inView: self.messageView,
-                                             withDuration: 2.0,
-                                             maxNumberOfLines: 0)
+                                     icon: UIImage(systemName: "exclamationmark.circle")!,
+                                     inView: self.messageView,
+                                     withDuration: 2.0,
+                                     maxNumberOfLines: 0)
                 self.resetColorOfTextfields()
-
+                
             }
         }
     }
@@ -123,7 +122,7 @@ class LoginViewController: UIViewController {
     @IBAction func registerPressed(_ sender: UIButton) {
         //Segue to Register
         self.performSegue(withIdentifier: Constants.Login.registerSegue, sender: self)
-
+        
     }
     
     // MARK: - Navigation
@@ -143,15 +142,15 @@ class LoginViewController: UIViewController {
     }
     
     //MARK: - Button Styling (Mostly done in Storyboard)
-        //Changes the design of Button
-        fileprivate func configureButtons() {
-            loginButton.layer.cornerRadius = 5
-            registerButton.layer.cornerRadius = 5
-        }
+    //Changes the design of Button
+    func configureButtons() {
+        loginButton.layer.cornerRadius = 5
+        registerButton.layer.cornerRadius = 5
+    }
     
     //MARK: - Textfield styling (Mostly done in Storyboard)
     //Changes the design of Textfields
-    fileprivate func configureTextFields() {
+    func configureTextFields() {
         usernameTextField.layer.borderWidth = 1.0
         passwordTextField.layer.borderWidth = 1.0
         usernameTextField.layer.cornerRadius = 5
@@ -162,10 +161,9 @@ class LoginViewController: UIViewController {
     }
     
     //Method for returning TextFields to default look after a few seconds
-    //Inspired by https://stackoverflow.com/questions/37801436/how-do-i-write-dispatch-after-gcd-in-swift-3-4-and-5
-    fileprivate func resetColorOfTextfields() {
+    func resetColorOfTextfields() {
         DispatchQueue.main.asyncAfter(deadline: .now()+3.0 ) {
-
+            
             self.usernameTextField.layer.borderColor = Constants.General.gray
             self.passwordTextField.layer.borderColor = Constants.General.gray
         }
