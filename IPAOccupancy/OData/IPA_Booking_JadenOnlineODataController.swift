@@ -23,7 +23,6 @@ public class IPA_Booking_JadenOnlineODataController: ODataControlling {
     public func configureOData(sapURLSession: SAPURLSession, serviceRoot: URL) throws {
         let odataProvider = OnlineODataProvider(serviceName: "EntityContainer", serviceRoot: serviceRoot, sapURLSession: sapURLSession)
         // Disables version validation of the backend OData service
-        #warning("Should only be used in demo and test applications")
         odataProvider.serviceOptions.checkVersion = false
         self.entityContainer = EntityContainer(provider: odataProvider)
         // To update entity force to use X-HTTP-Method header

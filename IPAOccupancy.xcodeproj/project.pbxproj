@@ -35,6 +35,39 @@
 		91937989232F7A39001F9DAC /* SAPFoundation.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 91937980232F7A38001F9DAC /* SAPFoundation.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9193798A232F7A39001F9DAC /* SAPOData.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91937981232F7A38001F9DAC /* SAPOData.xcframework */; };
 		9193798B232F7A39001F9DAC /* SAPOData.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 91937981232F7A38001F9DAC /* SAPOData.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A20330BB26564C780031A00B /* ASChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20330BA26564C780031A00B /* ASChildViewController.swift */; };
+		A20330BD265689BF0031A00B /* MapImageChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20330BC265689BF0031A00B /* MapImageChildViewController.swift */; };
+		A20330BF26568EC70031A00B /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20330BE26568EC70031A00B /* MapModel.swift */; };
+		A20330C226569F4E0031A00B /* MapTextChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20330C126569F4E0031A00B /* MapTextChildViewController.swift */; };
+		A20330C42657983B0031A00B /* MapFullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20330C32657983B0031A00B /* MapFullViewController.swift */; };
+		A20330C62657A85A0031A00B /* BookingGeneralChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20330C52657A85A0031A00B /* BookingGeneralChildViewController.swift */; };
+		A20330C82657A8710031A00B /* BookingReserveChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20330C72657A8710031A00B /* BookingReserveChildViewController.swift */; };
+		A20330CB2657B1F80031A00B /* BookingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20330CA2657B1F80031A00B /* BookingModel.swift */; };
+		A2B9AECE2653E7F3008BF07E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2B9AECD2653E7F3008BF07E /* Login.storyboard */; };
+		A2B9AED02653E806008BF07E /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2B9AECF2653E806008BF07E /* Register.storyboard */; };
+		A2B9AED32653EB7D008BF07E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AED22653EB7D008BF07E /* LoginViewController.swift */; };
+		A2B9AED72653F303008BF07E /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AED62653F303008BF07E /* LoginModel.swift */; };
+		A2B9AED92653F8D7008BF07E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AED82653F8D7008BF07E /* Constants.swift */; };
+		A2B9AEDC26540F6F008BF07E /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AEDB26540F6F008BF07E /* RegisterPageViewController.swift */; };
+		A2B9AEDE26540FF3008BF07E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AEDD26540FF3008BF07E /* RegisterViewController.swift */; };
+		A2B9AEE1265410F7008BF07E /* Onboarding1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AEE0265410F7008BF07E /* Onboarding1ViewController.swift */; };
+		A2B9AEE326541106008BF07E /* Onboarding2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AEE226541106008BF07E /* Onboarding2ViewController.swift */; };
+		A2B9AEE526541114008BF07E /* Onboarding3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AEE426541114008BF07E /* Onboarding3ViewController.swift */; };
+		A2B9AEE726542636008BF07E /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AEE626542636008BF07E /* RegisterModel.swift */; };
+		A2B9AEEB26542BC9008BF07E /* RegexExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AEEA26542BC9008BF07E /* RegexExtensions.swift */; };
+		A2B9AEEF2654E2EB008BF07E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AEEE2654E2EB008BF07E /* TabBarViewController.swift */; };
+		A2B9AEF12654E727008BF07E /* SettingsNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AEF02654E727008BF07E /* SettingsNavigationViewController.swift */; };
+		A2B9AEF32654E7DA008BF07E /* MapNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AEF22654E7DA008BF07E /* MapNavigationViewController.swift */; };
+		A2B9AEF52654E7F4008BF07E /* BookingNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AEF42654E7F4008BF07E /* BookingNavigationViewController.swift */; };
+		A2B9AEFA2654E8C3008BF07E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AEF92654E8C3008BF07E /* SettingsTableViewController.swift */; };
+		A2B9AEFC2654E8E8008BF07E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AEFB2654E8E8008BF07E /* MapViewController.swift */; };
+		A2B9AEFE2654E8FC008BF07E /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AEFD2654E8FC008BF07E /* BookingViewController.swift */; };
+		A2B9AF01265506CD008BF07E /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AF00265506CD008BF07E /* SettingsModel.swift */; };
+		A2B9AF03265509CA008BF07E /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AF02265509CA008BF07E /* SettingsTableViewCell.swift */; };
+		A2B9AF06265546B3008BF07E /* DokuSnippets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AF05265546B3008BF07E /* DokuSnippets.swift */; };
+		A2B9AF0A26564077008BF07E /* CSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AF0926564077008BF07E /* CSViewController.swift */; };
+		A2B9AF0C26564164008BF07E /* ASViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AF0B26564164008BF07E /* ASViewController.swift */; };
+		A2B9AF0E2656441F008BF07E /* CSChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9AF0D2656441F008BF07E /* CSChildViewController.swift */; };
 		A6B4EA55E80C53A589A7FC2A /* ODataOnboardingStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7713A41B719036DDCBB249EA /* ODataOnboardingStep.swift */; };
 		B043015C3A65739B1C251779 /* ConfigurationProvider.plist in Sources */ = {isa = PBXBuildFile; fileRef = 76CC561AFE1ED4364FD4BF99 /* ConfigurationProvider.plist */; };
 		B73F43DE5A6A35D6A478A802 /* OnboardingFlowProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A16F993422404F95BDE62 /* OnboardingFlowProvider.swift */; };
@@ -107,7 +140,40 @@
 		97C45778BB461862214038C6 /* User.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = User.swift; path = "Proxy Classes/public/User.swift"; sourceTree = "<group>"; };
 		9FD8CE236EC45ADFDB0A2B28 /* EntityContainerMetadata.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EntityContainerMetadata.swift; path = "Proxy Classes/public/EntityContainerMetadata.swift"; sourceTree = "<group>"; };
 		A07B22FB555D72E41E667F74 /* CellCreationHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CellCreationHelper.swift; path = Utils/CellCreationHelper.swift; sourceTree = "<group>"; };
+		A20330BA26564C780031A00B /* ASChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASChildViewController.swift; sourceTree = "<group>"; };
+		A20330BC265689BF0031A00B /* MapImageChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapImageChildViewController.swift; sourceTree = "<group>"; };
+		A20330BE26568EC70031A00B /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
+		A20330C126569F4E0031A00B /* MapTextChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTextChildViewController.swift; sourceTree = "<group>"; };
+		A20330C32657983B0031A00B /* MapFullViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFullViewController.swift; sourceTree = "<group>"; };
+		A20330C52657A85A0031A00B /* BookingGeneralChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingGeneralChildViewController.swift; sourceTree = "<group>"; };
+		A20330C72657A8710031A00B /* BookingReserveChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingReserveChildViewController.swift; sourceTree = "<group>"; };
+		A20330CA2657B1F80031A00B /* BookingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingModel.swift; sourceTree = "<group>"; };
 		A23BA71D466F288503A6DF4B /* ApplicationUIManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ApplicationUIManager.swift; path = Onboarding/ApplicationUIManager.swift; sourceTree = "<group>"; };
+		A2B9AECD2653E7F3008BF07E /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		A2B9AECF2653E806008BF07E /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		A2B9AED22653EB7D008BF07E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A2B9AED62653F303008BF07E /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		A2B9AED82653F8D7008BF07E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A2B9AEDB26540F6F008BF07E /* RegisterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
+		A2B9AEDD26540FF3008BF07E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A2B9AEE0265410F7008BF07E /* Onboarding1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding1ViewController.swift; sourceTree = "<group>"; };
+		A2B9AEE226541106008BF07E /* Onboarding2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding2ViewController.swift; sourceTree = "<group>"; };
+		A2B9AEE426541114008BF07E /* Onboarding3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding3ViewController.swift; sourceTree = "<group>"; };
+		A2B9AEE626542636008BF07E /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
+		A2B9AEEA26542BC9008BF07E /* RegexExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexExtensions.swift; sourceTree = "<group>"; };
+		A2B9AEEE2654E2EB008BF07E /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		A2B9AEF02654E727008BF07E /* SettingsNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNavigationViewController.swift; sourceTree = "<group>"; };
+		A2B9AEF22654E7DA008BF07E /* MapNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNavigationViewController.swift; sourceTree = "<group>"; };
+		A2B9AEF42654E7F4008BF07E /* BookingNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingNavigationViewController.swift; sourceTree = "<group>"; };
+		A2B9AEF92654E8C3008BF07E /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		A2B9AEFB2654E8E8008BF07E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A2B9AEFD2654E8FC008BF07E /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
+		A2B9AF00265506CD008BF07E /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		A2B9AF02265509CA008BF07E /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		A2B9AF05265546B3008BF07E /* DokuSnippets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DokuSnippets.swift; sourceTree = "<group>"; };
+		A2B9AF0926564077008BF07E /* CSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSViewController.swift; sourceTree = "<group>"; };
+		A2B9AF0B26564164008BF07E /* ASViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASViewController.swift; sourceTree = "<group>"; };
+		A2B9AF0D2656441F008BF07E /* CSChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSChildViewController.swift; sourceTree = "<group>"; };
 		B0F2F58DEC627E64C9D2876E /* IPA_Booking_JadenOnlineODataController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IPA_Booking_JadenOnlineODataController.swift; path = OData/IPA_Booking_JadenOnlineODataController.swift; sourceTree = "<group>"; };
 		B5C9897F68EEB2F9B0132FCB /* AlertHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlertHelper.swift; path = Utils/AlertHelper.swift; sourceTree = "<group>"; };
 		B5CB276A643F8529CD084829 /* IPA_Booking_JadenCollectionType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IPA_Booking_JadenCollectionType.swift; path = Model/IPA_Booking_JadenCollectionType.swift; sourceTree = "<group>"; };
@@ -199,17 +265,17 @@
 		7A1315B71D4B982000A5DA56 /* IPAOccupancy */ = {
 			isa = PBXGroup;
 			children = (
+				A2B9AF0426554699008BF07E /* DokuSnippets */,
 				7A1315B81D4B982000A5DA56 /* AppDelegate.swift */,
-				CBCA7A9B1E3778A9001AF49E /* Main.storyboard */,
 				7A1315C11D4B982000A5DA56 /* Assets.xcassets */,
-				7A1315C31D4B982000A5DA56 /* LaunchScreen.storyboard */,
 				1277F7601F8E66AC0060AF58 /* SAPLogo@2x.png */,
 				7A1315C61D4B982000A5DA56 /* Info.plist */,
+				A2B9AED12653E9D4008BF07E /* View */,
+				FF056DF0FE3F1D3426F049E7 /* ViewControllers */,
+				F6AE14B9E2294873B345BB94 /* Model */,
+				33E4DAB177E35891E013904E /* OData */,
 				D394B46DBC72B1781D78EEA5 /* Proxy Classes */,
 				AE5F8EFB586000DE30E62209 /* Utils */,
-				FF056DF0FE3F1D3426F049E7 /* ViewControllers */,
-				33E4DAB177E35891E013904E /* OData */,
-				F6AE14B9E2294873B345BB94 /* Model */,
 				47AE03489EEE8D180869CC64 /* Onboarding */,
 				6AD2580943EE695105EF3E68 /* LocalizedStrings.swift */,
 			);
@@ -248,6 +314,173 @@
 			name = public;
 			sourceTree = "<group>";
 		};
+		A20330C026568ECF0031A00B /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				A20330BE26568EC70031A00B /* MapModel.swift */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		A20330C92657B1EA0031A00B /* Booking */ = {
+			isa = PBXGroup;
+			children = (
+				A20330CA2657B1F80031A00B /* BookingModel.swift */,
+			);
+			name = Booking;
+			sourceTree = "<group>";
+		};
+		A2B9AED12653E9D4008BF07E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CBCA7A9B1E3778A9001AF49E /* Main.storyboard */,
+				A2B9AECF2653E806008BF07E /* Register.storyboard */,
+				A2B9AECD2653E7F3008BF07E /* Login.storyboard */,
+				7A1315C31D4B982000A5DA56 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A2B9AED42653EBC4008BF07E /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				A2B9AED22653EB7D008BF07E /* LoginViewController.swift */,
+			);
+			name = LoginVC;
+			sourceTree = "<group>";
+		};
+		A2B9AED52653F2F7008BF07E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A2B9AED62653F303008BF07E /* LoginModel.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		A2B9AEDA26540F36008BF07E /* RegisterVC */ = {
+			isa = PBXGroup;
+			children = (
+				A2B9AEDF265410D3008BF07E /* OnboardingVC */,
+				A2B9AEDB26540F6F008BF07E /* RegisterPageViewController.swift */,
+				A2B9AEDD26540FF3008BF07E /* RegisterViewController.swift */,
+			);
+			name = RegisterVC;
+			sourceTree = "<group>";
+		};
+		A2B9AEDF265410D3008BF07E /* OnboardingVC */ = {
+			isa = PBXGroup;
+			children = (
+				A2B9AEE0265410F7008BF07E /* Onboarding1ViewController.swift */,
+				A2B9AEE426541114008BF07E /* Onboarding3ViewController.swift */,
+				A2B9AEE226541106008BF07E /* Onboarding2ViewController.swift */,
+			);
+			name = OnboardingVC;
+			sourceTree = "<group>";
+		};
+		A2B9AEE82654263F008BF07E /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				A2B9AEE626542636008BF07E /* RegisterModel.swift */,
+			);
+			name = Register;
+			sourceTree = "<group>";
+		};
+		A2B9AEE926542BAE008BF07E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A2B9AEEA26542BC9008BF07E /* RegexExtensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		A2B9AEEC2654E29F008BF07E /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				A2B9AEF82654E86B008BF07E /* BookingVC */,
+				A2B9AEF72654E863008BF07E /* MapVC */,
+				A2B9AEF62654E858008BF07E /* SettingsVC */,
+				A2B9AEED2654E2AC008BF07E /* NavigationVC */,
+			);
+			name = MainVC;
+			sourceTree = "<group>";
+		};
+		A2B9AEED2654E2AC008BF07E /* NavigationVC */ = {
+			isa = PBXGroup;
+			children = (
+				A2B9AEEE2654E2EB008BF07E /* TabBarViewController.swift */,
+				A2B9AEF02654E727008BF07E /* SettingsNavigationViewController.swift */,
+				A2B9AEF22654E7DA008BF07E /* MapNavigationViewController.swift */,
+				A2B9AEF42654E7F4008BF07E /* BookingNavigationViewController.swift */,
+			);
+			name = NavigationVC;
+			sourceTree = "<group>";
+		};
+		A2B9AEF62654E858008BF07E /* SettingsVC */ = {
+			isa = PBXGroup;
+			children = (
+				A2B9AEF92654E8C3008BF07E /* SettingsTableViewController.swift */,
+				A2B9AF0826563FE9008BF07E /* AccountSettingsVC */,
+				A2B9AF0726563FD3008BF07E /* ClubSettingsVC */,
+			);
+			name = SettingsVC;
+			sourceTree = "<group>";
+		};
+		A2B9AEF72654E863008BF07E /* MapVC */ = {
+			isa = PBXGroup;
+			children = (
+				A2B9AEFB2654E8E8008BF07E /* MapViewController.swift */,
+				A20330BC265689BF0031A00B /* MapImageChildViewController.swift */,
+				A20330C126569F4E0031A00B /* MapTextChildViewController.swift */,
+				A20330C32657983B0031A00B /* MapFullViewController.swift */,
+			);
+			name = MapVC;
+			sourceTree = "<group>";
+		};
+		A2B9AEF82654E86B008BF07E /* BookingVC */ = {
+			isa = PBXGroup;
+			children = (
+				A2B9AEFD2654E8FC008BF07E /* BookingViewController.swift */,
+				A20330C52657A85A0031A00B /* BookingGeneralChildViewController.swift */,
+				A20330C72657A8710031A00B /* BookingReserveChildViewController.swift */,
+			);
+			name = BookingVC;
+			sourceTree = "<group>";
+		};
+		A2B9AEFF265506BB008BF07E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A2B9AF00265506CD008BF07E /* SettingsModel.swift */,
+				A2B9AF02265509CA008BF07E /* SettingsTableViewCell.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		A2B9AF0426554699008BF07E /* DokuSnippets */ = {
+			isa = PBXGroup;
+			children = (
+				A2B9AF05265546B3008BF07E /* DokuSnippets.swift */,
+			);
+			name = DokuSnippets;
+			sourceTree = "<group>";
+		};
+		A2B9AF0726563FD3008BF07E /* ClubSettingsVC */ = {
+			isa = PBXGroup;
+			children = (
+				A2B9AF0926564077008BF07E /* CSViewController.swift */,
+				A2B9AF0D2656441F008BF07E /* CSChildViewController.swift */,
+			);
+			name = ClubSettingsVC;
+			sourceTree = "<group>";
+		};
+		A2B9AF0826563FE9008BF07E /* AccountSettingsVC */ = {
+			isa = PBXGroup;
+			children = (
+				A2B9AF0B26564164008BF07E /* ASViewController.swift */,
+				A20330BA26564C780031A00B /* ASChildViewController.swift */,
+			);
+			name = AccountSettingsVC;
+			sourceTree = "<group>";
+		};
 		AE5F8EFB586000DE30E62209 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,7 +503,14 @@
 		F6AE14B9E2294873B345BB94 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A20330C92657B1EA0031A00B /* Booking */,
+				A20330C026568ECF0031A00B /* Map */,
+				A2B9AEFF265506BB008BF07E /* Settings */,
+				A2B9AEE82654263F008BF07E /* Register */,
+				A2B9AED52653F2F7008BF07E /* Login */,
+				A2B9AEE926542BAE008BF07E /* Extensions */,
 				B5CB276A643F8529CD084829 /* IPA_Booking_JadenCollectionType.swift */,
+				A2B9AED82653F8D7008BF07E /* Constants.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -278,6 +518,9 @@
 		FF056DF0FE3F1D3426F049E7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A2B9AEEC2654E29F008BF07E /* MainVC */,
+				A2B9AEDA26540F36008BF07E /* RegisterVC */,
+				A2B9AED42653EBC4008BF07E /* LoginVC */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -330,7 +573,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = SAP;
 				TargetAttributes = {
 					7A1315B41D4B982000A5DA56 = {
@@ -371,6 +614,8 @@
 			files = (
 				7A16F06D1FD1B3C700D2FABD /* README.md in Resources */,
 				7A1315C51D4B982000A5DA56 /* LaunchScreen.storyboard in Resources */,
+				A2B9AED02653E806008BF07E /* Register.storyboard in Resources */,
+				A2B9AECE2653E7F3008BF07E /* Login.storyboard in Resources */,
 				7A1315C21D4B982000A5DA56 /* Assets.xcassets in Resources */,
 				CBCA7A991E3778A9001AF49E /* Main.storyboard in Resources */,
 				1277F7611F8E66AF0060AF58 /* SAPLogo@2x.png in Resources */,
@@ -434,25 +679,56 @@
 				7A1315B91D4B982000A5DA56 /* AppDelegate.swift in Sources */,
 				4B954F8E1B250DC497D72E63 /* EntityContainerStaticResolver.swift in Sources */,
 				10245C08853E71CB3BAEA8EF /* SAPFioriLoadingIndicator.swift in Sources */,
+				A2B9AEF12654E727008BF07E /* SettingsNavigationViewController.swift in Sources */,
+				A20330C62657A85A0031A00B /* BookingGeneralChildViewController.swift in Sources */,
 				5F83796D974A25C5FA90E6D1 /* EntityContainerMetadata.swift in Sources */,
+				A2B9AEE726542636008BF07E /* RegisterModel.swift in Sources */,
 				A6B4EA55E80C53A589A7FC2A /* ODataOnboardingStep.swift in Sources */,
+				A2B9AEDC26540F6F008BF07E /* RegisterPageViewController.swift in Sources */,
 				6E943C2007A16BEB8657A406 /* ODataControlling.swift in Sources */,
 				EEA0DF602BAAA32FB4DF6196 /* EntityContainerFactory.swift in Sources */,
+				A2B9AF0A26564077008BF07E /* CSViewController.swift in Sources */,
+				A2B9AED92653F8D7008BF07E /* Constants.swift in Sources */,
 				D5ED2522A754A32AB9A02C6F /* EntityContainerMetadataText.swift in Sources */,
 				D029EA7099F3C23DFDCA3446 /* CellCreationHelper.swift in Sources */,
 				EA9BB69451C52013A69FE9E2 /* AlertHelper.swift in Sources */,
+				A2B9AF0E2656441F008BF07E /* CSChildViewController.swift in Sources */,
+				A20330CB2657B1F80031A00B /* BookingModel.swift in Sources */,
+				A2B9AEEB26542BC9008BF07E /* RegexExtensions.swift in Sources */,
+				A2B9AEF32654E7DA008BF07E /* MapNavigationViewController.swift in Sources */,
+				A2B9AEFA2654E8C3008BF07E /* SettingsTableViewController.swift in Sources */,
+				A20330C82657A8710031A00B /* BookingReserveChildViewController.swift in Sources */,
+				A2B9AED72653F303008BF07E /* LoginModel.swift in Sources */,
+				A2B9AEE1265410F7008BF07E /* Onboarding1ViewController.swift in Sources */,
+				A2B9AEFC2654E8E8008BF07E /* MapViewController.swift in Sources */,
 				E850EB9AABF3C5418F7E5CC5 /* EntityContainer.swift in Sources */,
 				1CA0B58AF589BFCFE6FA5D60 /* User.swift in Sources */,
+				A20330BB26564C780031A00B /* ASChildViewController.swift in Sources */,
+				A2B9AEE526541114008BF07E /* Onboarding3ViewController.swift in Sources */,
+				A2B9AED32653EB7D008BF07E /* LoginViewController.swift in Sources */,
+				A2B9AF0C26564164008BF07E /* ASViewController.swift in Sources */,
+				A2B9AF06265546B3008BF07E /* DokuSnippets.swift in Sources */,
+				A2B9AF01265506CD008BF07E /* SettingsModel.swift in Sources */,
 				83FA34DA9B8A77CD12B373DE /* Club.swift in Sources */,
+				A2B9AEE326541106008BF07E /* Onboarding2ViewController.swift in Sources */,
+				A20330BD265689BF0031A00B /* MapImageChildViewController.swift in Sources */,
 				272286E4D671A276574B8603 /* IPA_Booking_JadenCollectionType.swift in Sources */,
 				C48EF88663DAD81352B9866E /* EntityContainerMetadataChanges.swift in Sources */,
 				D7D034E306E45ECD7E31B0A8 /* EntityContainerMetadataParser.swift in Sources */,
+				A20330C226569F4E0031A00B /* MapTextChildViewController.swift in Sources */,
 				39C03430CF33AFDE983E6A15 /* IPA_Booking_JadenOnlineODataController.swift in Sources */,
+				A2B9AEEF2654E2EB008BF07E /* TabBarViewController.swift in Sources */,
+				A2B9AF03265509CA008BF07E /* SettingsTableViewCell.swift in Sources */,
 				3B76AC7FE730FAA70A9A576C /* OnboardingErrorHandler.swift in Sources */,
 				267F5750BE28EAE990F08261 /* ApplicationUIManager.swift in Sources */,
+				A2B9AEDE26540FF3008BF07E /* RegisterViewController.swift in Sources */,
 				B043015C3A65739B1C251779 /* ConfigurationProvider.plist in Sources */,
 				B73F43DE5A6A35D6A478A802 /* OnboardingFlowProvider.swift in Sources */,
 				093D75F6630CC92C73BB573B /* AppParameters.plist in Sources */,
+				A2B9AEF52654E7F4008BF07E /* BookingNavigationViewController.swift in Sources */,
+				A20330BF26568EC70031A00B /* MapModel.swift in Sources */,
+				A20330C42657983B0031A00B /* MapFullViewController.swift in Sources */,
+				A2B9AEFE2654E8FC008BF07E /* BookingViewController.swift in Sources */,
 				EE0625A71E6260E7B7BFF10C /* LocalizedStrings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,6 +796,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -544,7 +821,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -581,6 +858,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -599,7 +877,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -617,7 +895,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6FA25HE7RV;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -643,7 +921,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6FA25HE7RV;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -656,7 +934,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sap.ayayeet.IPAOccupancy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sap.ayayeet.IPAOccupancySAP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
