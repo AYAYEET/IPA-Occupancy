@@ -14,6 +14,7 @@ class BookingGeneralChildViewController: UIViewController {
     //Instantiate bookingModel
     let bookingModel = BookingModel()
 
+    //Storyboard connections
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descTotalLabel: UILabel!
     @IBOutlet weak var club1Label: UILabel!
@@ -72,7 +73,7 @@ class BookingGeneralChildViewController: UIViewController {
     func configureLabelText() {
         bookingModel.getCurrentClubData { (currentlyFreeArray, status) in
             if status == Constants.Booking.success {
-                self.descTotalLabel.text = "A look at the current occupancy at\nThe Circle Office.\nCurrent free spaces: \(currentlyFreeArray.reduce(0, +))"
+                self.descTotalLabel.text = "A look at the current occupancy at\nThe Circle Office.\nCurrent free spaces: \(currentlyFreeArray.reduce(0, +))" //Adds all values in array together.
                 self.club1Label.text = "Club 1: \(currentlyFreeArray[0])"
                 self.club2Label.text = "Club 2: \(currentlyFreeArray[1])"
                 self.club3Label.text = "Club 3: \(currentlyFreeArray[2])"

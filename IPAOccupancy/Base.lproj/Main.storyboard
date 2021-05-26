@@ -659,9 +659,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current occupancy data: Total 100% PlaceHolder" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6j-eW-Kvb">
-                                <rect key="frame" x="16" y="66" width="150" height="62"/>
+                                <rect key="frame" x="16" y="66" width="162" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="A3g-qS-AUe"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="162" id="ewR-4a-Lx2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -742,7 +743,7 @@
                         <constraints>
                             <constraint firstItem="VcN-gX-Sxl" firstAttribute="leading" secondItem="0Hh-3y-asA" secondAttribute="trailing" constant="20" id="3tu-sE-FbA"/>
                             <constraint firstItem="0Hh-3y-asA" firstAttribute="top" secondItem="bgC-VP-au8" secondAttribute="top" constant="135" id="FGe-eJ-AyH"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="l6j-eW-Kvb" secondAttribute="trailing" constant="201" id="JPB-Ha-cHw"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="l6j-eW-Kvb" secondAttribute="trailing" constant="196" id="JPB-Ha-cHw"/>
                             <constraint firstAttribute="bottom" secondItem="gYS-4T-qld" secondAttribute="bottom" constant="211" id="Nib-q6-DHi"/>
                             <constraint firstItem="gYS-4T-qld" firstAttribute="top" secondItem="bgC-VP-au8" secondAttribute="top" constant="211" id="Rtb-Kw-iry"/>
                             <constraint firstItem="qhQ-3R-tY0" firstAttribute="top" secondItem="bgC-VP-au8" secondAttribute="top" constant="18" id="XPc-c0-dP1"/>

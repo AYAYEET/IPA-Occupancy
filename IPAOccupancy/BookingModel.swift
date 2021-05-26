@@ -17,15 +17,15 @@ struct BookingModel {
     let serviceRoot = URL(string: Constants.General.odataURL)!
     let sapURLSession = SAPURLSession()
     
-    //Method to get currently free values in each Club (Same Method as in MapModel)
+    //Method to get currently free values in each Club (Same Method as in MapModel).
     func getCurrentClubData(completionHandler: @escaping ([Int], String?) -> ()) {
         let odataProvider = OnlineODataProvider(serviceName: "EntityContainer", serviceRoot: serviceRoot, sapURLSession: sapURLSession)
         odataProvider.serviceOptions.checkVersion = false
         let dataService = EntityContainer(provider: odataProvider)
         let query = DataQuery()
             .select(Club.currentlyFree)
-            
         do {
+            //Do the OData request
             dataService.fetchClub(matching: query) { club, error in
                 if let error = error {
                     print(error.localizedDescription)
@@ -55,7 +55,7 @@ struct BookingReserveModel {
     let serviceRoot = URL(string: Constants.General.odataURL)!
     let sapURLSession = SAPURLSession()
     
-    //Method to get currently Users preferred club and reserved club
+    //Method to get currently Users preferred Club and reserved Club.
     func getUserClubReservation(username: String?, completionHandler: @escaping (String, String, Bool) -> ()) {
         
         let odataProvider = OnlineODataProvider(serviceName: "EntityContainer", serviceRoot: serviceRoot, sapURLSession: sapURLSession)
@@ -63,9 +63,9 @@ struct BookingReserveModel {
         let dataService = EntityContainer(provider: odataProvider)
         let query = DataQuery()
             .select(User.prefferedClub,User.reservedClub, User.hasReserved)
-            .filter(User.iUser.equal(username!)) //there will always be a username
-        
+            .filter(User.iUser.equal(username!))
         do {
+            //Do the OData request
             dataService.fetchUser(matching: query) { user, error in
                 if let error = error {
                     print(error.localizedDescription)
@@ -79,7 +79,7 @@ struct BookingReserveModel {
         }
     }
     
-    //Uses preferred club of user to to check for available space in that club
+    //Uses preferred club of user to to check for available space in that club.
     func getFreeInPreferredClub(prefferedClub: String, completionHandler: @escaping (Int?, String) -> ()) {
         let odataProvider = OnlineODataProvider(serviceName: "EntityContainer", serviceRoot: serviceRoot, sapURLSession: sapURLSession)
         odataProvider.serviceOptions.checkVersion = false
@@ -87,8 +87,8 @@ struct BookingReserveModel {
         let query = DataQuery()
             .select(Club.currentlyFree)
             .filter(Club.clubName.equal(prefferedClub))
-        
         do {
+            //Do the OData request
             dataService.fetchClub(matching: query) { club, error in
                 if let error = error {
                     print(error.localizedDescription)
@@ -100,26 +100,27 @@ struct BookingReserveModel {
             }
         }
     }
-    //Method to book space in preferred Club and ensure Club is not full
+    
+    //Method to book space in preferred Club and ensure Club is not full.
     func bookpreferredClub(preferredClub: String, username: String?, completionHandler: @escaping (String) -> ()) {
         let odataProvider = OnlineODataProvider(serviceName: "EntityContainer", serviceRoot: serviceRoot, sapURLSession: sapURLSession)
         odataProvider.serviceOptions.checkVersion = false
         let dataService = EntityContainer(provider: odataProvider)
         let queryUser = DataQuery()
             .select(User.iUser, User.hasReserved, User.reservedClub, User.prefferedClub)
-            .filter(User.iUser.equal(username!)) //username exists
+            .filter(User.iUser.equal(username!))
         let queryClub = DataQuery()
             .select(Club.currentlyFree)
             .filter(Club.clubName.equal(preferredClub))
-        
         do {
+            //Do the OData request
             dataService.fetchUser(matching: queryUser) { user, error in
                 if let error = error {
                     print(error.localizedDescription)
                     completionHandler(Constants.Booking.connectionError)
                 }
                 if let oDataUser = user {
-                   
+                    
                     oDataUser[0].hasReserved = true
                     oDataUser[0].reservedClub = oDataUser[0].prefferedClub
                     //Ensure Club is not full
@@ -128,13 +129,12 @@ struct BookingReserveModel {
                             print(error.localizedDescription)
                             completionHandler(Constants.Booking.connectionError)
                         }
-                        //Testcase warned about this in advance ;)
+                        //Ensure Testcase "Full Club" is correct
                         if let oDataClub = club {
                             if oDataClub[0].currentlyFree! == 0 {
                                 completionHandler(Constants.Booking.fullClub)
                             } else {
-                            oDataClub[0].currentlyFree! -= 1
-                                
+                                oDataClub[0].currentlyFree! -= 1
                                 do {
                                     try odataProvider.updateEntity(oDataClub[0], headers: .empty, options: .none)
                                 } catch {
@@ -147,27 +147,26 @@ struct BookingReserveModel {
                                     completionHandler(Constants.Booking.failed)
                                 }
                             }
-
                         }
                     }
-
                 }
             }
         }
     }
-    //Method to cancel booking
-    func cancelBookClub(reservedClub: String, username: String?, completionHandler: @escaping (String) -> ()) {
+    
+    //Method to cancel booking in currently reserved Club.
+    func cancelBookedClub(reservedClub: String, username: String?, completionHandler: @escaping (String) -> ()) {
         let odataProvider = OnlineODataProvider(serviceName: "EntityContainer", serviceRoot: serviceRoot, sapURLSession: sapURLSession)
         odataProvider.serviceOptions.checkVersion = false
         let dataService = EntityContainer(provider: odataProvider)
         let queryUser = DataQuery()
             .select(User.iUser, User.hasReserved, User.reservedClub, User.prefferedClub)
-            .filter(User.iUser.equal(username!)) //username exists
+            .filter(User.iUser.equal(username!))
         let queryClub = DataQuery()
             .select(Club.currentlyFree)
             .filter(Club.clubName.equal(reservedClub))
-        
         do {
+            //Do OData request
             dataService.fetchUser(matching: queryUser) { user, error in
                 if let error = error {
                     print(error.localizedDescription)
@@ -213,17 +212,17 @@ struct BookingReserveModel {
             .filter(User.iUser.equal(username!)) //username exists
         let queryClub = DataQuery()
             .select(Club.currentlyFree)
-        
+        //Variables for random selection
         var randomClub = Int.random(in: 0...7)
         var maxTries = 0
         do {
+            //Do OData request
             dataService.fetchUser(matching: queryUser) { user, error in
                 if let error = error {
                     print(error.localizedDescription)
                     completionHandler(Constants.Booking.connectionError)
                 }
                 if let oDataUser = user {
-                                       
                     //Ensure Club is not full
                     dataService.fetchClub(matching: queryClub) { club, error in
                         if let error = error {
@@ -241,27 +240,25 @@ struct BookingReserveModel {
                                     completionHandler(Constants.Booking.noneFree)
                                 }
                             }
+                            //Update needed values in User & Club
                             oDataClub[randomClub].currentlyFree! -= 1
                             oDataUser[0].reservedClub = String(randomClub + 1)
                             oDataUser[0].hasReserved = true
-
-                                do {
-                                    try odataProvider.updateEntity(oDataClub[randomClub], headers: .empty, options: .none)
-                                } catch {
-                                    completionHandler(Constants.Booking.failed)
-                                }
-                                do {
-                                    try odataProvider.updateEntity(oDataUser[0], headers: .empty, options: .none)
-                                    completionHandler(Constants.Booking.success)
-                                } catch {
-                                    completionHandler(Constants.Booking.failed)
-                                }
+                            do {
+                                try odataProvider.updateEntity(oDataClub[randomClub], headers: .empty, options: .none)
+                            } catch {
+                                completionHandler(Constants.Booking.failed)
                             }
-
+                            do {
+                                try odataProvider.updateEntity(oDataUser[0], headers: .empty, options: .none)
+                                completionHandler(Constants.Booking.success)
+                            } catch {
+                                completionHandler(Constants.Booking.failed)
+                            }
                         }
                     }
-
                 }
             }
+        }
     }
 }
