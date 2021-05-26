@@ -58,7 +58,7 @@ class MapTextChildViewController: UIViewController {
             case "8":
                 self.bookedLabel.text = "You have a Desk booked in Club \(club)"
             case Constants.Map.notReserved:
-                self.bookedLabel.text = "You haven't reserved yet."
+                self.bookedLabel.text = "You have not reserved yet."
             default:
                 do{}
             }
